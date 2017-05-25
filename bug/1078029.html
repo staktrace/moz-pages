@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<body>
+ <div id="green" style="position:absolute; top: 0; left: 0; margin: 0px; width: 260px; height: 160px; background-color: green"></div>
+ <div id="yellow" style="position:absolute; top: 0; left: 0; margin: 10px; width: 240px; height: 140px; background-color: yellow"></div>
+ <div id="red" style="position:absolute; top: 0; left: 0; margin: 20px; width: 220px; height: 120px; background-color: red"></div>
+ <button id="x" style="position:absolute; top: 0; left: 0; margin: 30px; border: 0px; width: 200px; height: 100px">click just outside me</button>
+
+  <div style="position:absolute; top: 200px; left: 0">
+    Touch-start : <span id="ts"></span><br>
+    Mouse-down : <span id="md"></span><br>
+    Click : <span id="c"></span><br>
+  </div>
+ <script>
+  window.addEventListener('touchstart', function(e) {
+    document.getElementById('ts').textContent = e.target + ' at (' + e.touches[0].clientX + ', ' + e.touches[0].clientY + ')';
+  }, true);
+  window.addEventListener('mousedown', function(e) {
+    document.getElementById('md').textContent = e.target + ' at (' + e.clientX + ', ' + e.clientY + ')';
+  }, true);
+  window.addEventListener('click', function(e) {
+    document.getElementById('c').textContent = e.target + ' at (' + e.clientX + ', ' + e.clientY + ')';
+  }, true);
+ </script>
+</body>

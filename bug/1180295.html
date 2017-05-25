@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript">
+    var heights = {};
+    var resizeCount = 0;
+
+    heights['initial'] = window.innerHeight;
+
+    function recordHeight(e) {
+        heights[e.type] = window.innerHeight;
+        if (e.type == 'resize') {
+            resizeCount++;
+        }
+        document.getElementById('lastHeight').textContent = window.innerHeight;
+        document.getElementById('lastOHeight').textContent = window.outerHeight;
+        document.getElementById('resizeCount').textContent = '' + resizeCount;
+    }
+
+    window.addEventListener('DOMContentLoaded', recordHeight, false);
+    window.addEventListener('load', recordHeight, true);
+    window.addEventListener('resize', recordHeight, true);
+
+    function toggle() {
+        if (document.getElementById('shortpage').style.display == 'none') {
+            document.getElementById('shortpage').style.display = 'block';
+            document.getElementById('longpage').style.display = 'none';
+        } else {
+            document.getElementById('shortpage').style.display = 'none';
+            document.getElementById('longpage').style.display = 'block';
+        }
+    }
+
+    function report() {
+        for (x in heights) {
+            document.getElementById('height_' + x).textContent = heights[x];
+        }
+    }
+  </script>
+ </head>
+ <body>
+  <div style="position:fixed; top: 0; right: 0; width: 50px; height: 10%; background-color: green; color: white; opacity: 0.5">Top<br/>Right</div>
+  <div style="position:fixed; bottom: 0; right: 0; width: 50px; height: 50px; background-color: green; color: white; opacity: 0.5">Bottom<br/>Right</div>
+  <div style="position:fixed; top: 100px; right: 0; width: 50px; height: 10vh; background-color: green; color: white; opacity: 0.5">100px<br/>Right</div>
+  <div id="shortpage" style="display:none">
+   This is the top of the page.<br/>
+   Here is some content in the page.<br/>
+   This content is intentionally short so that the page doesn't scroll.<br/>
+   That way, you can't scroll off the dynamic toolbar.<br/>
+   However, here is a button that you can press to make the page long again, so that you can scroll it.<br/>
+   <button onclick="toggle()">Make the page long</button><br/>
+   This is the bottom of the page.
+  </div>
+  <div id="longpage" style="display:block">
+   This is the top of the page.<br/>
+   Here is some content in the page.<br/>
+   This content is intentionally long so that the page can scroll.<br/>
+   If you wish to make the page short so that it doesn't scroll, you can click the buton below.<br/>
+   <button onclick="toggle()">Make the page short</button><br/>
+   On this page you should do a number of tests to make sure everything is working.<br/>
+   <ol>
+    <li>First check that the top-right and bottom-right corners of the visible area of this page have green squares labelled appropriately. This should be true throughout this test.
+    <li><button onclick="report()">Then, click this button</button> and check that the first three values are all the same. The last one should be empty. This will only actually happen after bug 1180267 is done, but more values being the same is good.<br/>
+        initial innerHeight: <span id="height_initial"></span><br/>
+        innerHeight on DOMContentLoaded: <span id="height_DOMContentLoaded"></span><br/>
+        innerHeight on load: <span id="height_load"></span><br/>
+        innerHeight on resize: <span id="height_resize"></span><br/>
+    <li>Now, scroll down a little bit so that the toolbar slides off the page. The resize event should fire and fill in the thing below.<br/>
+        Most recent innerHeight: <span id="lastHeight"></span> (resize count is <span id="resizeCount"></span>)<br/>
+        Most recent outerHeight: <span id="lastOHeight"></span><br/>
+    <li>Now try rotating the device and see what happens. The resize should be smooth; the toolbar should remain off, the green boxes should stay in the corners.
+        Make sure that the resize counter above is incrementing in accordance with the number of resizes.
+    <li>Put focus in this input field to bring up the keyboard and see what happens: <input>. Things should be smooth.
+    <li>Try long-pressing on this text to get the action bar. If you do this when the toolbar is visible, the action mode should just replace the toolbar; if the toolbar is not visible then the action bar should slide in on top of the content. Tap somewhere to dismiss the action bar. The content should not shift or jump in any of these cases. Dragging the selection handles should work as expected.
+    <li>Bonus test case: hide the toolbar, long-press to get the action bar, then switch to some other app and open an external link in Fennec. This will switch to a new tab and dismiss action mode; the new tab should have the toolbar showing and everything should work as expected.
+    <li>Here is a link that causes a scroll back to the top, make sure that the toolbar visibility doesn't change when you click on this: <a href="#longpage">top</a>.
+    <li>And here is a link that explicitly causes a scrollTo(0,0) back to the top, again make sure the toolbar visibility doesn't change: <a href="javascript:scrollTo(0,0);">scrollTo(0)</a>.
+    <li>Here is a button to request full-screen mode: <button onclick="document.documentElement.mozRequestFullScreen();">fullscreen</button>
+    <li><a href="1180295-2.html">This page</a> has a bunch of links in close proximity that you can use to bring up the zoomed view and test that it works well also.
+    <li>The above linked page also has an input field. If you put focus in the field you should get a autocomplete popup dialog. Make sure there is no gap between it and the input field.
+    <li>Scroll down all the way to the bottom of this page and make sure the toolbar slides in on its own. Look carefully to make sure there is no glitch that happens after the toolbar is done sliding.
+    <li>Oh, and now test all of these things with the dynamic toolbar disabled (go to Settings - Display and uncheck "Full-screen browsing").
+   </ol>
+   This is the bottom of the page.
+  </div>
+ </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="author" content="Matteo Ferretti">
+  <link rel="author" href="https://twitter.com/zer0">
+  <link rel="shortcut icon" type="image/svg+xml">
+
+  <title></title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: monospace;
+      color: #283037;
+      font-size: 14px;
+      line-height: 1.5em;
+      scroll-behavior: smooth;
+      width: 40000px;
+      height: 40000px;
+    }
+
+    #a {
+      position: absolute;
+      width: 320px;
+      height: 240px;
+      top: 400px;
+      left: 600px;
+      background: #b39bbf;
+      border: 1px solid #906ca2;
+    }
+
+    #b {
+      position: absolute;
+      width: 160px;
+      height: 120px;
+      top: 20000px;
+      left: 3000px;
+      background: #bb3658;
+      border: 1px solid #7e3661;
+    }
+
+    #c {
+      position: absolute;
+      width: 640px;
+      height: 480px;
+      top: 33000px;
+      left: 30px;
+      background: #beeb9f;
+      border: 1px solid #00a388;
+    }
+
+    canvas {
+      position: absolute;
+      z-index: 9999;
+    }
+
+    main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40000px;
+      height: 40000px;
+      overflow: hidden;
+    }
+
+    output {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0.5em;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <output></output>
+  <main></main>
+
+  <div id="a"></div>
+  <div id="b"></div>
+  <div id="c"></div>
+
+  <script>
+    const output = document.querySelector("output");
+    function updateDebugInfo() {
+      output.textContent =
+        `canvas size: ${w}x${h}`;
+    }
+
+    let canvas = document.querySelector("main")
+                  .appendChild(document.createElement("canvas"));
+
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+    canvas.style.border="1px solid red";
+    canvas.style.borderLeft = "1px solid blue";
+
+    let context = canvas.getContext("2d");
+    let x = 0;
+    let y = 0;
+    let w = 0;
+    let h = 0;
+
+    canvas.style.left = x + "px";
+    canvas.style.top = y + "px";
+
+    let drawOffset = 1 / devicePixelRatio / 2;
+
+    function resizeCanvas() {
+      canvas.width = w * devicePixelRatio;
+      canvas.height = h * devicePixelRatio;
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      updateDebugInfo();
+    }
+
+    if (document.scrollingElement.addRenderCallback) {
+      let callbackId = document.scrollingElement.addRenderCallback(function paint(rect) {
+        let hasUpdated = false;
+        if (w !== rect.width || h !== rect.height) {
+          w = rect.width;
+          h = rect.height;
+          resizeCanvas();
+          hasUpdated = true;
+        }
+        if (x !== rect.x || y !== rect.y) {
+          x = rect.x;
+          y = rect.y;
+          canvas.style.transform = `translate3d(${x}px, ${y}px, .1px)`;
+          hasUpdated = true;
+        }
+        if (hasUpdated) {
+          drawGuideLines();
+        }
+      });
+    }
+
+    let rects = ["a", "b", "c"].reduce((result, id, i) => {
+      let node = document.getElementById(id);
+      let rect = node.getBoundingClientRect();
+      let color = window.getComputedStyle(node).borderTopColor;
+
+      result.push({
+        top: rect.top + window.pageYOffset,
+        right: rect.right + window.pageXOffset,
+        bottom: rect.bottom + window.pageYOffset,
+        left: rect.left + window.pageXOffset,
+        color,
+      });
+
+      return result;
+    }, [])
+
+    function drawGuideLines() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.setLineDash([5, 8]);
+
+      for (let rect of rects) {
+        context.beginPath();
+        context.moveTo(0 ,Math.round((rect.top - 1 - y) * devicePixelRatio) + drawOffset);
+        context.lineTo(w, Math.round((rect.top - 1 - y) * devicePixelRatio) + drawOffset);
+        context.moveTo(0 ,Math.round((rect.bottom - 2 - y) * devicePixelRatio) + drawOffset);
+        context.lineTo(w, Math.round((rect.bottom - 2 - y) * devicePixelRatio) + drawOffset);
+
+        context.moveTo(Math.round((rect.left - 1 - x) * devicePixelRatio) + drawOffset, 0);
+        context.lineTo(Math.round((rect.left - 1 - x) * devicePixelRatio) + drawOffset, h);
+        context.moveTo(Math.round((rect.right - 2 - x) * devicePixelRatio) + drawOffset, 0);
+        context.lineTo(Math.round((rect.right - 2 - x) * devicePixelRatio) + drawOffset, h);
+        context.strokeStyle = rect.color;
+        context.stroke();
+      }
+    }
+
+    drawGuideLines();
+  </script>
+
+
+</body></html>

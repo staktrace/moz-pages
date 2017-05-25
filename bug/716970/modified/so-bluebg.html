@@ -1,0 +1,2991 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+
+
+<title>Why is good UI design so hard for some Developers? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<script src="so-bluebg_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="so-bluebg_files/jquery.js"></script>
+<script type="text/javascript" src="so-bluebg_files/stub.js"></script>
+<script type="text/javascript" src="so-bluebg_files/mobile.js"></script>
+
+
+    
+        <link rel="stylesheet" type="text/css" href="so-bluebg_files/all.css">   
+    
+
+
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <link rel="canonical" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Why is good UI design so hard for some Developers?'" href="http://stackoverflow.com/feeds/question/514083">
+    <meta name="title" content="Why is good UI design so hard for some Developers? - Stack Overflow">
+    <link rel="image_src" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            StackExchange.question.init({votesCast:[],totalCommentCount:13,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:514083});
+
+            styleCode();
+        });
+    </script>
+
+    <script type="text/javascript">
+        var opts = {"stackAuthUrl":"https://stackauth.com","serverTime":1327602304,"isMobile":true,"styleCode":true,"newTagEditor":true,"enableUserHovercards":true,"enableTabCompletion":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"enableAccountEmails":true,"user":{"isRegistered":true,"accountId":7054,"gravatar":"\u003cdiv class=\"\"\u003e\u003cimg src=\"http://www.gravatar.com/avatar/f3d510406265d48b82e4e8a70f4e4adb?s=32&amp;d=identicon&amp;r=PG\" alt=\"\"\u003e\u003c/div\u003e","profileUrl":"http://stackoverflow.com/users/12050/staktrace","fkey":"41ba06b6ffc14cdc0e083477bd58b568","messages":[{"id":6232147,"messageTypeId":9,"text":"Congrats, you\u0027ve gained the privilege &ndash; view close votes \u003ca href=\"/privileges/view-close-votes\"\u003elearn more\u003c/a\u003e","userId":12050,"showProfile":false}],"inboxUnviewedCount":0}};
+        opts.isMobile = true;
+        StackExchange.init(opts);
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"6c71f9dce92f","js/moderator.js":"723991e143f9","js/full-anon.js":"2c21937828a6","js/full.js":"9255464dc25f","js/wmd.js":"718aab13f8f6","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"c58294e4b2d6","js/help.js":"fc9fb0517db2","js/tageditor.js":"bdcf5e00cb94","js/tageditornew.js":"4cc1b1585293","js/inline-tag-editing.js":"b19f6e3b50a5","js/mathjax-editing.js":"6cf599b0be36","js/revisions.js":"ba0b3238d60e","js/suggested-edits.js":"a0db134b1f80"});
+
+        StackExchange.using("mobile", function() { StackExchange.mobile.init(true); });
+    </script>
+
+    
+<script src="so-bluebg_files/full.js" type="text/javascript" async=""></script></head>
+<body class="no-message-slide question-single">
+    <div class="header">
+	    <div class="logo fl"><a href="http://stackoverflow.com/"><img src="so-bluebg_files/icon-48.png" alt="Stack Overflow" class="icon-logo"><h1>Stack Overflow</h1></a></div> 
+        <div id="user-dropdown" class="menu-arrow-off">▼</div>
+    </div>
+ 
+<div style="display: none;" class="site-menu-wrap">
+    <div class="site-menu">
+        <div class="top-row">
+            <div class="search">              
+                <form action="/search" method="get">
+                    <input name="q" class="searchbox" maxlength="140" size="28" type="">
+                </form>
+            </div>
+            <div class="user-box">
+                <a href="http://stackoverflow.com/users/12050/staktrace">
+                    <div class=""><img src="so-bluebg_files/f3d510406265d48b82e4e8a70f4e4adb.png" alt=""></div>
+                    <span class="reputation-score" title="reputation score" dir="ltr">252</span><span title="1 silver badge"><span class="badge2">●</span><span class="badgecount">1</span></span><span title="4 bronze badges"><span class="badge3">●</span><span class="badgecount">4</span></span>
+                </a>
+                <a href="http://stackoverflow.com/users/logout">logout</a>
+            </div>
+        </div>
+        <div class="site-menu-links">
+                <a class="close-link" style="float: right;">close menu</a>
+        </div>
+    </div>
+</div>
+
+    <div id="notify-container">
+    <div id="notify-9-6232147" style=""><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Congrats, you've gained the privilege – view close votes <a href="http://stackoverflow.com/privileges/view-close-votes">learn more</a></span></div></div>
+
+    <div class="nav"> 
+	    <ul> 
+		    <li>    <a href="http://stackoverflow.com/questions" title="Questions" class="current">Questions</a>
+</li>
+		    <li>    <a href="http://stackoverflow.com/tags" title="Tags" class="">Tags</a>
+</li>
+		    <li>    <a href="http://stackoverflow.com/users" title="Users" class="">Users</a>
+</li>
+		    <li>    <a href="http://stackoverflow.com/badges" title="Badges" class="">Badges</a>
+</li> 
+		    <li>    <a href="http://stackoverflow.com/unanswered" title="Unanswered" class="">Unanswered</a>
+</li> 
+		    <li>    <a href="http://stackoverflow.com/questions/ask" title="Ask" class="">Ask</a>
+</li>	
+	    </ul> 
+    </div>
+
+    
+    
+
+    <div class="wrapper">
+        
+
+
+
+
+
+
+    <div class="question question-summary " id="question">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514083" type="hidden">
+
+    
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">207</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">vote down</a>
+    
+        <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+</div>
+    
+        <div class="question-title">
+            <h2>
+                <a href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers" class="question-hyperlink">Why is good UI design so hard for some Developers? [closed]</a>
+            </h2>
+            <div class="tags">
+                    
+                        <a href="http://stackoverflow.com/questions/tagged/design" class="post-tag">design</a>
+                    
+                    
+                        <a href="http://stackoverflow.com/questions/tagged/user-interface" class="post-tag">user-interface</a>
+                    
+                    
+                        <a href="http://stackoverflow.com/questions/tagged/web-design" class="post-tag">web-design</a>
+                    
+            </div>
+        </div>
+    <br>
+    <div class="post-text">
+        <p>Some of us just have a hard time with the softer aspects of UI design (<em>myself especially</em>).  Are "back-end coders" doomed to only design business logic and data layers?  Is there something we can do to <strong>retrain our brain</strong> to be more effective at designing pleasing and useful presentation layers?</p>
+
+<p>Colleagues have recommended a few books me including <em>The Design of Sites</em>, <em>Don't make me think</em> and <em>Why Software sucks</em> , but I am wondering what others have done to remove their deficiencies in this area?</p>
+
+
+        <div class="util-bar"><a href="http://stackoverflow.com/posts/514083/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514083" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514083" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/514083/revisions" title="show all edits to this post"><span title="2009-02-13 00:07:22Z" class="relativetime">Feb 13 '09 at 0:07</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>        
+        <div class="user-info owner fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 7 '09 at 1:38. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-514083" href="http://stackoverflow.com/posts/514083/revisions" title="show revision history for this post">12 revs, 2 users 100%<br>Chris Ballance</a></div></div>
+    </div>
+
+
+
+<div id="comments-514083" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-327940" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">For 
+myself (I suffer the same problem) I know a good UI when I use one.  And
+ I definitely know a UI that annoys me.  But I have a very difficult 
+time trying to design one myself.  It's like the critical eye I have 
+when I'm using someone else's UI doesn't work on my own designs.</span> –&nbsp;<a href="http://stackoverflow.com/users/56793/jmd" title="3136 reputation" class="comment-user">JMD</a> <span class="comment-date" dir="ltr"><span title="2009-02-05 01:17:39Z">Feb 5 '09 at 1:17</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-327998" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I hate the term "back-end coder" and was trying to keep it out of the title</span> –&nbsp;<a href="http://stackoverflow.com/users/1551/chris-ballance" title="13501 reputation" class="comment-user owner">Chris Ballance</a> <span class="comment-date" dir="ltr"><span title="2009-02-05 01:44:04Z">Feb 5 '09 at 1:44</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-347377" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="hot">19</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Graphic design != UI design. The former is about making things pretty. The latter is about making things useful and usable.</span> –&nbsp;<a href="http://stackoverflow.com/users/62130/esko-luontola" title="17686 reputation" class="comment-user">Esko Luontola</a> <span class="comment-date" dir="ltr"><span title="2009-02-10 22:24:19Z">Feb 10 '09 at 22:24</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-347588" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">2</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">+1 @Esko.  Often 'pretty' means totally UN-usable.  But the two CAN co-exist if handled with care and thought.</span> –&nbsp;<a href="http://stackoverflow.com/users/242/david-haust" title="1816 reputation" class="comment-user">David HAust</a> <span class="comment-date" dir="ltr"><span title="2009-02-10 23:25:51Z">Feb 10 '09 at 23:25</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-359308" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">12</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Why is developing software so hard for UI designers?</span> –&nbsp;<a href="http://stackoverflow.com/users/35/greg-hurlman" title="7838 reputation" class="comment-user">Greg Hurlman</a> <span class="comment-date" dir="ltr"><span title="2009-02-13 20:33:14Z">Feb 13 '09 at 20:33</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514083" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>8</b> more comments</a>
+            <form id="add-comment-514083" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+<div class="question-status">
+                    <h2><b>closed</b> as not constructive by <a href="http://stackoverflow.com/users/1288/bill-the-lizard">Bill the Lizard</a><span class="mod-flair" title="moderator">♦</span> <span title="2012-01-07 02:29:55Z" class="relativetime">Jan 7 at 2:29</span></h2>
+                    <p>This question is not a good fit to our Q&amp;A 
+format. We expect answers to generally involve facts, references, or 
+specific expertise; this question will likely solicit opinion, debate, 
+arguments, polling, or extended discussion. <a href="http://stackoverflow.com/faq#close">See the FAQ</a>.</p>
+                  </div>
+
+
+    <a name="tab-top"></a>
+    <div class="answer-header">
+        <div class="subheader">65 Answers</div>
+        <div class="sorter">
+            order by
+            <form id="answersort" action="#tab-top" method="get">
+                <select name="answertab" class="submit-on-change">
+                    <option value="active">active</option>
+                    <option value="oldest">oldest</option>
+                    <option value="votes" selected="selected">votes</option>
+                </select>
+            </form>
+        </div>
+        <div class="pager fl"><span class="page-numbers current">1</span><a title="go to page 2" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?page=2&amp;tab=Votes">
+                                <span class="page-numbers">2</span>
+                             </a><a title="go to page 1" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?page=3&amp;tab=Votes">
+                        <span class="page-numbers">3</span>
+                      </a><a rel="next" title="go to page 2" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?page=2&amp;tab=Votes"><span class="page-numbers next">▶</span></a></div>
+    </div>
+
+
+
+  
+    <a name="516180"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="516180" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">361</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Feb 14 '09 at 2:00">accepted answer</span></div>            <div class="post-text">
+                <p>Let me say it directly: </p>
+
+<p><strong>Improving on this does not begin with guidelines. It begins with reframing how you think about software.</strong></p>
+
+<p>Most hardcore developers have practically <strong>zero</strong> empathy with users of their software. They have <strong>no clue</strong> how users think, how users build models of software they use and how they use a computer in general.</p>
+
+<p>It is a typical problem when an expert collides with a laymen: How on earth could a normal person be so <strong>dumb</strong> not to understand what the expert understood 10 years ago?</p>
+
+<p>One of the first facts to acknowledge that is unbelievably difficult to grasp for almost all experienced developers is this: </p>
+
+<p><strong>Normal people have a vastly different concept of software 
+than you have. They have no clue whatsoever of programming. None. Zero. 
+And they don't even care. They don't even think they have to care. If 
+you force them to, they will delete your program.</strong> </p>
+
+<p>Now that's unbelievably harsh for a developer. He is proud of the 
+software he produces. He loves every single feature. He can tell you 
+exactly how the code behind it works. Maybe he even invented an 
+unbelievable clever algorithm that made it work 50% faster than before.</p>
+
+<p>And the user doesn't care.</p>
+
+<p>What an idiot.</p>
+
+<p>Many developers can't stand working with normal users. They get 
+depressed by their non-existing knowledge of technology. And that's why 
+most developers shy away and think users must be idiots.</p>
+
+<p>They are not.</p>
+
+<p>If a software developer buys a car, he expects it to run smoothly. He
+ usually does not care about tire pressures, the mechanical fine-tuning 
+that was important to make it run that way. Here he is <strong>not</strong> the expert. And if he buys a car that does not have the fine-tuning, he gives it back and buys one that does what he wants.</p>
+
+<p>Many software developers like movies. Well-done movies that spark 
+their imagination. But they are not experts in producing movies, in 
+producing visual effects or in writing good movie scripts. Most nerds 
+are very, very, very bad at acting because it is all about displaying 
+complex emotions and little about analytics. If a developer watches a 
+bad film, he just notices that it is bad as a whole. Nerds have even 
+built up IMDB to collect information about good and bad movies so they 
+know which ones to watch and which to avoid. But they are not experts in
+ creating movies. If a movie is bad, they'll not go to the movies (or 
+not download it from BitTorrent ;)</p>
+
+<p>So it boils down to: Shunning normal users as an expert is <strong>ignorance.</strong>
+ Because in those areas (and there are so many) where they are not 
+experts, they expect the experts of other areas to have already thought 
+about normal people who use their products or services. </p>
+
+<p>What can you do to remedy it? The more hardcore you are as a 
+programmer, the less open you will be to normal user thinking. It will 
+be alien and clueless to you. You will think: I can't imagine how people
+ could <strong>ever</strong> use a computer with this lack of knowledge.
+ But they can. For every UI element, think about: Is it necessary? Does 
+it fit to the concept a user has of my tool? How can I make him 
+understand? Please read up on usability for this, there are many good 
+books. It's a whole area of science, too.</p>
+
+<p>Ah and before you say it, yes, I'm an Apple fan ;)</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/516180/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-516180" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-516180" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/516180/revisions" title="show all edits to this post"><span title="2009-04-15 15:23:07Z" class="relativetime">Apr 15 '09 at 15:23</span></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/1551/chris-ballance">Chris Ballance</a><br>
+				        </div>
+			        </div>
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 14:42:35Z" class="relativetime">Feb 5 '09 at 14:42</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/19734/thorsten79"><div class=""><img src="so-bluebg_files/e94d53cbcdbba224d742834f7745b85c.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/19734/thorsten79">Thorsten79</a><br><span class="reputation-score" title="reputation score" dir="ltr">7,044</span><span title="2 gold badges"><span class="badge1">●</span><span class="badgecount">2</span></span><span title="12 silver badges"><span class="badge2">●</span><span class="badgecount">12</span></span><span title="32 bronze badges"><span class="badge3">●</span><span class="badgecount">32</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-516180" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-331643" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">7</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Excellent
+ comment! You've nailed one of the most fundamental hurdles in software 
+design. A hard fact to swallow for hardened developers (like me), but 
+the truth often is.</span> –&nbsp;<a href="http://stackoverflow.com/users/34411/gerard" title="1585 reputation" class="comment-user">Gerard</a> <span class="comment-date" dir="ltr"><span title="2009-02-05 22:03:51Z">Feb 5 '09 at 22:03</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-337582" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">12</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">+1.  I 
+recommend reading "The Inmates are Running the Asylum", it goes into 
+good detail about the differences in user/dev mindsets, as well as some 
+remedies.</span> –&nbsp;<a href="http://stackoverflow.com/users/36805/richard-levasseur" title="3145 reputation" class="comment-user">Richard Levasseur</a> <span class="comment-date" dir="ltr"><span title="2009-02-07 18:59:33Z">Feb 7 '09 at 18:59</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-337928" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">9</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">+1 To be honest, any developer that doesn't care about the user is a poor developer!</span> –&nbsp;<a href="http://stackoverflow.com/users/13227/gary-willoughby" title="6744 reputation" class="comment-user">Gary Willoughby</a> <span class="comment-date" dir="ltr"><span title="2009-02-07 22:10:26Z">Feb 7 '09 at 22:10</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-347365" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">7</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Very 
+valid points, and I think that this mentality is also part of the reason
+ that a number of developer-run projects (e.g. open source or 
+what-have-you) have come across as difficult to use -- by and large, 
+most developers write for themselves as the user, not for the "real" end
+ user.</span> –&nbsp;<a href="http://stackoverflow.com/users/61665/rmz" title="879 reputation" class="comment-user">rmz</a> <span class="comment-date" dir="ltr"><span title="2009-02-10 22:19:57Z">Feb 10 '09 at 22:19</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-349611" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="hot">24</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">+1 This is THE reason Linux still isn't ready for the average user's desktop.</span> –&nbsp;<a href="http://stackoverflow.com/users/21186/bryan-anderson" title="4627 reputation" class="comment-user">Bryan Anderson</a> <span class="comment-date" dir="ltr"><span title="2009-02-11 15:16:46Z">Feb 11 '09 at 15:16</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-516180" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>26</b> more comments</a>
+            <form id="add-comment-516180" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="537490"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="537490" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">215</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <h1>UI design <em>is</em> hard</h1>
+
+<p>To the question:</p>
+
+<blockquote>
+  <p><strong>why is UI design so hard for most developers?</strong></p>
+</blockquote>
+
+<p>Try asking the inverse question:</p>
+
+<blockquote>
+  <p><strong>why is <em>programming</em> so hard for most <em>UI designers</em>?</strong></p>
+</blockquote>
+
+<p>Coding a UI and designing a UI require different skills and a different mindset. UI design is hard for <em>most</em> developers, not <em>some</em> developers, just as writing code is hard for <em>most</em> designers, not <em>some</em> designers. </p>
+
+<p>Coding is hard. Design is hard too. Few people do both well. Good UI 
+designers rarely write code. They may not even know how, yet they are 
+still good designers. So why do good developers feel responsible for UI 
+design? </p>
+
+<p>Knowing more about UI design will make you a better developer, but 
+that doesn't mean you should be responsible for UI design. The reverse 
+is true for designers: knowing how to write code will make them better 
+designers, but that doesn't mean they should be responsible for coding 
+the UI.</p>
+
+<h1>How to get better at UI design</h1>
+
+<p>For developers wanting to get better at UI design I have 3 basic pieces of advice:</p>
+
+<ol>
+<li><strong>Recognize design as a separate skill</strong>. Coding and 
+design are separate but related. UI design is not a subset of coding. It
+ requires a different mindset, knowledge base, and skill group. There 
+are people out there who focus on UI design.</li>
+<li><strong>Learn about design</strong>. At least a little bit. Try to 
+learn a few of the design concepts and techniques from the long list 
+below. If you are more ambitious, read some books, attend a conference, 
+take a class, get a degree. There are lot of ways to learn about design.
+ <a href="http://www.librarything.com/work/8032" rel="nofollow">Joel Spolky's book on UI design</a> is a good primer for developers, but there's a lot more to it and that's where designers come into the picture.</li>
+<li><strong>Work with designers</strong>. Good designers, if you can. 
+People who do this work go by various titles. Today, the most common 
+titles are User Experience Designer (UXD), Information Architect (IA), 
+Interaction Designer(ID), and Usability Engineer. They think about 
+design as much as you think about code. You can learn a lot from them, 
+and they from you. Work with them however you can. Find people with 
+these skills in your company. Maybe you need to hire someone. Or go to 
+some conferences, attend webinars, and spend time in the UXD/IA/ID 
+world.</li>
+</ol>
+
+<p>Here are some specific things you can learn. <strong>Don't try to learn everything</strong>. If you knew everything below you could call yourself an interaction designer or an information architect. <strong>Start with things near the top of the list</strong>.
+ Focus on specific concepts and skills. Then move down and branch out. 
+If you really like this stuff, consider it as a career path. Many 
+developers move into managements, but UX design is another option.</p>
+
+<ul>
+<li><strong>Learn fundamental design concepts</strong>. You should know about affordances, visibility, feedback, mappings, Fitt's law, poka-yokes, and more. I recommend reading <em><a href="http://www.librarything.com/work/768" rel="nofollow">The Design of Everyday Things</a></em> (Don Norman) and <em><a href="http://www.librarything.com/work/62763" rel="nofollow">Universal Principles of Design</a></em> (Lidwell, Holden, &amp; Butler)</li>
+<li><strong>Learn about user experience</strong>. This is becoming the 
+umbrella term for the human-centered design of web sites, applications, 
+and any other digital artifact. The classic primer here is <em><a href="http://www.librarything.com/work/62762" rel="nofollow">The elements of User Experience</a></em> (Jesse James Garrett). You can get an <a href="http://www.jjg.net/elements/" rel="nofollow">overview and the first few chapters from the author's site</a>.</li>
+<li><strong>Learn to sketch designs</strong>. Sketching is fast way to <em>explore</em>
+ design options and find the right design, whereas usability testing is 
+about getting the design right. Paper prototyping is fast, cheap, and 
+effective during the early design stages. Much faster than coding a 
+digital prototype. The key text here is <em><a href="http://www.librarything.com/work/4701386" rel="nofollow">Sketching User Experience: Getting the design right and the right design</a></em> (<a href="http://billbuxton.com/" rel="nofollow">Bill Buxton</a>).
+ Sketching is a particularly useful skill when working with IA/ID/UX 
+designers. Your collaboration will be more effective. For a good primer 
+on how and why designers sketch, watch the presentation <a href="http://www.slideshare.net/ugleah/how-to-be-a-ux-team-of-one" rel="nofollow">How to be a UX team of one</a> by Leah Buley from the <a href="http://iasummit.org/" rel="nofollow">2008 IA Summit</a>.</li>
+<li><strong>Learn paper prototyping</strong>. The fastest way to iteratively <em>test</em> an interface before you write code. Different from sketching and usability testing. The definitive book here is <em><a href="http://www.librarything.com/work/319043" rel="nofollow">Paper Prototyping</a></em> (Carolyn Snyder). You can get a good DVD on this from the <a href="http://www.nngroup.com/reports/prototyping/" rel="nofollow">Nielsen Norman Group</a>. </li>
+<li><strong>Learn usability testing</strong>. Discount testing is easy 
+and effective. But for many UIs, usability is hard to do well. You can 
+learn the basics quickly, but good usability people are invaluable. If 
+you want a book, the classic is <em><a href="http://www.librarything.com/work/2292796" rel="nofollow">The Handbook of Usability Testing</a></em> (Jeffrey Rubin). It's older but offers thorough coverage of lab-based testing. The famous starter book is <em><a href="http://www.librarything.com/work/12322" rel="nofollow">Don't Make Me Think (2nd Ed)</a></em>
+ (Steve Krug). I caution people about this one: Krug makes it sound 
+easier than it is. But it is a good starting point. The user research 
+books listed in the next point also cover this topic. And you can find 
+piles about it online. </li>
+<li><strong>Learn about information architecture</strong>. The main book here is <em><a href="http://www.librarything.com/work/2608" rel="nofollow">Information Architecture for the World Wide Web (3rd)</a></em> (Louis Rosenfeld &amp; Peter Morville). A good starter book is <em><a href="http://www.librarything.com/work/62754" rel="nofollow">Information Architecture: Blueprints for the Web</a></em> (Christina Wodtke). For more, visit the <a href="http://iainstitute.org/" rel="nofollow">Information Architecture Institute</a> or attend the annual <a href="http://iasummit.org/" rel="nofollow">Information Architecture Summit</a>.</li>
+<li><strong>Learn about interaction design</strong>. The main book here is <em><a href="http://www.librarything.com/work/3037776" rel="nofollow">The Essentials of Interaction Design (3rd)</a></em> (Alan Cooper, <em>et al</em>). A good starter book is <em><a href="http://www.librarything.com/work/1202204" rel="nofollow">Designing for interaction</a></em> (Dan Saffer). For more, visit the <a href="http://ixda.org/" rel="nofollow">Interaction Design Association (IxDA)</a> or attend the annual <a href="http://interaction09.ixda.org/" rel="nofollow">Interaction Design conference</a>.</li>
+<li><strong>Learn fundamentals of graphic design</strong>. Graphic 
+design is not UI design, but concepts from graphic design can improve an
+ interface. Graphic design introduces design principles for the visual 
+presentation of information, such as proximity, alignment, and small 
+multiples. I recommend reading <em><a href="http://www.librarything.com/work/10038" rel="nofollow">The non-designer's design book</a></em> (Robin Williams) and <em><a href="http://www.librarything.com/work/2815655" rel="nofollow">Envisioning Information</a></em> (Edward Tufte)</li>
+<li><strong>Learn to do user research</strong>. Where usability tests an
+ interface, user research tries to model users and their tasks through 
+personas, scenarios, user journeys, and other documents. It's about 
+understanding users and what they do, then using that to inform the 
+design instead of guessing. Some techniques are interviews, surveys, 
+diary studies, and cart sorting. Good books on this are <em><a href="http://www.librarything.com/work/62757" rel="nofollow">Observing the User Experience</a></em> (Mike Kuniavsky) and <em><a href="http://www.librarything.com/work/457101" rel="nofollow">Understanding Your Users</a></em> (Courage &amp; Baxter)</li>
+<li><strong>Learn to do field research</strong>. Watching people in the 
+lab under artificial conditions helps (ie: usability), but there is 
+nothing like watching people use your code in context: their home, their
+ office, or wherever they use it. Goes by various names, including 
+ethnography, field studies, and contextual inquiry. Here is <a href="http://www.adaptivepath.com/ideas/essays/archives/000569.php" rel="nofollow">a good primer on field research</a>. Two of the better known books here are <em><a href="http://www.librarything.com/work/1330347" rel="nofollow">Rapid Contextual Design</a></em> (Karen Holtzblatt <em>et al</em>) and <em><a href="http://www.librarything.com/work/311880" rel="nofollow">User and task analysis for interface design</a></em> (Hackos &amp; Redish).</li>
+<li><strong>Read UX design web sites</strong>. Some of the big ones are <a href="http://boxesandarrows.com/" rel="nofollow">Boxes &amp; Arrows</a>, <a href="http://www.uxmag.com/" rel="nofollow">UX Mag</a>, <a href="http://uxmatters.com/" rel="nofollow">UX Matters</a>, and <a href="http://digital-web.com/" rel="nofollow">Digital Web magazine</a>.</li>
+<li><strong>Use UI pattern libraries</strong>. There are patterns for interfaces. For web sites, I recommend <em><a href="http://www.librarything.com/work/5520877" rel="nofollow">The Design of Sites, 2nd ed</a></em> (Van Duyne, <em>et al</em>) and <em><a href="http://www.librarything.com/work/5804" rel="nofollow">Homepage usability: 50 websites deconstructed</a></em> (Jakob Nielsen &amp; Marie Tahir). For desktop applications I recommend <em><a href="http://www.librarything.com/work/630562" rel="nofollow">Designing interfaces</a></em> (Jennifer Tidwell), and for web applications I recommend <em><a href="http://designingwebinterfaces.com/" rel="nofollow">Designing Web Interfaces: Principles and Patterns for Rich Interactions</a></em> (Bill Scott &amp; Theresa Neil). Online you should check <a href="http://www.welie.com/patterns/" rel="nofollow">Welie pattern library</a>, <a href="http://ui-patterns.com/" rel="nofollow">UI patterns</a>, and <a href="http://designingwebinterfaces.com/explore" rel="nofollow">Web UI patterns</a>.</li>
+<li><strong>Attend UX design conferences</strong>. Some good annual conferences are: <a href="http://iasummit.org/" rel="nofollow">Information Architecture Summit</a>, <a href="http://interaction09.ixda.org/" rel="nofollow">Interaction '09 (IxDA)</a>, <a href="http://www.uie.com/events/uiconf/" rel="nofollow">User Interface</a>, and <a href="http://uxweek.com/" rel="nofollow">UX week</a>.</li>
+<li><strong>Attend a workshop or webinar</strong>. You can take workshops, webinars, and online courses. This is far from a comprehensive list, but you might try the <a href="http://www.uie.com/events/virtual%5Fseminars/" rel="nofollow">UIE virtual seminars</a>, <a href="http://www.adaptivepath.com/events/" rel="nofollow">Adaptive Path virtual seminars</a>, and <a href="http://www.rosenfeldmedia.com/webinars/" rel="nofollow">UX webinars from Rosenfeld Media</a>.</li>
+<li><strong>Get a degree</strong>. A graduate degree in HCI is one 
+approach, but these programs are mostly about writing coding. If you 
+want to learn about the design of digital artifacts and devices, then 
+you want a graduate program that's not in CS. Some options include <a href="http://www.design.cmu.edu/show%5Fprogram.php?s=2&amp;t=3" rel="nofollow">Interaction Design at Carnegie Mellon</a>, the <a href="http://www.stanford.edu/group/dschool/" rel="nofollow">d-School at Stanford</a>, the <a href="http://itp.nyu.edu/itp/" rel="nofollow">ITP program at NYU</a>, and <a href="http://www.iakm.kent.edu/" rel="nofollow">Information Architecture &amp; Knowledge Management</a>
+ at Kent State (disclosure: I'm on faculty at Kent; we are seeing more 
+and more people with CS degrees moving into UX design instead of 
+management, which is interesting, because management is the traditional 
+path for developers who want to move away from writing code while 
+staying in their field). There are many more programs. Each has their 
+own perspective, areas of emphasis, and technical expectations. Some 
+come out of the arts and visual design, others out of library and 
+information science, and some from CS. Most are hybrids, but every 
+hybrid has deeper roots in one or more fields. If this interests you, 
+look around and try to understand the differences between these 
+programs. Some offer online courses and certificate programs in addition
+ to full-fledged degrees.</li>
+</ul>
+
+<h1>Why UI design is hard</h1>
+
+<p>Good UI design is hard because it involves 2 vastly different skills:</p>
+
+<ul>
+<li><strong>A deep understanding of the machine</strong>. People in this
+ group worry about code first, people second. They have deep 
+technological knowledge and skill. We call them developers, programmers,
+ engineers, and so forth.</li>
+<li><strong>A deep understanding of people and design</strong>: People 
+in this group worry about people first, code second. They have deep 
+knowledge of how people interact with information, computers, and the 
+world around them. We call them user experience designers, information 
+architects, interaction designers, usability engineers, and so forth.</li>
+</ul>
+
+<p>This is the essential difference between these 2 groups—between developers and designers:</p>
+
+<ul>
+<li><strong>Developers make it work</strong>. They implement the 
+functionality on your TiVo, your iPhone, your favorite website, etc. 
+They make sure it actually does what it is supposed to do. Their highest
+ priority is making it work.</li>
+<li><strong>Designers make people <em>love</em> it</strong>. They figure
+ out how to interact with it, how it should look, and how it should 
+feel. They design the experience of using the application, the web site,
+ the device. Their highest priority is making you fall in love with what
+ developers make. This is what is meant by user experience, and it's not
+ the same as brand experience. </li>
+</ul>
+
+<p>Moreover, programming and design require <em>different mindsets</em>,
+ not just different knowledge and different skills. Good UI design 
+requires both mindsets, both knowledge bases, both skill groups. And it 
+takes years to master either one.</p>
+
+<p>Developers should expect to find UI design hard, just as UI designers should expect to find writing code hard. </p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/537490/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-537490" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-537490" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/537490/revisions" title="show all edits to this post"><span title="2009-08-17 14:17:18Z" class="relativetime">Aug 17 '09 at 14:17</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 11 '09 at 16:05. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-537490" href="http://stackoverflow.com/posts/537490/revisions" title="show revision history for this post">23 revs, 2 users 99%<br>Karl Fast</a></div></div>
+            </div>
+
+
+
+<div id="comments-537490" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-350980" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">8</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">This is the best answer here. Great links BTW!</span> –&nbsp;<a href="http://stackoverflow.com/users/254455/bernard" title="419 reputation" class="comment-user">Bernard</a> <span class="comment-date" dir="ltr"><span title="2009-02-11 20:32:31Z">Feb 11 '09 at 20:32</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-3832621" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">2</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Why isn't this marked as the best answer? It seems far better than Thorsten79's answer.</span> –&nbsp;<a href="http://stackoverflow.com/users/336656/hippo" title="1912 reputation" class="comment-user">Hippo</a> <span class="comment-date" dir="ltr"><span title="2010-09-05 09:19:04Z">Sep 5 '10 at 9:19</span></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-6468129" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Wish I could favorite this answer directly. :)</span> –&nbsp;<a href="http://stackoverflow.com/users/238688/djacobson" title="6982 reputation" class="comment-user">djacobson</a> <span class="comment-date" dir="ltr"><span title="2011-04-14 18:30:05Z">Apr 14 '11 at 18:30</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-537490" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>7</b> more comments</a>
+            <form id="add-comment-537490" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514098"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514098" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">70</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>What really helps me improve my design is to grab a 
+fellow developer, one the QA guys, the PM, or anyone who happens to walk
+ by and have them try out a particular widget or screen.</p>
+
+<p>Its amazing what you will realize when you watch someone else use your software for the first time</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514098/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514098" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514098" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 00:59:16Z" class="relativetime">Feb 5 '09 at 0:59</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/26620/kevin"><div class=""><img src="so-bluebg_files/f654549723ac0841aad2ade1385871b4.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/26620/kevin">Kevin</a><br><span class="reputation-score" title="reputation score 13393" dir="ltr">13.4k</span><span title="3 gold badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="17 silver badges"><span class="badge2">●</span><span class="badgecount">17</span></span><span title="30 bronze badges"><span class="badge3">●</span><span class="badgecount">30</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514098" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-337056" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">7</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I believe its called the "hallway usability test"</span> –&nbsp;<a href="http://stackoverflow.com/users/26620/kevin" title="13393 reputation" class="comment-user">Kevin</a> <span class="comment-date" dir="ltr"><span title="2009-02-07 12:48:22Z">Feb 7 '09 at 12:48</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514098" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>5</b> more comments</a>
+            <form id="add-comment-514098" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514117"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514117" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">32</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>Ultimately, it's really about empathy -- can you put yourself in the shoes of your user?</p>
+
+<p>One thing that helps, of course, is "eating your own dogfood" -- 
+using your applications as a real user yourself, and seeing what's 
+annoying.</p>
+
+<p>Another good idea is to find a way to watch a real user using your 
+application, which may be as complicated as a usability lab with one-way
+ mirrors, screen video capture, video cameras on the users, etc., or can
+ be as simple as paper prototyping using the next person who happens to 
+walk down the hall.</p>
+
+<p>If all else fails, remember that it's almost always better for the UI
+ to be too simple than too complicated.  It's very very easy to say "oh,
+ I know how to solve that, I'll just add a checkbox so the user can 
+decide which mode they prefer".  Soon your UI is too complicated.  Pick a
+ default mode and make the preference setting an advanced configuration 
+option.  Or just leave it out.</p>
+
+<p>If you read a lot about design you can easily get hung up on dropped 
+shadows and rounded corners and so forth.  That's not the important 
+stuff.  Simplicity and discoverability are the important stuff.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514117/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514117" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514117" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 01:05:53Z" class="relativetime">Feb 5 '09 at 1:05</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/1237/jacobm"><div class=""><img src="so-bluebg_files/6704b031163fde4396bf1fdedecbfb44.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/1237/jacobm">JacobM</a><br><span class="reputation-score" title="reputation score 20659" dir="ltr">20.7k</span><span title="1 gold badge"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="16 silver badges"><span class="badge2">●</span><span class="badgecount">16</span></span><span title="44 bronze badges"><span class="badge3">●</span><span class="badgecount">44</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514117" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514117" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>6</b> more comments</a>
+            <form id="add-comment-514117" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="516204"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="516204" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">26</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>Contrary to popular myth there are literally no soft 
+aspects in UI design, at least no more than needed to design a good back
+ end.</p>
+
+<p>Consider the following; good back end design is based upon fairly 
+solid principles and elements any good developer is familiar with:</p>
+
+<ul>
+<li><p>low coupling</p></li>
+<li><p>high cohesion</p></li>
+<li><p>architectural patterns</p></li>
+<li><p>industry best practices</p></li>
+<li><p>etc</p></li>
+</ul>
+
+<p>Good back end design is usually born through a number of 
+interactions, where based on the measurable feedback obtained during 
+tests or actual use the initial blueprint is gradually improved. 
+Sometimes you need to prototype smaller aspects of back end and trial 
+them in isolation etc.</p>
+
+<p>Good UI design is based on the sound principles of:</p>
+
+<ul>
+<li><p>visibility</p></li>
+<li><p>affordance</p></li>
+<li><p>feedback</p></li>
+<li><p>tolerance</p></li>
+<li><p>simplicity</p></li>
+<li><p>consistency</p></li>
+<li><p>structure</p></li>
+</ul>
+
+<p>UI is also born through test and trial, through iterations but not 
+with compiler + automated test suit, but people. Similarly to back end 
+there are industry best practises, measurement and evaluation 
+techniques, ways to think of UI and set goals in terms of user model, 
+system image, designer model, structural model, functional model etc. </p>
+
+<p>The skill set needed for designing UI is quite different from 
+designing back-end and hence don’t expect to be able to do good UI 
+without doing some learning first. However that both these activities 
+have in common is the process of design. I believe that anyone who can 
+design good software is capable of designing good UI as long as they 
+spend some time learning how.</p>
+
+<p>I recommend taking a course in Human Computer Interaction, check MIT and Yale site for example for online materials:</p>
+
+<ul>
+<li><a href="http://ocw.mit.edu/OcwWeb/Electrical-Engineering-and-Computer-Science/6-831Fall-2004/LectureNotes/index.htm" rel="nofollow" title="MIT Human Computer Iteraction Course">MIT User Interface Design and Implementation Course</a></li>
+</ul>
+
+<p><strong>Structural vs Functional Model in Understanding and Usage</strong></p>
+
+<p>The excellent earlier <a href="http://stackoverflow.com/questions/514083/why-is-ui-design-so-hard-for-some-developers/516180#516180">post by Thorsten79</a>
+ brings up the topic of software development experts vs users and how 
+their understanding of software differ. Human learning experts 
+distinguish between functional and structural mental models. Finding  
+way to your friend's house can be an excellent example of the difference
+ between the two:</p>
+
+<ul>
+<li><p>First approach includes a set of detailed instructions: take the 
+first exit of the motorway, then after 100 yards turn left etc. This is 
+an example of functional model: list of concrete steps necessary to 
+achieve a certain goal. Functional models are easy to use, they do not 
+require much thinking just a straight forward execution. Obviously there
+ is a penalty for the simplicity: it might not be the most efficient 
+route and any any exceptional situation (i.e. a traffic diversion) can 
+easilly lead to a complete failure.</p></li>
+<li><p>A different way to cope with the task is to build a structural 
+mental model. In our example that would be a map that conveyes a lot of 
+information about the internal structure of the "task object". From 
+understanding the map and relative locations of our and friend's house 
+we can deduct the functional model (the route). Obviously it's requires 
+more effort, but much more reliable way of completing the task in spite 
+of the possible deviations.</p></li>
+</ul>
+
+<p>The choice between conveying functional or structural model through 
+UI (for example, wizard vs advanced mode) is not that straight forward 
+as it might seem from Thorsten79's post. Advanced and frequent users 
+might well prefer the structural model, whereas occassional or less 
+expirienced users — functional.</p>
+
+<p>Google 
+            
+                </p><div class="util-bar"><a href="http://stackoverflow.com/posts/516204/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-516204" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-516204" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/516204/revisions" title="show all edits to this post"><span title="2009-02-11 14:52:39Z" class="relativetime">Feb 11 '09 at 14:52</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 14:49:40Z" class="relativetime">Feb 5 '09 at 14:49</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/22088/vlad-gudim"><div class=""><img src="so-bluebg_files/4008c948b1b3bde08d42ba6c467c7f48.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/22088/vlad-gudim">Vlad Gudim</a><br><span class="reputation-score" title="reputation score" dir="ltr">6,537</span><span title="4 gold badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="28 silver badges"><span class="badge2">●</span><span class="badgecount">28</span></span><span title="68 bronze badges"><span class="badge3">●</span><span class="badgecount">68</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-516204" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-516204" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>3</b> more comments</a>
+            <form id="add-comment-516204" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="524347"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="524347" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">25</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>I suggest you start by doing all your UI in the same way as you are doing now, with no focus on usability and stuff. </p>
+
+<p><img src="so-bluebg_files/WordToolbars-718376.html" alt="alt text"></p>
+
+<p>Now think of this:</p>
+
+<p>A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.
+— Saint-Exupéry</p>
+
+<p>And apply this in your design.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/524347/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-524347" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-524347" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/524347/revisions" title="show all edits to this post"><span title="2009-02-07 21:00:22Z" class="relativetime">Feb 7 '09 at 21:00</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 7 '09 at 18:53. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-524347" href="http://stackoverflow.com/posts/524347/revisions" title="show revision history for this post">2 revs<br>Hoffmann</a></div></div>
+            </div>
+
+
+
+<div id="comments-524347" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-337831" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">2</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">You really have to work at it to make it that bad...</span> –&nbsp;<a href="http://stackoverflow.com/users/12983/tm" title="9059 reputation" class="comment-user">TM.</a> <span class="comment-date" dir="ltr"><span title="2009-02-07 21:10:34Z">Feb 7 '09 at 21:10</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-358096" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="warm">5</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">You should've selected the print view...can't see the rulers now.</span> –&nbsp;<a href="http://stackoverflow.com/users/59351/mussnoon" title="373 reputation" class="comment-user">Mussnoon</a> <span class="comment-date" dir="ltr"><span title="2009-02-13 14:55:12Z">Feb 13 '09 at 14:55</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-524347" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>9</b> more comments</a>
+            <form id="add-comment-524347" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514115"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514115" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">16</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>A lot of developers think that because they can write
+ code, they can do it all.  Designing an interface is a completely 
+different skill, and it was not taught at all when I attended college.  
+It's not just something that just comes naturally.  </p>
+
+<p>Another good book is <a href="http://mitpress.mit.edu/catalog/item/default.asp?tid=5393&amp;ttype=2" rel="nofollow"><em>The Design of Everyday Things</em></a> by Donald Norman.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514115/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514115" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514115" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/514115/revisions" title="show all edits to this post"><span title="2010-03-06 10:50:57Z" class="relativetime">Mar 6 '10 at 10:50</span></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/143495/fx">F'x</a><br>
+				        </div>
+			        </div>
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 01:05:20Z" class="relativetime">Feb 5 '09 at 1:05</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/22523/thursdaysgeek"><div class=""><img src="so-bluebg_files/3ea8bec1de7ea63d2c0161c7a9a02ac2.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/22523/thursdaysgeek">thursdaysgeek</a><br><span class="reputation-score" title="reputation score" dir="ltr">2,064</span><span title="3 gold badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="16 silver badges"><span class="badge2">●</span><span class="badgecount">16</span></span><span title="38 bronze badges"><span class="badge3">●</span><span class="badgecount">38</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514115" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514115" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>4</b> more comments</a>
+            <form id="add-comment-514115" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514285"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514285" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">14</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>There's a huge difference between design and aesthetics, and they are often confused. </p>
+
+<p>A beautiful UI requires artistic or at least aesthetic skills that 
+many, including myself, are incapable of producing. Unfortunately, it is
+ not enough and does not make the UI usable, as we can see in many 
+heavyweight flash-based APIs.</p>
+
+<p>Producing usable UIs requires an understanding of how humans interact
+ with computers, some issues in psychology (e.g., Fitt's law, Hick's 
+law), and other topics. Very few CS programs train for this. Very few 
+developers that I know will pick a user-testing book over a JUnit book, 
+etc.</p>
+
+<p>Many of us are also "core programmers", tending to think of UIs as 
+the facade rather than as a factor that could make or break the success 
+of our project.</p>
+
+<p>In addition, most UI development experience is extremely frustrating.
+ We can either use toy GUI builders like old VB and have to deal with 
+ugly glue code, or we use APIs that frustrate us to no end, like trying 
+to sort out layouts in Swing.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514285/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514285" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514285" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 02:23:25Z" class="relativetime">Feb 5 '09 at 2:23</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/23072/uri"><div class=""><img src="so-bluebg_files/ad19b9146f4ffd608bf137323f68de0c.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/23072/uri">Uri</a><br><span class="reputation-score" title="reputation score 38689" dir="ltr">38.7k</span><span title="5 gold badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="66 silver badges"><span class="badge2">●</span><span class="badgecount">66</span></span><span title="181 bronze badges"><span class="badge3">●</span><span class="badgecount">181</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514285" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514285" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>5</b> more comments</a>
+            <form id="add-comment-514285" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="516338"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="516338" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">12</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>Go over to Slashdot, and read the comments on any 
+article dealing with Apple.  You'll find a large number of people 
+talking about how Apple products are nothing special, and ascribing the 
+success of the iPod and iPhone to people trying to be trendy or hip.  
+They will typically go through feature lists, and point out that they do
+ nothing earlier MP3 players or smart phones didn't do.</p>
+
+<p>Then there are people who like the iPod and iPhone because they do 
+what the users want simply and easily, without reference to manuals.  
+The interfaces are about as intuitive as interfaces get, memorable, and 
+discoverable.  I'm not as fond of the UI on MacOSX as I was on earlier 
+versions, I think they've given up some usefulness in favor of glitz, 
+but the iPod and iPhone are examples of superb design.</p>
+
+<p>If you are in the first camp, you don't think the way the average 
+person does, and therefore you are likely to make bad user interfaces 
+because you can't tell them from good ones.  This doesn't mean you're 
+hopeless, but rather that you have to explicitly learn good interface 
+design principles, and how to recognize a good UI (much as somebody with
+ Asperger's might need to learn social skills explicitly).   Obviously, 
+just having a sense of a good UI doesn't mean you can make one; my 
+appreciation for literature, for example, doesn't seem to extend to the 
+ability (currently) to write publishable stories. </p>
+
+<p>So, try to develop a sense for good UI design.  This extends to more 
+than just software.  Don Norman's "The Design of Everyday Things" is a 
+classic, and there's other books out there.  Get examples of successful 
+UI designs, and play with them enough to get a feel for the difference. 
+ Recognize that you may be having to learn a new way of thinking abou 
+things, and enjoy it.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/516338/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-516338" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-516338" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 15:22:53Z" class="relativetime">Feb 5 '09 at 15:22</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/14148/david-thornley"><div class=""><img src="so-bluebg_files/c5750c14e2bd0f866dfe2239c40fd861.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/14148/david-thornley">David Thornley</a><br><span class="reputation-score" title="reputation score 30888" dir="ltr">30.9k</span><span title="4 gold badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="37 silver badges"><span class="badge2">●</span><span class="badgecount">37</span></span><span title="91 bronze badges"><span class="badge3">●</span><span class="badgecount">91</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-516338" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-2872108" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">2</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I 
+personally find Apple products to be extremely unintuitive to use. I 
+imagine I am not the only person who was frustrated when their first 
+iPod would start shuffling songs every time I started jogging, or why 
+the iPhone screen is continually inverting itself. I think things should
+ only occur from direct, unambiguous user actions.</span> –&nbsp;<a href="http://stackoverflow.com/users/296308/lotus-notes" title="2380 reputation" class="comment-user">Lotus Notes</a> <span class="comment-date" dir="ltr"><span title="2010-05-13 23:00:09Z">May 13 '10 at 23:00</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-516338" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>5</b> more comments</a>
+            <form id="add-comment-516338" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514091"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514091" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">10</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>The main rule of thumb I hold to, is never try to do 
+both at once.  If I'm working on back-end code, I'll finish up doing 
+that, take a break, and return with my UI hat on.  If you try to work it
+ in whilst you're doing code, you'll approach it with the wrong mindset,
+ and end up with some horrible interfaces as a result.</p>
+
+<p>I think it's definitely possible to be both a good back-end developer
+ and a good UI designer, you just have to work at it, do some reading 
+and research on the topic (everything from Miller's #7, to Nielsen's 
+archives), and make sure you understand <em>why</em> UI design is of the utmost importance.</p>
+
+<p>I don't think it's a case of needing to be creative but rather, like 
+back-end development, it is a very methodical, very structured thing 
+that needs to be learned.  It's people getting 'creative' with UIs that 
+creates some of the biggest usability monstrosities... I mean, take a 
+look at 100% Flash websites, for a start...</p>
+
+<p><strong>Edit</strong>: Krug's book is really good... do take a read of it, especially if you're going to be designing for the Web.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514091/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514091" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514091" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 00:57:31Z" class="relativetime">Feb 5 '09 at 0:57</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/2951/james-burgess"><div class=""><img src="so-bluebg_files/b7dfb779aa9a035f8b704dfe38d4aaaf.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/2951/james-burgess">James Burgess</a><br><span class="reputation-score" title="reputation score" dir="ltr">3,057</span><span title="1 gold badge"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="12 silver badges"><span class="badge2">●</span><span class="badgecount">12</span></span><span title="26 bronze badges"><span class="badge3">●</span><span class="badgecount">26</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514091" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514091" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>2</b> more comments</a>
+            <form id="add-comment-514091" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="3042659"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="3042659" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">8</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>There are many reasons for this.</p>
+
+<p>(1) Developer fails to see things from the point of view of the user.
+ This is the usual suspect: lack of empathy. But it is not usually true 
+since developers are not as alien as people make them out to be.</p>
+
+<p>(2) Another, more common reason is that the developer being so close 
+to his own stuff, having stayed with his stuff for so long, fails to 
+realize that his stuff may not be so familiar(a term better than 
+intuitive) to other people.</p>
+
+<p>(3) Still another reason is the developer lacks techniques. </p>
+
+<p>MY BIG CLAIM: read any UI, human interection design, prototyping 
+book. e.g. Designing the Obvious: A Common Sense Approach to Web 
+Application Design, Don't Make Me Think: A Common Sense Approach to Web 
+Usability, Designing the moment, whatever.</p>
+
+<p>How do they discuss task flows? How do they describe decision points?
+ That is, in any use case, there are at least 3 paths: success, 
+failure/exception, alternative.</p>
+
+<p>Thus, from point A, you can go to A.1, A.2, A.3.
+From point A.1, you can get to A.1.1, A.1.2,  A.1.3, and so on.</p>
+
+<p>How do they show such drill-down task flow?
+They don't. They just gloss over it.</p>
+
+<p>Since even UI experst don't have a technique, developers have no chance.
+He thinks it is clear in his head. But it is not even clear on paper, let alone clear in software implementation.</p>
+
+<p>I have to use my own hand-made techniques for this.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/3042659/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-3042659" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-3042659" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/3042659/revisions" title="show all edits to this post"><span title="2011-04-14 18:21:58Z" class="relativetime">Apr 14 '11 at 18:21</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Jun 15 '10 at 5:10. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-3042659" href="http://stackoverflow.com/posts/3042659/revisions" title="show revision history for this post">2 revs, 2 users 93%<br>george kyaw naing</a></div></div>
+            </div>
+
+
+
+<div id="comments-3042659" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-3042659" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-3042659" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514095"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514095" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">7</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>I try to keep in touch with design-specific websites and texts. I found also the excellent Robin Williams book <b><a href="http://rads.stackoverflow.com/amzn/click/0321534042" rel="nofollow">The Non-Designer's Design Book</a></b> to be very interesting in these studies.</p>
+
+<p>I believe that design and usability is a very important part of 
+software engineering and we should learn it more and stop giving excuses
+ that we are not supposed to do design.</p>
+
+<p>Everyone can be a designer once in a while, as also everyone can be a programmer.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514095/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514095" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514095" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 00:58:21Z" class="relativetime">Feb 5 '09 at 0:58</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/18623/augusto-radtke"><div class=""><img src="so-bluebg_files/8e2c346917de92501123bd2ac7950483.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/18623/augusto-radtke">Augusto Radtke</a><br><span class="reputation-score" title="reputation score" dir="ltr">2,077</span><span title="13 silver badges"><span class="badge2">●</span><span class="badgecount">13</span></span><span title="26 bronze badges"><span class="badge3">●</span><span class="badgecount">26</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514095" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-327922" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">2</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I mean, once in a while, that doesn't mean that the guy will be a <i>good</i> programmer or will be it forever.</span> –&nbsp;<a href="http://stackoverflow.com/users/18623/augusto-radtke" title="2077 reputation" class="comment-user">Augusto Radtke</a> <span class="comment-date" dir="ltr"><span title="2009-02-05 01:08:33Z">Feb 5 '09 at 1:08</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514095" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>1</b> more comment</a>
+            <form id="add-comment-514095" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514176"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514176" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">7</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>When approaching UI design, here are a few of the things I keep in mind throughout (by far not a complete list):</p>
+
+<ul>
+<li><p><strong>Communicating a model</strong>. The UI is a narrative 
+that explains a mental model to the user. This model may be a business 
+object, a set of relationships, what have you. The visual prominence, 
+spatial placement, and workflow ordering all play a part in 
+communicating this model to the user. For example, a certain kind of 
+list vs another implies different things, as well as the relationship of
+ what's in the list to the rest of the model. In general I find it best 
+to make sure only one model is communicated at a time. Programmers 
+frequently try to communicate more than one model, or parts of several, 
+in the same UI space.</p></li>
+<li><p><strong>Consistency</strong>. Re-using popular UI metaphors helps a lot. Internal consistency is also very important.</p></li>
+<li><p><strong>Grouping of tasks</strong>. Users should not have to move
+ the mouse all the way across the screen to verify or complete a related
+ sequence of commands. Modal dialogs and flyout-menus can be especially 
+bad in this area.</p></li>
+<li><p><strong>Knowing your audience</strong>. If your users will be 
+doing the same activities over and over, they will quickly become power 
+users at those tasks and be frustrated by attempts to lower the initial 
+entry barrier. If your users do many different kinds of activities 
+infrequently, it's best to ensure the UI holds their hand the whole 
+time.</p></li>
+</ul>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514176/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514176" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514176" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 01:28:34Z" class="relativetime">Feb 5 '09 at 1:28</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/67/rex-m"><div class=""><img src="so-bluebg_files/3e9f1629fd4cb4a5ce9fbd27b13e862d.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/67/rex-m">Rex M</a><br><span class="reputation-score" title="reputation score 55502" dir="ltr">55.5k</span><span title="5 gold badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="107 silver badges"><span class="badge2">●</span><span class="badgecount">107</span></span><span title="181 bronze badges"><span class="badge3">●</span><span class="badgecount">181</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514176" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514176" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>1</b> more comment</a>
+            <form id="add-comment-514176" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="524261"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="524261" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">6</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>Read <a href="http://developer.apple.com/documentation/userexperience/Conceptual/AppleHIGuidelines/index.html" rel="nofollow">Apple Human Interface Guidelines</a>.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/524261/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-524261" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-524261" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/524261/revisions" title="show all edits to this post"><span title="2009-02-07 18:11:22Z" class="relativetime">Feb 7 '09 at 18:11</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 7 '09 at 18:11. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-524261" href="http://stackoverflow.com/posts/524261/revisions" title="show revision history for this post"><div class="user-details">facildelembrar</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-524261" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-524261" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>2</b> more comments</a>
+            <form id="add-comment-524261" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514287"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514287" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>I find the best tool in UI design is to watch a 
+first-time User attempt to use the software. Take loads of notes and ask
+ them some questions. Never direct them or attempt to explain how the 
+software works. This is the job of the UI (and well written 
+documentation).</p>
+
+<p>We consistently adopt this approach in all projects. It is always 
+fascinating to watch a User deal with software in a manner that you 
+never considered before.</p>
+
+<p>Why is UI design so hard? Well generally because the Developer and User never meet.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514287/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514287" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514287" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 02:24:19Z" class="relativetime">Feb 5 '09 at 2:24</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/34411/gerard"><div class=""><img src="so-bluebg_files/f7c8b63e0283a7403878489b9bdd963d.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/34411/gerard">Gerard</a><br><span class="reputation-score" title="reputation score" dir="ltr">1,585</span><span title="7 silver badges"><span class="badge2">●</span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3">●</span><span class="badgecount">13</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514287" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514287" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>2</b> more comments</a>
+            <form id="add-comment-514287" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514381"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514381" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>duffymo just reminded me why: Many Programmers think "*Design" == "Art".</p>
+
+<p>Good UI design is absolutely not artistic. It follows solid 
+principles, that can be backed up with data if you've got the time to do
+ the research.</p>
+
+<p>I think all programmers need to do is take the time to learn the 
+principles. I think it's in our nature to apply best practice whenever 
+we can, be it in code or in layout. All we need to do is make ourselves 
+aware of what the best practices are for this aspect of our job.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514381/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514381" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514381" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 03:02:32Z" class="relativetime">Feb 5 '09 at 3:02</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/40934/nailitdown"><div class=""><img src="so-bluebg_files/a537a79ea943802fd857bcbc229d8b74.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/40934/nailitdown">nailitdown</a><br><span class="reputation-score" title="reputation score" dir="ltr">2,007</span><span title="5 gold badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="13 silver badges"><span class="badge2">●</span><span class="badgecount">13</span></span><span title="27 bronze badges"><span class="badge3">●</span><span class="badgecount">27</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514381" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514381" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>2</b> more comments</a>
+            <form id="add-comment-514381" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="519067"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="519067" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>What have I done to become better at UI design?<br>
+  <strong>Pay attention to it!</strong>    </p>
+
+<p>It's like how ever time you see a chart on the news or an electronic 
+bus sign and you wonder 'How did they get that data? Did they do that 
+with raw sql or are they using LINQ?' (or insert your own common geek 
+curiosity here).  </p>
+
+<p>You need to start doing that but with visual elements of all kinds.</p>
+
+<p>But just like learning a new language, if you don't <em>really</em> throw yourself into it, you won't ever learn it.  </p>
+
+<p>Taken from <a href="http://stackoverflow.com/questions/15373/non-tech-skills-that-complement-programming">another answer</a> I wrote:</p>
+
+<blockquote>
+  <p>Learn to look, really look, at the world around you. Why do I like 
+that UI but hate this one? Why is it so hard to find the noodle dishes 
+in this restaurant menu? Wow, I knew what that sign meant before I even 
+read the words. Why was that? How come that book cover looks so wrong? 
+Learn to take the time to think about why you react the way you do to 
+visual elements of all kinds, and then apply this to your work.</p>
+</blockquote>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/519067/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-519067" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-519067" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-06 04:12:37Z" class="relativetime">Feb 6 '09 at 4:12</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/242/david-haust"><div class=""><img src="so-bluebg_files/cd7535da801917cdf281ac431fdd17c6.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/242/david-haust">David HAust</a><br><span class="reputation-score" title="reputation score" dir="ltr">1,816</span><span title="3 gold badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="13 silver badges"><span class="badge2">●</span><span class="badgecount">13</span></span><span title="26 bronze badges"><span class="badge3">●</span><span class="badgecount">26</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-519067" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-519067" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>1</b> more comment</a>
+            <form id="add-comment-519067" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="3259416"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="3259416" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>However you do it (and there are some great points 
+above), it really helped me once I accepted that there is NO SUCH THING 
+AS INTUITIVE....</p>
+
+<p>I can hear the arguments rumbling on the horizon... so let me explain a little.</p>
+
+<p>Intuitive: using what one feels to be right or true based on an unconscious method or feeling.</p>
+
+<p>If (as Carl Sagan postulated) you accept that you cannot comprehend 
+things that are absolutely unlike anything you have ever encountered 
+then how could you possibly "know" how to use something if you have 
+never used anything remotely like it?</p>
+
+<p>Think about it: kids try to open doors not because they "know" how a 
+doorknob works, but because they have seen someone else do it... often 
+they turn the knob in the wrong direction, or pull too soon. They have 
+to LEARN how a doorknob works. This knowledge then gets applied in 
+different but similar instances: opening a window, opening a drawer, 
+opening almost anything big with a big, knob-looking handle.</p>
+
+<p>Even simple things that seem intuitive to us will not be intuitive at
+ all to people from other cultures. If someone held their arm out in 
+front of them and waived their hand up-and-down at the wrist while 
+keeping the arm still.... are they waiving you away? Probably, unless 
+you are in Japan. There, this hand signal can mean "come here". So who 
+is right? Both, of course, in their own context. But if you travel to 
+both, you need to know both... UI design.</p>
+
+<p>I try to find the things that are already "familiar" to the potential
+ users of my project and then build the UI around them: user-centric 
+design.</p>
+
+<p>Take a look at Apple's iPhone. Even if you hate it, you have to 
+respect the amount of thought that went into it. Is it perfect? Of 
+course not. Over time an object's perceived "intuitiveness" can grow or 
+even fade away completely.</p>
+
+<p>For example. Most everyone knows that a strip of black with two rows 
+of holes along the top and bottom looks like a film strip... or do they?</p>
+
+<p>Ask your average 9 or 10 year old what they think it is. You may be 
+surprised how many kids right now will have a hard time identifying it 
+as a film strip, even though it is something that is still used to 
+represent Hollywood, or anything film (movie) related. Most movies for 
+the past 20 years have been digitally shot. And when was the last time 
+any of us held a piece of film of ANY kind, photos or film?</p>
+
+<p>So, what it all boils down to for me is: Know your audience and 
+constantly research to keep up with trends and changes in things that 
+are "intuitive", target your main users and try not to do things that 
+punish the inexperienced in favor of the advanced users or slow down the
+ advanced users in order to hand-hold the novices.</p>
+
+<p>Ultimately, every program will require a certain amount of training 
+on the user's part to use it. How much training and for which level of 
+user is part of the decisions that need to be made.</p>
+
+<p>Some things are more or less familiar based on your target user's 
+past experience level as a human being, or computer user, or student, or
+ whatever.</p>
+
+<p>I just shoot for the fattest part of the bell curve and try to get as
+ many people as I can but realizing that I will never please 
+everyone....</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/3259416/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-3259416" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-3259416" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/3259416/revisions" title="show all edits to this post"><span title="2010-07-16 06:11:56Z" class="relativetime">Jul 16 '10 at 6:11</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Jul 15 '10 at 19:51. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-3259416" href="http://stackoverflow.com/posts/3259416/revisions" title="show revision history for this post">3 revs<br>exoboy</a></div></div>
+            </div>
+
+
+
+<div id="comments-3259416" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-3259416" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-3259416" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="514361"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="514361" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>I know that Microsoft is rather inconsistent with 
+their own guidelines, but I have found that reading their Windows design
+ guidelines have really helped me. I have a copy on my website <a href="http://www.dcomproductions.com/downloads/" rel="nofollow">here</a>, just scroll down a little the the Vista UX Guide. It has helped me with things such as colors, spacing, layouts, and more.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/514361/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-514361" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-514361" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 02:54:35Z" class="relativetime">Feb 5 '09 at 2:54</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/52589/david-anderson"><div class=""><img src="so-bluebg_files/94a27981f95486453826c63777c3f3b8.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/52589/david-anderson">David Anderson</a><br><span class="reputation-score" title="reputation score" dir="ltr">3,387</span><span title="12 silver badges"><span class="badge2">●</span><span class="badgecount">12</span></span><span title="26 bronze badges"><span class="badge3">●</span><span class="badgecount">26</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-514361" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-514361" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>4</b> more comments</a>
+            <form id="add-comment-514361" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="516133"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="516133" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>I believe the main problem has nothing to do with 
+different talents or skillsets. The main problem is that as a developer,
+ you know too much about what the application does and how it does it, 
+and you automatically design your UI from the point of view of someone 
+who has that knowledge.</p>
+
+<p>Whereas a user typically starts out knowing absolutely nothing about 
+the application and should never need to learn anything about its inner 
+workings.</p>
+
+<p>It is very hard, almost impossible, to not use knowledge that you 
+have - and that's why an UI should not be designed by someone who's 
+developing the app behind it.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/516133/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-516133" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-516133" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 14:34:49Z" class="relativetime">Feb 5 '09 at 14:34</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/16883/michael-borgwardt"><div class=""><img src="so-bluebg_files/0382297f273df0a544b0c6c2734de096.jpg" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/16883/michael-borgwardt">Michael Borgwardt</a><br><span class="reputation-score" title="reputation score 103927" dir="ltr">104k</span><span title="10 gold badges"><span class="badge1">●</span><span class="badgecount">10</span></span><span title="85 silver badges"><span class="badge2">●</span><span class="badgecount">85</span></span><span title="252 bronze badges"><span class="badge3">●</span><span class="badgecount">252</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-516133" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-516133" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-516133" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="517707"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="517707" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>"Designing from both sides of the screen" presents a 
+very simple but profound reason as to why programmers find UI design 
+hard: programmers are trained to think in terms of edge cases while UI 
+designers are trained to think in terms of common cases or usage.</p>
+
+<p>So going from one world to the other is certainly difficult if the default traning in either is the exact opposite of the other.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/517707/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-517707" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-517707" class="mod-menu" style="display:none;"></div>
+
+
+
+                
+                    <div class="user-info fr">
+				        <div class="user-action-time">answered <span title="2009-02-05 20:14:33Z" class="relativetime">Feb 5 '09 at 20:14</span>
+				        </div>
+				        <div class="user-gravatar"><a href="http://stackoverflow.com/users/6210/msn"><div class=""><img src="so-bluebg_files/14994f4fef70636139dfeaf97dca2ef8.png" alt=""></div></a>
+				        </div>
+				        <div class="user-details"><a href="http://stackoverflow.com/users/6210/msn">MSN</a><br><span class="reputation-score" title="reputation score 20309" dir="ltr">20.3k</span><span title="21 silver badges"><span class="badge2">●</span><span class="badgecount">21</span></span><span title="41 bronze badges"><span class="badge3">●</span><span class="badgecount">41</span></span>
+				        </div>
+			        </div>
+            </div>
+
+
+
+<div id="comments-517707" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-517707" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-517707" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="524325"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="524325" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>To say that programms suck at UI design is to miss 
+the point. The point of the problem is that the formal training that 
+most developers get go indepth with the technology. Human - Computer 
+Interaction is not a simple topic. It is not something that I can 
+"mind-meld" to you by providing a simple one line statement that makes 
+you realize "oh the users will use this application more effectively if I
+ do x instead of y."</p>
+
+<p>This is because there is one part of UI design that you are missing. 
+The human brain. In order to understand how to design a UI, you have to 
+understand how the human mind interacts with machinery. There is an 
+excellent course I took at the University of Minnesota on this topic 
+taught by a professor of Psychology. It is named "Human - Machine 
+Interaction". This describes many of the reasons of why UI design is so 
+complicated.</p>
+
+<p>Since Psychology is based on Correlations and not Causality you can 
+never prove that a method of UI design will always work in any given 
+situation. You can correlate that many users will find a particular UI 
+design appealing or efficient, but you cannot prove that it will always 
+generalize.</p>
+
+<p>Additionally, there are two parts to UI design that many people seem 
+to miss. There is the aesthetical appeal, and the functional workflow. 
+If you go for a 100% aesthetical appeal, sure people will but your 
+product. I highly doubt that aesthetics will ever reduce user 
+frustration though. </p>
+
+<p>There are several good books on this topic and course to take (like Bill Buxton's <a href="http://www.billbuxton.com/bookFlyer.pdf" rel="nofollow"><em>Sketching User Experiences</em></a>, and <a href="http://hci.ucsd.edu/hutchins/citw.html" rel="nofollow"><em>Cognition in the Wild</em></a> by Edwin Hutchins). There are graduate programs on Human - Computer Interaction at many universities.</p>
+
+<p>The overall answer to this question though lies in how individuals 
+are taught computer science. It is all math based, logic based and not 
+based on the user experience. To get that, you need more than a generic 4
+ year computer science degree (unless your 4 year computer science 
+degree had a minor in psychology and was emphasized in Human - Computer 
+Interaction). </p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/524325/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-524325" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-524325" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">edited <a href="http://stackoverflow.com/posts/524325/revisions" title="show all edits to this post"><span title="2010-03-06 10:52:14Z" class="relativetime">Mar 6 '10 at 10:52</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 7 '09 at 18:38. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-524325" href="http://stackoverflow.com/posts/524325/revisions" title="show revision history for this post">2 revs, 2 users 77%<br>jwendl</a></div></div>
+            </div>
+
+
+
+<div id="comments-524325" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+            
+    <tr id="comment-352134" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up " title="this is a great comment">▲</a>
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Yes, 
+you are right Paul. Computers are math and logic. UI design involves a 
+human element though, which has proven in history to be far less math 
+and logic based.</span> –&nbsp;<a href="http://stackoverflow.com/users/49415/jwendl" title="541 reputation" class="comment-user">jwendl</a> <span class="comment-date" dir="ltr"><span title="2009-02-12 03:10:12Z">Feb 12 '09 at 3:10</span></span></div></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-524325" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>2</b> more comments</a>
+            <form id="add-comment-524325" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="524365"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="524365" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>Let's turn your question around - </p>
+
+<p><em>Are "ui designers" doomed to only design information architecture
+ and presentation layers? Is there something they can do to retrain 
+their brains to be more effective at designing pleasing and efficient 
+system layers?</em></p>
+
+<p>Seems like them "ui designers" would have to take a completely 
+different perspective - they'd have to look from the inside of the box 
+outwards; instead of looking in from outside the box.</p>
+
+<p>Alan Cooper's <a href="http://books.google.com/books?id=04cFCVXC_AUC&amp;printsec=frontcover&amp;dq=alan+cooper+the+inmates#PPP1,M1" rel="nofollow">"The Inmates are Running the Asylum"</a> opinion is that we can't successfully take both perspectives - we can learn to wear one hat well but we can't just switch hats.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/524365/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-524365" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-524365" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/524365/revisions" title="show all edits to this post"><span title="2009-02-07 19:04:18Z" class="relativetime">Feb 7 '09 at 19:04</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 7 '09 at 19:04. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-524365" href="http://stackoverflow.com/posts/524365/revisions" title="show revision history for this post"><div class="user-details">igouy</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-524365" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-524365" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-524365" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="534775"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="534775" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>I think its because a good UI is not logical.  A good UI is intuitive.</p>
+
+<p>Software developers typically do bad on 'intuitive'</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/534775/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-534775" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-534775" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/534775/revisions" title="show all edits to this post"><span title="2009-02-10 23:30:52Z" class="relativetime">Feb 10 '09 at 23:30</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 10 '09 at 23:30. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-534775" href="http://stackoverflow.com/posts/534775/revisions" title="show revision history for this post"><div class="user-details">Gregor Brandt</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-534775" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-534775" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>5</b> more comments</a>
+            <form id="add-comment-534775" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="534849"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="534849" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>A useful framing is to actively consider what you're 
+doing as designing a process of communication.  In a very real sense, 
+your interface is a language that the user must use to tell the computer
+ what to do.  This leads to considering a number of points:</p>
+
+<ol>
+<li>Does the user already speak this language?  Using a highly 
+idiosyncratic interface is like communicating in a language you've never
+ spoken before.  So if your interface must be idiosyncratic at all, it 
+had best introduce itself with the simplest of terms and few 
+distractions.  On the other hand, if your interface uses idioms that the
+ user is accustomed to, they'll gain confidence from the start.</li>
+<li>The enemy of communication is noise.  Auditory noise interferes with
+ spoken communication; visual noise interferes with visual 
+communication.  The more noise you can cut out of your interface, the 
+easier communicating with it will be.</li>
+<li>As in human conversation, it's often not what you say, it's how you 
+say it.  The way most software communicates is rude to a degree that 
+would get it punched in the face if it were a person.  How would you 
+feel if you asked someone a question and they sat there and stared at 
+you for several minutes, refusing to respond in any other way, before 
+answering?  Many interface elements, like progress bars and automatic 
+focus selection, have the fundamental function of politeness.  Ask 
+yourself how you can make the user's day a little more pleasant.</li>
+</ol>
+
+<p>Really, it's somewhat hard to determine what programmers think of interface interaction as being, <i>other</i> than a process of communication, but maybe the problem is that it doesn't get thought of as being anything at all.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/534849/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-534849" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-534849" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/534849/revisions" title="show all edits to this post"><span title="2009-02-10 23:54:42Z" class="relativetime">Feb 10 '09 at 23:54</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 10 '09 at 23:54. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-534849" href="http://stackoverflow.com/posts/534849/revisions" title="show revision history for this post"><div class="user-details">chaos</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-534849" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-534849" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-534849" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="536289"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="536289" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>There are a lot o good comments already, so I am not sure there is much I can add.
+But still...</p>
+
+<ul>
+<li>Why would a developer expect to be able to design good UI?</li>
+<li>How much training did he had in that field?</li>
+<li>How many books did he read?</li>
+<li>How many things did he designed over how many years?</li>
+<li>Did he had the opportunity to see the reaction of it's users?</li>
+</ul>
+
+<p>We don't expect that a random "Joe the plumber" to be able to write good code.
+So why would we expect the random "Joe the programmer" to design good UI?</p>
+
+<p>Empathy helps. Separating the UI design and the programming helps. Usability testing helps.</p>
+
+<p>But UI design is a craft that has to be learned, and practiced, like any other.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/536289/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-536289" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-536289" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/536289/revisions" title="show all edits to this post"><span title="2009-02-11 10:42:03Z" class="relativetime">Feb 11 '09 at 10:42</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 11 '09 at 10:42. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-536289" href="http://stackoverflow.com/posts/536289/revisions" title="show revision history for this post"><div class="user-details">Mihai Nita</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-536289" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-536289" class="comments-link" title="expand to show all comments on this post, or add one of your own">add / show <b>3</b> more comments</a>
+            <form id="add-comment-536289" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="538506"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="538506" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>Developers are not (necessarily) good at UI design 
+for the same reason they aren't (necessarily) good at knitting;  it's 
+hard, it takes practice, and it doesn't hurt to have someone show you 
+how in the first place.</p>
+
+<p>Most developers (me included) started "designing" UIs because it was a
+ necessary part of writing software.  Until a developer puts in the 
+effort to get good at it, s/he won't be.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/538506/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-538506" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-538506" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/538506/revisions" title="show all edits to this post"><span title="2009-02-11 20:00:20Z" class="relativetime">Feb 11 '09 at 20:00</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 11 '09 at 20:00. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-538506" href="http://stackoverflow.com/posts/538506/revisions" title="show revision history for this post"><div class="user-details">MattBelanger</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-538506" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-538506" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-538506" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="538517"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="538517" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>To improve just look around at existing sites. In 
+addition to the books already suggested, you might like to have a look 
+at Robin Williams's excellent book "The Non-designers Design Book" (<a href="http://rads.stackoverflow.com/amzn/click/0321534042" rel="nofollow">sanitised Amazon link</a>)</p>
+
+<p>Have a look at what's possible in visual design by taking a look at the various submissions over at <a href="http://www.csszengarden.com/" rel="nofollow">The Zen Garden</a> as well.</p>
+
+<p>UI design is definitely an art though, like pointers in C, some people get it and some people don't.</p>
+
+<p>But at least <a href="http://www.ok-cancel.com/comic/4.html" rel="nofollow">we can have a chuckle at their attempts</a>. BTW Thanks OK/Cancel for a funny comic and thanks Joel for putting it in your book "The Best Software Writing I" (<a href="http://rads.stackoverflow.com/amzn/click/1590595009" rel="nofollow">sanitised Amazon link</a>).</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/538517/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-538517" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-538517" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/538517/revisions" title="show all edits to this post"><span title="2009-02-11 20:04:20Z" class="relativetime">Feb 11 '09 at 20:04</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 11 '09 at 20:04. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-538517" href="http://stackoverflow.com/posts/538517/revisions" title="show revision history for this post"><div class="user-details">Rob Wells</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-538517" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-538517" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-538517" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="539896"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="539896" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>User interface isn't something that can be applied 
+after the fact, like a thin coat of paint. It is something that needs to
+ be there at the start, and based on real research. There's tons of 
+Usability research available of course. It needs to not just be there at
+ the start, it needs to form the core of the very reason you're making 
+the software in the first place: There's some gap in the world out 
+there, some problem, and it needs to be made more usable and more 
+efficient. </p>
+
+<p>Software is not there for its own sake. The reason for a peice of 
+software to exist is FOR PEOPLE. It's absolutely ludicrous to even try 
+to come up with an idea for a new peice of software, without 
+understanding why anyone would need it. Yet this happens all the time.</p>
+
+<p>Before a single line of code is written, you should go through paper 
+versions of the interface, and test it on real people. This is kind of 
+weird and silly, it works best with kids, and someone entertaining 
+acting as "the computer".</p>
+
+<p>The interface needs to take advantage of our natural cognitive 
+facilities. How would a caveman use your program? For instance, we've 
+evolved to be really good at tracking moving objects. That's why 
+interfaces that use physics simulations, like the iphone, work better 
+than interfaces where changes occur instantaneously.</p>
+
+<p>We are good at certain kinds of abstraction, but not others. As 
+programmers, we're trained to do mental gymnastics and backflips to 
+understand some of the weirdest abstractions. For instance, we 
+understand that a sequence of arcane text can represent and be 
+translated into a pattern of electromagnetic state on a metal platter, 
+which when encountered by a carefully designed device, leads to a 
+sequence of invisible events that occur at lightspeed on an electronic 
+circuit, and these events can be directed to produce a useful outcome. 
+This is an incredibly unnatural thing to have to understand. Understand 
+that while it's got a perfectly rational explanation to us, to the 
+outside world, it looks like we're writing incomprehensible incantations
+ to summon invisible sentient spirits to do our bidding.</p>
+
+<p>The sorts of abstractions that normal humans understand are things 
+like maps, diagrams, and symbols. Beware of symbols, because symbols are
+ a very fragile human concept that take conscious mental effort to 
+decode, until the symbol is learned.</p>
+
+<p>The trick with symbols is that there has to be a clear relationship 
+between the symbol, and the thing it represents. The thing it represents
+ either has to be a noun, in which case the symbol should look VERY MUCH
+ like the thing it represents. If a symbol is representing a more 
+abstract concept, that has to be explained IN ADVANCE. See the 
+inscrutable unlabled icons in msword's, or photoshop's toolbar, and the 
+abstract concepts they represent. It has to be LEARNED that the crop 
+tool icon in photoshop means CROP TOOL. it has to be understood what 
+CROP even means. These are prerequisites to correctly using that 
+software. Which brings up an important point, beware of ASSUMED 
+knowledge.</p>
+
+<p>We only gain the ability to understand maps around the age of 4. I 
+think I read somewhere once that chimpanzees gain the ability to 
+understand maps around the age of 6 or 7. </p>
+
+<p>The reason that guis have been so successful to begin with, is that 
+they changed a landscape of mostly textual interfaces to computers, to 
+something that mapped the computer concepts to something that resembled a
+ physical place. Where guis fail in terms of usability, is where they 
+stop resembling something you'd see in real life. There are invisible, 
+unpredictable, incomprehensible things that happen in a computer that 
+bare no resemblance to anything you'd ever see in the physical world. 
+Some of this is necessary, since there'd be no point in just making a 
+reality simulator- The idea is to save work, so there has to be a bit of
+ magic. But that magic has to make sense, and be grounded in an 
+abstraction that human beings are well adapted to understanding. It's 
+when our abstractions start getting deep, and layered, and mismatched 
+with the task at hand that things break down. In other words, the 
+interface doesn't function as a good map for the underlying software.</p>
+
+<p>There are lots of books. The two I've read, and can therefore 
+reccomend, are "The Design of Everyday Things" by donald norman, and 
+"The Human Interface" by Jef Raskin.</p>
+
+<p>I also reccomend a course in psychology. "The Design of Every day 
+Things" talks about this a bit. A lot of interfaces break down because 
+of a developer's "folk understanding" of psychology. This is similar to 
+"folk physics". An object in motion stays in motion doesn't make any 
+sense to most people. "You have to keep pushing it to keep it in 
+motion!" thinks the physics novice. User testing doesn't make sense to 
+most developers. "You can just ask the users what they want, and that 
+should be good enough!" thinks the psychology novice.</p>
+
+<p>I reccomend Discovering Psychology, a PBS documentary series, hosted 
+by Philip Zimbardo. Failing that, try and find a good physics textbook. 
+The expensive kind. Not the pulp fiction self help crap that you find in
+ Borders, but the thick hardbound stuff you can only find in a 
+university library. This is a necesesary foundation. You can do good 
+design without it, but you'll only have an intuitive understanding of 
+what's going on. Reading some good books will give you a good 
+perspective.</p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/539896/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-539896" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-539896" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/539896/revisions" title="show all edits to this post"><span title="2009-02-12 03:29:42Z" class="relativetime">Feb 12 '09 at 3:29</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 12 '09 at 3:29. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-539896" href="http://stackoverflow.com/posts/539896/revisions" title="show revision history for this post"><div class="user-details">Breton</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-539896" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-539896" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-539896" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+
+  
+    <a name="546767"></a>
+    <div class="answer-summary answer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="votes vote">
+    <input value="546767" type="hidden">
+
+    
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">vote up</a>
+    <span class="vote-count-post mobile-vote-count">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">vote down</a>
+    
+</div>            <div class="post-text">
+                <p>If you read the book "Why software sucks" you would have seen Platt's answer, which is a simple one:</p>
+
+<ol>
+<li>Developers prefere control over user-friendliness</li>
+<li>Average people prefere user-friendliness over control</li>
+</ol>
+
+<p>But another another answer to your question would be "why is 
+dentistry so hard for some developers?" - UI design is best done by a UI
+ designer.</p>
+
+<p><a href="http://dotmad.net/blog/2007/11/david-platt-on-why-software-sucks/" rel="nofollow">http://dotmad.net/blog/2007/11/david-platt-on-why-software-sucks/</a></p>
+
+            
+                <div class="util-bar"><a href="http://stackoverflow.com/posts/546767/edit" title="revise and improve this post">edit</a><a class="flag-link" id="mobile-flag-post-546767" title="flag this post for serious problems or moderator attention">flag</a></div><div id="mod-menu-546767" class="mod-menu" style="display:none;"></div>
+
+
+                    <div class="user-info fl">
+				        <div class="user-action-time">answered <a href="http://stackoverflow.com/posts/546767/revisions" title="show all edits to this post"><span title="2009-02-13 17:05:56Z" class="relativetime">Feb 13 '09 at 17:05</span></a>
+				        </div>
+				        <div class="user-details"><br>
+				        </div>
+			        </div>
+
+                <div class="user-info fr"><div class="user-action-time"><span class="community-wiki" title="This post is community owned as of Feb 13 '09 at 17:05. Votes do not generate reputation, and it can be edited by users with 100 rep">community wiki</span></div><br><div class="user-details"><a id="history-546767" href="http://stackoverflow.com/posts/546767/revisions" title="show revision history for this post"><div class="user-details">dotmad</div></a></div></div>
+            </div>
+
+
+
+<div id="comments-546767" class="comments-wrap comments ">
+    <table class="comments-table">
+    <tbody>
+        <tr><td></td><td></td></tr>
+    </tbody>
+    </table>
+    <div class="comment-form">
+        <a id="comments-link-546767" class="comments-link" title="ask author for clarification about this post">add comment</a>
+            <form id="add-comment-546767" class="mobile-comment-form"></form>
+    </div>
+</div></div>
+            <div class="answer-header">
+                <div class="pager fl"><span class="page-numbers current">1</span><a title="go to page 2" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?page=2&amp;tab=Votes">
+                                <span class="page-numbers">2</span>
+                             </a><a title="go to page 1" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?page=3&amp;tab=Votes">
+                        <span class="page-numbers">3</span>
+                      </a><a rel="next" title="go to page 2" href="http://stackoverflow.com/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?page=2&amp;tab=Votes"><span class="page-numbers next">▶</span></a></div>
+            </div>
+
+
+<script type="text/javascript" src="so-bluebg_files/8d89.txt"></script>
+<noscript>
+    <div><img src="/posts/514083/ivc/8d89" class="dno" alt=""></div>
+</noscript>
+<div style="display:none" id="prettify-lang"></div>
+    </div>
+
+    <div class="footer">
+	    <div class="footer-links">
+                <a href="http://chat.stackoverflow.com/">chat</a>
+            <a href="http://stackoverflow.com/about">about</a>
+            <a href="http://stackoverflow.com/faq">faq</a>
+            <a href="http://blog.stackexchange.com/">blog</a>
+            <a href="http://stackoverflow.com/legal">legal</a>
+            <a href="mailto:team@stackoverflow.com">contact us</a>
+
+
+            <a onclick="StackExchange.switchMobile('off', '/questions/514083/why-is-good-ui-design-so-hard-for-some-developers?')">full site</a>
+        </div> 
+	    <div class="copyrights">2012 stack exchange, inc</div> 
+    </div>
+
+    
+    <div id="footer" class="dno"></div>
+
+    
+    <div id="overlay-header" class="error-notification overlay-header"></div>
+
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|design|user-interface|web-design|']); 
+        _gaq.push(['_setCustomVar', 2, 'accountid', '7054',2]); 
+_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="so-bluebg_files/quant.js"></script>    
+
+</body></html>

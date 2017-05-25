@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://nv1.ad.naver.com/adshow?unit=002AN&nrefreshx=0 -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>네이버 :: 나의 경쟁력, 네이버</title>
+<link rel="stylesheet" type="text/css" href="timeboard_v1.min.css">
+<style type="text/css">
+/* DA Alternative - Contents Style */
+#addiv{position:relative}
+#addiv embed,#addiv object{z-index:20}
+#addiv #da_alt{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+#addiv #da_alt.on{z-index:30}
+#addiv #da_alt a{display:block;overflow:hidden;position:absolute;bottom:0;left:0;width:100%;height:100%}
+#addiv #da_alt .guide{visibility:hidden;position:absolute;top:50%;left:50%;width:154px;height:58px;margin:-29px 0 0 -77px;background:url(http://img.naver.net/static/common/da/da_access.png)}
+#addiv #da_alt.on .guide{visibility:visible}
+#addiv #da_alt .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0}
+</style>
+</head>
+<body onload="initAd()" marginwidth="0" marginheight="0">
+<div id="da_timeboard">
+	<div class="content">
+		<div id="addiv" class="ad"><embed src="http://nv1.adcreative.naver.net/ad3/res/www/timeboard/animation/animation_loader_635x100.swf?20140407" width="635" height="100" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" type="application/x-shockwave-flash" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="animation_loader" name="animation_loader" movie="http://nv1.adcreative.naver.net/ad3/res/www/timeboard/animation/animation_loader_635x100.swf?20140407" wmode="transparent" quality="high" allowscriptaccess="always" swliveconnect="true" flashvars="bannerURL=http://nv1.adcreative.naver.net/ad3/1073/1073467/20140929032637-5feKdy7P.swf&amp;clickURL=http%3A%2F%2Fnv.ad.naver.com%2Fadclick%3Funit%3D002AN%26ac%3D5847298%26src%3D2353969%26br%3D1897891%26rk%3DVCumha%40eHC4AABxadHUAAAAq&amp;freq=0"><div id="da_alt"><a href="http://nv.ad.naver.com/adclick?unit=002AN&ac=5847298&src=2353969&br=1897891&rk=VCumha@eHC4AABxadHUAAAAq" id="da_altlink" target="_blank"><span class="blind">노벰버맨 10월 대개봉 피어스 브로스넌 그가 선택한 새로운 스파이액션은?</span> <span class="guide"></span></a></div></div>
+		<a id="link" name="link" href="javascript:void(0)"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="da.min.js"></script>
+<script type="text/javascript" src="da.picnic.min.js"></script>
+<script type="text/javascript">var local_cookie = "";</script>
+<script type="text/javascript">
+//<![CDATA[
+document.domain = "naver.com";
+var sLoader = "http://nv1.adcreative.naver.net/ad3/res/www/timeboard/animation/animation_loader_635x100.swf?20140407";
+var sF1 = "http://nv1.adcreative.naver.net/ad3/1073/1073467/20140929032637-5feKdy7P.swf";
+var sC1 = Da.EF("http://nv.ad.naver.com/adclick?unit=002AN&ac=5847298&src=2353969&br=1897891&rk=VCumha@eHC4AABxadHUAAAAq");
+var oNimp = new Nimp(["http://nv.ad.naver.com/adshow?unit=002AN&ac=5847298&src=2353970&t=i","http://nv.ad.naver.com/adshow?unit=002AN&ac=5847298&src=2353971&t=i"]);
+
+function initAd() {
+	var iFreq = getFreq("f1432319");
+
+	if (local_cookie != "LZ") {
+		iFreq = 0;
+	}
+	
+	var agent = new Agent();
+	if(agent.hasFP() && !(agent.isMac && agent.isSF)) {
+		var oF1 = new Flash(sLoader, 635, 100, "transparent");
+		oF1.setAtt("id", "animation_loader");
+		oF1.setAtt("name", "animation_loader");
+		oF1.setVal("bannerURL", sF1);
+		oF1.setVal("clickURL", sC1);
+		oF1.setVal("freq", iFreq);
+		Da.SH(Da.$("addiv"), oF1.getHTML());
+		initAlt();
+	} else {
+		var imgTag = "";
+		if( "K1"=="K1" ) {
+			imgTag = '<a id="ac_banner_a" href="http://nv.ad.naver.com/adclick?unit=002AN&ac=5847298&src=2353970&br=1897892&rk=VCumha@eHC4AABxadHUAAAAq" target=\"_blank\">';
+		}
+		imgTag += '<img src=\"http://nv1.adcreative.naver.net/ad3/1073/1073467/20140929032637-076JdMkO.jpg\" width=\"635\" height=\"100\" title=\"\" alt=\"노벰버맨 10월 대개봉 피어스 브로스넌 그가 선택한 새로운 스파이액션은?\" border=\"0\">';
+		if( "K1"=="K1" ) {
+			imgTag += '</a>';
+		}
+
+		Da.SH(Da.$("addiv"), imgTag);
+		oNimp.log(1);
+
+		initAltForImage();
+	}
+	if (iFreq===0 && local_cookie == "LZ") {oNimp.log(2);}
+}
+
+function initAlt() {
+	// DA Alternative - Create Alternative Contents
+	var altObj = document.createElement('div');
+	altObj.setAttribute('id','da_alt');
+	altObj.innerHTML = '<a href="http://nv.ad.naver.com/adclick?unit=002AN&ac=5847298&src=2353969&br=1897891&rk=VCumha@eHC4AABxadHUAAAAq" id="da_altlink" target="_blank"><span class="blind">노벰버맨 10월 대개봉 피어스 브로스넌 그가 선택한 새로운 스파이액션은?</span> <span class="guide"></span></a>';
+	var pObj = Da.$('addiv');
+	pObj.appendChild(altObj);
+
+	// DA Alternative - Focus Action
+	var altLink = Da.$("da_altlink");
+	altLink.onfocus = function() {
+		altObj.className = "on";
+	};
+	altLink.onblur = function() {
+		altObj.className = "";
+	};
+}
+
+function initAltForImage() {
+	// DA Alternative - Create Access Layer
+	var accessLayer = document.createElement('div');
+	accessLayer.setAttribute('id','da_access');
+	accessLayer.style.cssText = 'position:absolute;top:50%;left:50%;width:154px;height:58px;margin:-29px 0 0 -77px;background:url(http://img.naver.net/static/common/da/da_access.png)';
+	accessLayer.style.display = "none";
+	var oAdDiv = document.getElementById("ac_banner_a");
+	oAdDiv.appendChild(accessLayer);
+
+	// DA Alternative - Focus Action
+	var altLink = document.getElementById("ac_banner_a");
+	var bMousedown = false;
+	altLink.onmousedown = function() {
+		bMousedown = true;
+	};
+	altLink.onfocus = function() {
+		if(!bMousedown){accessLayer.style.display = "block";}
+	};
+	altLink.onblur = function() {
+		accessLayer.style.display = "none";
+	};
+}
+//]]>
+</script>
+</body></html>

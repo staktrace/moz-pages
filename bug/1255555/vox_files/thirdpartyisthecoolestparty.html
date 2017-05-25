@@ -1,0 +1,21 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="thirdpartyisthecoolestparty_data/beacon-min.js"></script>
+    <script type="text/javascript">
+      // 1. Loads the UUID from a cookie local to the third-party domain if set
+      // 2. Sets the UUID as a cookie local to the third-party domain if not set
+      // 3. Sets up a UUID for local storage use if cookie setting is unsuccessful
+      var uuid = phonograph.getUUIDCookie() ||
+              phonograph.setCookie(phonograph.generateUUID(), phonograph.cookieName) ||
+              phonograph.generateUUID();
+
+      // In some cases, the browser (Safari) may ban setting third-party cookies from an iframe (if
+      // this is the case, the uuid from loadUUIDFromCookie will be null), so we want to store the
+      // uuid in local storage as well to get around this.
+      localStorage.setItem(phonograph.cookieName, uuid);
+
+      window.parent.postMessage({ uuid: uuid }, "*");
+    </script>
+  </head>
+<body>
+</body></html>

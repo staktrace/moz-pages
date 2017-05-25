@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test page</title>
+<script type="text/javascript" src="CollapsibleLists.js"></script>
+<style type="text/css">
+   body { color: white; background-color: black; font-weight: bold; }
+     .collapsibleList li {
+          list-style-image: url("bulletLeaf.png");
+          cursor: auto;
+     }
+     li.collapsibleListOpen {
+          list-style-image: url("bulletOpened.png");
+          cursor: pointer;
+     }
+     li.collapsibleListClosed {
+          list-style-image: url("bulletClosed.png");
+          cursor: pointer;
+     }
+</style>
+</head>
+<body>
+
+<ul class="collapsibleList" style="padding-left: 15px;">
+<li>&nbsp;<span style="background-color: gray;"><input type="checkbox"></span> parent
+     <ul>
+     <li>&nbsp;<span style="background-color: gray;"><input type="checkbox"></span> child
+          <ul>
+          <li>&nbsp;<span style="background-color: gray;"><input type="checkbox"></span> one</li>
+          <li>&nbsp;<span style="background-color: gray;"><input type="checkbox"></span> two</li>
+          <li>&nbsp;<span style="background-color: gray;"><input type="checkbox"></span> three</li>
+          </ul></li>
+     </ul></li>
+</ul>
+
+</body>
+</html>
+

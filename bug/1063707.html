@@ -1,0 +1,11 @@
+<script>
+    var matched, matchedLater;
+    addEventListener('DOMContentLoaded', function() {
+        matched = window.matchMedia('(max-width: 480px)').matches;
+    }, false);
+    setTimeout(function() {
+        matchedLater = window.matchMedia('(max-width: 480px)').matches;
+        document.body.innerHTML = 'matched: ' + matched + '; matchedLater: ' + matchedLater;
+    }, 1000);
+</script>
+<body>

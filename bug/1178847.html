@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head id="h">
+<script>
+function addMeta() {
+    var meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width';
+    document.getElementById('h').appendChild(meta);
+}
+
+function removeMeta() {
+    var c = document.getElementById('h').lastElementChild;
+    while (c && c.tagName != 'meta') {
+        c = c.previousElementSibling;
+    }
+    document.getElementById('h').removeChild(c);
+}
+</script>
+</head>
+<body>
+<button style="width:100%" onclick="addMeta()">Append meta-viewport</button><br/>
+<button style="width:100%" onclick="removeMeta()">Remove last meta-viewport</button><br/>
+<button style="width:100%" onclick="alert(window.innerWidth + 'x' + window.innerHeight)">Alert window.innerX</button><br/>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis accumsan nisi. Donec pharetra velit purus, ut condimentum nisi pharetra ac. Duis malesuada egestas orci vel volutpat. Proin id felis risus. Praesent mattis fringilla enim vel feugiat. Proin tincidunt, elit nec sodales congue, velit tellus pulvinar nisl, at consectetur dolor magna blandit dui. Ut egestas maximus malesuada. In tellus nisl, pharetra nec consequat a, hendrerit at massa. Etiam efficitur accumsan accumsan. Quisque sed euismod sapien. Vivamus gravida massa tellus, nec vulputate tellus efficitur quis. Donec at venenatis tellus. Fusce tristique mollis nunc, sit amet interdum nibh porta eu.
+
+Curabitur vel purus ut ex blandit posuere eget sit amet enim. Nunc nibh justo, tristique sed lectus quis, euismod pulvinar lacus. Nulla placerat non eros quis malesuada. Praesent ac commodo augue, et posuere libero. Vivamus condimentum ultricies arcu, gravida fermentum ligula malesuada nec. Suspendisse eu enim tortor. Donec a congue odio, vitae vestibulum felis. In et arcu mattis, ultricies velit vel, ultricies ante. Aliquam commodo purus vel sem cursus ornare.
+
+In congue vitae dolor sit amet sodales. Proin vitae purus in eros aliquet cursus quis quis neque. Quisque ipsum ex, pellentesque ac luctus eget, accumsan molestie sapien. In fringilla rhoncus mi vitae volutpat. Nunc sed ipsum ex. Nulla porta commodo ligula, et sollicitudin nunc rhoncus sit amet. Integer non aliquet purus. Suspendisse potenti. Cras commodo et dolor a elementum. Aenean iaculis tellus commodo elit pellentesque laoreet imperdiet eget mi.
+
+Donec facilisis nisl et tortor porttitor sodales. In dictum arcu et ante accumsan porta. In imperdiet id enim eget mollis. Aliquam dapibus, sem id convallis suscipit, quam sapien tincidunt nulla, non rutrum nulla sem eget enim. Vestibulum eget aliquam nibh, in finibus massa. Nam nec erat fringilla, molestie ligula eu, tempus orci. Suspendisse sit amet nunc rhoncus, porttitor arcu lobortis, dictum mi. Maecenas sollicitudin, elit ac vehicula aliquam, erat lorem vestibulum orci, sit amet faucibus erat nibh in nulla. Maecenas in gravida turpis. Quisque laoreet convallis purus. Nulla ornare elit ut mauris varius faucibus. Etiam aliquet sodales mi, et finibus mi finibus at. Suspendisse sit amet risus nec mauris sollicitudin vestibulum vitae vitae diam. Fusce pharetra mi ex, a dictum ligula congue at. Aenean ut massa ullamcorper, malesuada odio non, sagittis metus.
+
+Donec a ipsum vulputate sem fringilla placerat ut a orci. Nulla facilisi. Etiam et sollicitudin est. Fusce eget est orci. Vivamus gravida dictum sapien, nec molestie metus dapibus tempor. Suspendisse euismod sollicitudin egestas. Vestibulum quis purus eget leo pretium fringilla non ac ante. Nulla sed convallis ligula. Etiam pharetra lobortis finibus. Quisque lobortis dictum erat ac rutrum. Praesent non ligula auctor, maximus eros ut, hendrerit ligula. Sed pharetra ipsum in arcu mattis, ac cursus dui euismod. Quisque lobortis magna eu placerat consectetur. Fusce ullamcorper nunc sem, id aliquam leo lobortis ac. 
+</body>

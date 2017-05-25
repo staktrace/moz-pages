@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)http://static.nid.naver.com/login.nhn?svc=wme&amp;url=http%3A%2F%2Fwww.naver.com&amp;t=2014080701 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>네이버 : 로그인</title>
+<link rel="stylesheet" type="text/css" href="main_wide_login.css">
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="login_wrap">
+	<div class="error_box" style="display:none">
+		<p class="er_txt">보안로그인 2단계 이용을 위해서는<br><em>플래시 플레이어</em>를 설치해주세요.</p>
+		<p class="er_btn_g"><button type="button" class="btn_cl">설치방법 안내</button> <button type="button" class="btn_cl"><span>오류메세지</span>닫기</button></p>
+		<button type="button" class="close_x">닫기</button>
+	</div>
+	<div class="login">
+		<form id="frmNIDLogin" name="frmNIDLogin" target="_top" action="https://nid.naver.com/nidlogin.login" method="post">
+			<input type="hidden" name="enctp" id="enctp" value="1">
+			<input type="hidden" name="encpw" id="encpw" value="">
+			<input type="hidden" name="encnm" id="encnm" value="">
+			<input type="hidden" name="svctype" id="svctype" value="0">
+			<input type="hidden" name="url" id="url" value="http://www.naver.com/">
+			<input type="hidden" name="enc_url" id="enc_url" value="http%3A%2F%2Fwww.naver.com%2F">
+			<input type="hidden" name="postDataKey" id="postDataKey" value="">
+			<input type="hidden" name="nvlong" id="nvlong" value="">
+			<input type="hidden" name="saveID" id="saveID" value="">
+			<input type="hidden" name="smart_level" id="smart_level" value="1">
+			<fieldset>
+			<legend>로그인</legend>
+			<div class="flasharea" id="flasharea" style="visibility: hidden;"><div style="width:105px;height:49px;">&nbsp;</div></div>
+			<div class="htmlarea" id="htmlarea" style="display: block;">
+				<div class="input_box" style="width:118px"><label for="id" id="label_id" class="lbl_in">아이디</label><input type="text" id="id" name="id" maxlength="25" title="아이디" accesskey="L" placeholder="아이디" class="int"></div>
+				<div class="input_box" style="width:118px"><label for="pw" id="label_pw" class="lbl_in">비밀번호</label><input type="password" id="pw" name="pw" maxlength="16" title="비밀번호" placeholder="비밀번호" class="int">
+					<div class="error_box_v2" style="display:none" id="div_capslock">
+						<p><strong>Caps Lock</strong>이 켜져 있습니다.</p>
+					</div>
+				</div>
+			</div>
+			<div class="chk_id_login">
+				<input type="checkbox" id="chk_log" title="로그인 상태유지" class="chk_login"> <label for="chk_log" class="lbl_long">로그인 상태 유지</label>
+				<div class="error_box_v3" style="display:none" id="div_chk_long">
+					<p class="er3_txt">개인정보 보호를 위해<br><strong>개인 PC에서만 사용하세요.</strong><br><a href="https://help.naver.com/support/contents/contents.nhn?serviceNo=532&categoryNo=1523" target="_blank" title="새창" class="help_txt">도움말 보기</a></p>
+					<p class="btn_g"><button type="button" id="help_close" class="btn_cl"><span>오류메세지</span>닫기</button></p>
+					<span class="bu_arr"></span>
+				</div>
+			</div>
+			<div class="login_help">
+				<div class="chk_ip"><a href="http://static.nid.naver.com/loginv3/help_ip.html" id="ip_guide" target="_blank" title="">IP보안</a> <span class="ip_box"><input type="checkbox" id="ckb_type" title="IP 보안이 켜져 있습니다. IP보안을 사용하지 않으시려면 선택을 해제해주세요." class="chb_b"><label for="ckb_type" id="lbl_type" class="lbl_type on">IP보안 체크</label></span></div>
+			</div>
+			<input type="image" src="btn_login_m.png" title="로그인" alt="로그인" class="btn_login">
+			<a href="https://nid.naver.com/nidlogin.login?mode=number&svctype=&logintp=&viewtype=&url=http://www.naver.com" target="_top" class="btn_dis">일회용 로그인</a>
+			<p class="btn_lnk">
+				<a href="https://nid.naver.com/nidregister.form?url=http://www.naver.com" target="_blank" class="btn_join">회원가입</a>
+				<a href="https://nid.naver.com/user/help.nhn?todo=idinquiry" target="_blank" class="btn_id">아이디<span class="blind">찾기</span></a>/<a href="https://nid.naver.com/nidreminder.form" target="_blank">비밀번호 찾기</a>
+			</p>
+		</fieldset>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+var useWideLoginboxFlash=true;
+function loadScript() {
+	var scriptEl = document.createElement('script');
+	scriptEl.setAttribute('type', 'text/javascript');
+	scriptEl.setAttribute('language', 'javascript');
+	scriptEl.setAttribute('src', '/loginv3/js/loginv3_140325.js?140807');
+	if (scriptEl.readyState){
+		scriptEl.onreadystatechange = function(){
+			if (scriptEl.readyState == "loaded" ||scriptEl.readyState == "complete"){
+				scriptEl.onreadystatechange = null;
+				initPage();
+			}
+		};
+	} else {
+		scriptEl.onload = function(){
+			initPage();
+		};
+	}
+	document.body.appendChild(scriptEl);
+}
+
+window.onload = function(){setTimeout(loadScript,50);}
+</script>
+
+
+<script type="text/javascript" language="javascript" src="loginv3_140325.js"></script></body></html>

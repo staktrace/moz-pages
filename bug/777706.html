@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script>
+    function setup() {
+        document.getElementById('x').addEventListener('touchstart', function(a) {
+            a = a.touches ? a.touches[0] : a;
+            alert(a.clientX);
+        }, false);
+    }
+  </script>
+ </head>
+ <body onload="setup()">
+  <div id="x">click on me</div>
+ </body>

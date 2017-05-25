@@ -1,0 +1,19 @@
+<html>
+ <body>
+  <button onclick="addit();">add</button>
+  <script>
+    globalE = new Array();
+
+    function addit() {
+        addEventListener('touchstart', stuff, false);
+    }
+
+    function stuff(e) {
+        globalE.push(e);
+        var div = document.createElement('div');
+        div.textContent = 'touchstart';
+        document.body.appendChild(div);
+    }
+  </script>
+ </body>
+</html>

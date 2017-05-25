@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* NHN Technology Services UI Development 1 Team,SMY 121025 */
+
+/* Common */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'돋움',Dotum,Helvetica,sans-serif;font-size:12px}
+img,fieldset{border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:underline}
+
+/* etc */
+a:hover,a:active,a:focus,a:link,a:visited{color:#666}
+legend{display:none}
+table,th,td{border:0 none}
+hr{display:none}
+button{overflow:hidden;cursor:pointer}
+.blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+.blind_txt{overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+
+/* layout */
+body{line-height:16px;color:#666}
+.login_wrap{overflow:hidden;position:relative;z-index:30;width:298px;height:98px;border:1px solid #b6b8bb;border-bottom:none}
+.login{position:relative;z-index:15;padding:0 14px;border:1px solid #fff;border-bottom:1px solid #eceded;background:#f3f4f3;zoom:1;height:95px}
+.btn_lnk{position:absolute;top:2px;display:inline-block;margin:6px 0 2px;*margin:5px 0 2px;font-size:11px;color:#5f6164;}
+.btn_lnk a,.btn_lnk a:visited,.btn_lnk a:hover{font-size:11px;color:#5f6164;letter-spacing:-1px}
+.bar{margin:0 1px}
+.btn_join{margin:0 36px 0 2px}
+.input_box{position:relative;z-index:13;height:22px;margin-bottom:3px}
+.lbl_in{position:absolute;top:4px;left:5px;font-size:12px;color:#6b6d70;z-index:9}
+.ie7 .lbl_in,.ie8 .lbl_in,.ie9 .lbl_in{z-index:11}
+.ie7 .lbl_in.focus,.ie8 .lbl_in.focus,.ie9 .lbl_in.focus{z-index:9;border:none}
+.int{position:relative;width:100%;height:20px;padding:0 0 0 4px;border:1px solid #bebebe;font-size:12px;line-height:20px;color:#333;z-index:10}
+.input_box .focus{border:1px solid #5aa409}
+.chk_id_login{position:absolute;top:75px;display:inline-block;z-index:10;margin:0 0 6px;*margin:-1px 0 4px -4px}
+.chk_login{vertical-align:middle;margin:-1px 0 1px}
+.lbl_long{*margin-left:-3px;font-size:11px;color:#5f6164;letter-spacing:-1px;cursor:pointer}
+.btn_login{position:absolute;top:24px;left:142px;z-index:8}
+.login_help{display:block;position:absolute;top:10px;left:211px;width:86px;height:80px;border-left:1px solid #dcdcdc;text-align:center}
+.btn_dis{display:block;position:absolute;top:49px;right:7px;width:69px;height:20px;background:url(/loginv3/img/sp_login_m.png) no-repeat 0 -16px;text-indent:-999em}
+.btn_cl{font-size:11px;padding:0 4px}
+:root .btn_cl{line-height:18px}
+.btn_cl span{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+.er_btn_g,.btn_g{margin-bottom:15px;text-align:center}
+.error_box_v2{position:absolute;top:22px;left:0;z-index:11;width:162px;height:28px;font-size:11px;color:#d1d3da;letter-spacing:-1px;text-align:center;background:url(/loginv3/img/sp_login_m.png) no-repeat 0 -38px}
+.error_box_v2 p{margin-top:8px}
+.error_box_v2 strong{color:#fff200}
+.error_box_v3{position:absolute;top:-77px;left:128px;z-index:9;width:155px;border:1px solid #b5b7ba;background:#fff;font-size:11px;letter-spacing:-1px;}
+.error_box_v3 .bu_arr{display:block;position:absolute;top:78px;left:-5px;width:5px;height:8px;background:url(/loginv3/img/sp_login_m.png) no-repeat -75px 0}
+.error_box_v3 .er3_txt{margin:10px 9px}
+.error_box_v3 a.help_txt{padding-right:10px;background:url(/loginv3/img/sp_login_m.png) no-repeat -103px -21px;*background-position:-103px -19px;text-decoration:underline;zoom:1}
+.error_box{position:absolute;top:0;left:0;z-index:20;width:100%;background:#fff}
+.error_box .er_txt{margin:15px;font-size:11px;color:#333;text-align:center}
+.error_box .er_txt em{color:#5aa409}
+.close_x{overflow:hidden;position:absolute;top:5px;right:5px;width:18px;height:18px;border:none;background:url(/loginv3/img/sp_login_m.png) no-repeat -144px 0;text-indent:-999em}
+
+/* ip체크박스 */
+.chk_ip{display:inline-block;position:relative;margin-top:11px;font-size:11px;color:#6b6d70}
+.ip_box{display:inline-block;overflow:hidden;position:relative;top:5px;width:26px;height:16px;margin-left:-3px}
+.ip_box .chb_b{position:absolute;top:0;left:2px;width:23px;height:16px;padding:1px}
+.ip_box .lbl_type{z-index:8;position:absolute;top:0;left:-2px;width:23px;height:16px;margin-left:4px;border:none;background:url(/loginv3/img/sp_login_m.png) no-repeat 0 0;vertical-align:top;cursor:pointer;text-indent:-999em}
+.ip_box .lbl_type.on{background-position:-25px 0}
+.ip_box .chb_b:checked +label{background-position:-25px 0}
+.htmlarea{position:absolute;top:24px;left:14px;border:0px;margin:0px;padding:0px;display:none;z-index:13}
+.flasharea{position:absolute;top:24px;border:0px;margin:0px;padding:0px}
+
+/* ipad 대응*/
+.t .int{padding:0 0 0 4px;height:20px;-webkit-border-radius:1px;-webkit-appearance:none}
+.t .btn_login{-webkit-border-radius:0;-webkit-appearance:none}
+.t .ip_box .chb_b{left:2px}
+
+ 
+/* 크롬브라우저및 사파리브라우저 input 맞춤 */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.int{padding-top:4px;height:16px;line-height:12px}
+}
+ 
+/* placholder */
+::-webkit-input-placeholder{color:#6b6d70}
+::-moz-placeholder{color:#6b6d70} /* firefox 19+ */
+:-ms-input-placeholder{color:#6b6d70;line-height:24px} /* ie */
+input:-moz-placeholder{color:#6b6d70}

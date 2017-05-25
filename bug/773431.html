@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script type="text/javascript">
+    function setup() {
+        var div = document.getElementsByTagName("div")[0];
+        div.addEventListener("touchstart", function(e) {
+            e.stopPropagation();
+        }, true);
+    }
+  </script>
+ </head>
+ <body onload="setup()">
+  <div onclick="alert('success')">tap on me!</div>
+ </body>
+</html>

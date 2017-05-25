@@ -1,0 +1,9 @@
+<meta name="Viewport" content="width=device-width"/>
+<a href="#">long-press on this, the window will close 1000ms after that</a>
+<script>
+window.addEventListener('contextmenu', function() {
+    setTimeout(function() {
+        window.close();
+    }, 1000);
+}, true);
+</script>

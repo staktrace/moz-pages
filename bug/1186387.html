@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bugmash Dashboard (3 unviewed, 0 errors)</title>
+  <!-- base href="https://staktrace.com/apps/bugmash/dashboard.php" -->
+  <style type="text/css">
+@media (min-width:801px) {
+    html {
+        overflow-y: scroll;
+    }
+}
+body {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+.column {
+    width: 25%;
+    float: left;
+}
+@media (max-width:800px) {
+    .column {
+        width: 100%;
+        float: left;
+    }
+}
+.bug {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid;
+}
+.secure {
+    border-color: red;
+}
+.row {
+    border-bottom: dashed 1px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.row:last-child {
+    border-bottom: none;
+}
+div.title {
+    background-color: lightblue;
+    margin-bottom: 2px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.secure > div.title {
+    background-color: red;
+    color: white;
+}
+a.wipe, a.wipetop {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+a.noteify {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+div.footer {
+    background-color: lightblue;
+    margin-top: 2px;
+}
+.noteinput {
+    width: 350px;
+}
+a.linkified {
+    color: black;
+    text-decoration: none;
+}
+a.linkified:hover {
+    text-decoration: underline;
+}
+  </style>
+  <script type="text/javascript">
+    function wipe(e) {
+        var block = e.target;
+        while (! block.classList.contains("bug")) {
+            block = block.parentNode;
+        }
+        var items = block.querySelectorAll( "div.row" );
+        var ids = new Array();
+        for (var i = 0; i < items.length; i++) {
+            ids.push( items[i].id );
+        }
+        block.style.display = 'none';
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) {
+                return;
+            }
+            if (xhr.status == 200) {
+                block.parentNode.removeChild(block);
+                document.title = document.title.replace( /\d+ unviewed/, function(unviewed) { return (unviewed.split(" ")[0] - ids.length) + " unviewed"; } );
+            } else {
+                block.style.display = 'block';
+                e.target.textContent = "[E]";
+            }
+        };
+        var body = "ids=" + ids.join( "," );
+        xhr.open( "POST", "wipe.php", true );
+        xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+        xhr.setRequestHeader( "Content-Length", body.length );
+        xhr.send( body );
+        e.preventDefault();
+    }
+
+    document.addEventListener( "DOMContentLoaded", function() {
+        var wipers = document.querySelectorAll( "a.wipe" );
+        for (var i = 0; i < wipers.length; i++) {
+            wipers[i].addEventListener( "click", wipe, true );
+        }
+    }, true );
+
+    function addNote( bugnumber ) {
+        var notediv = document.createElement( "div" );
+        notediv.className = "newnote";
+        var sibling = document.getElementById( "notebuttons" );
+        sibling.parentNode.insertBefore( notediv, sibling );
+        notediv.innerHTML = '<span>Bug <input type="text" size="7" maxlength="10" value="' + bugnumber + '"/></span>: <input class="noteinput" type="text"/><input class="tagsinput" type="text""/>';
+        if (bugnumber) {
+            notediv.getElementsByTagName( "input" )[1].focus();
+        } else {
+            notediv.getElementsByTagName( "input" )[0].focus();
+        }
+    }
+
+    function setNoteNames() {
+        var newnotes = document.getElementsByClassName( "newnote" );
+        while (newnotes.length > 0) {
+            var newnote = newnotes[0];
+            var bugnumbertext = newnote.getElementsByTagName( "input" )[0].value;
+            var bugnumber = parseInt( bugnumbertext );
+            if (isNaN( bugnumber )) {
+                if (window.confirm( "Unable to parse " + bugnumbertext + " as a bug number; replace with 0 and continue anyway?" )) {
+                    bugnumber = 0;
+                } else {
+                    return false;
+                }
+            }
+            var anchor = document.createElement( "a" );
+            anchor.setAttribute( "href", "https://bugzilla.mozilla.org/show_bug.cgi?id=" + bugnumber );
+            anchor.textContent = "Bug " + bugnumber;
+            newnote.replaceChild( anchor, newnote.getElementsByTagName( "span" )[0] );
+            newnote.getElementsByTagName( "input" )[0].setAttribute( "name", "note" + bugnumber );
+            newnote.getElementsByTagName( "input" )[1].setAttribute( "name", "tags" + bugnumber );
+            newnote.className = "note";
+        }
+        return true;
+    }
+
+    function noteify( linkElement, bugnumber ) {
+        var notes = document.getElementsByClassName( "note" );
+        // see if we can find a note already for this bug and just give it focus
+        var search = "Bug " + bugnumber;
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].firstChild.textContent == search) {
+                notes[i].getElementsByTagName( "input" )[0].focus();
+                return false;
+            }
+        }
+        // also search through the newly-added notes that are in a different format
+        notes = document.getElementsByClassName( "newnote" );
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].getElementsByTagName( "input" )[0].value == bugnumber) {
+                notes[i].getElementsByTagName( "input" )[1].focus();
+                return false;
+            }
+        }
+        // couldn't find it, so add a new one
+        addNote( bugnumber );
+        linkElement.textContent = 'U';
+        return false;
+    }
+  </script>
+ </head>
+ <body>
+  <div class="column">
+   &nbsp;  </div>
+  <div class="column">
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug1186159"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1186159)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1186159">Bug 1186159</a> Add an APZ minimap</div><div><div class="row" style="white-space: pre-line;" id="c171556">Benoit Girard (:BenWa)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1186159#c8">said</a>:<br>- Outer box is the page. This will keep the aspect ratio of the page and will
+be restricted to the left-most 100px.
+- Green box is the display port (fixed the offset issue after the screenshot)
+- Pink is the viewport.
+
+Does anyone feel strongly about critical displayport? Right now I'm learning
+towards leaving it out not to overload the view but I could be easily
+convinced.
+
+I'll be tweaking the color, adding contrast. I also want to look at the
+feasibility of showing where the content is -currently- painting but that might
+be too difficult since it would need to by-pass IPDL.</div>
+
+<div class="row" id="d282297">CC:  → nissan4321@gmail.com</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1186159').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1186159').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1186159').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1186159').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+<div class="bug" id="bug1181135"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1181135)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1181135">Bug 1181135</a> Crashing on pages while clicking-selecting-dragging text</div><div><div class="row" style="white-space: pre-line;" id="c171583">mayankleoboy1@gmail.com <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1181135#c5">said</a>:<br>i had APZ disabled for the last 2 weeks, and no crashes. On a lark, i enabled
+APZ, and within 5 minutes, i got a crash.
+<a class="linkified" href="https://crash-stats.mozilla.com/report/index/1a07e512-13ee-44ae-bebb-331832150722">https://crash-stats.mozilla.com/report/index/1a07e512-13ee-44ae-bebb-331832150722</a>
+
+Is there any plan to fix this?</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1181135').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1181135').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1181135').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1181135').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <div class="column">
+   &nbsp;  </div>
+  <form onsubmit="return setNoteNames()" method="POST" target="_self" style="clear: both">
+   <fieldset>
+    <legend>Bug notes</legend>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=858137">Bug 858137</a>: <input class="noteinput" name="note858137" value="mentored" type="text"><input class="tagsinput" name="tags858137" type="text"> Animated GIFs not working properly on the Samsung Galaxy SII (i9100)</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=894622">Bug 894622</a>: <input class="noteinput" name="note894622" value="mentored" type="text"><input class="tagsinput" name="tags894622" value="feb20" type="text"> display URL/address when hovering over a link</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=976616">Bug 976616</a>: <input class="noteinput" name="note976616" value="mentored" type="text"><input class="tagsinput" name="tags976616" type="text"> Support dynamic viewport changes (changing meta viewport tag from JavaScript)</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=969466">Bug 969466</a>: <input class="noteinput" name="note969466" value="mentored-botond" type="text"><input class="tagsinput" name="tags969466" type="text"> Log checkerboarding in APZC</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1023571">Bug 1023571</a>: <input class="noteinput" name="note1023571" value="mentored" type="text"><input class="tagsinput" name="tags1023571" type="text"> Strangely poor performance on fairly simple app</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1091889">Bug 1091889</a>: <input class="noteinput" name="note1091889" value="look into try failures" type="text"><input class="tagsinput" name="tags1091889" type="text"> Touch events on B2G get retargeted to the nearest clickable element</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1156606">Bug 1156606</a>: <input class="noteinput" name="note1156606" value="steal this" type="text"><input class="tagsinput" name="tags1156606" type="text"> Use WheelScrollAnimation for instant scrolling, too</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1171098">Bug 1171098</a>: <input class="noteinput" name="note1171098" value="touch-action fallout on b2g" type="text"><input class="tagsinput" name="tags1171098" type="text"> Browser app crash during doing APZ on nexus-5-l when touch-action pref is enabled</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=986884">Bug 986884</a>: <input class="noteinput" name="note986884" type="text"><input class="tagsinput" name="tags986884" value="waiting-spec" type="text"> [Camera][Madai] Settings options lose the active state when sliding the finger</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1105812">Bug 1105812</a>: <input class="noteinput" name="note1105812" type="text"><input class="tagsinput" name="tags1105812" value="!address-comments" type="text"> run-gdb.sh should allow overriding GDB_PORT so as to more easily allow running gdb over ssh</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1151617">Bug 1151617</a>: <input class="noteinput" name="note1151617" type="text"><input class="tagsinput" name="tags1151617" value="!write-more-tests" type="text"> Write tests that exercise ApplyAsyncTransformToScrollbarForContent</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1175282">Bug 1175282</a>: <input class="noteinput" name="note1175282" type="text"><input class="tagsinput" name="tags1175282" value="!think" type="text"> [Fennec-APZ] Unable to scroll outside scrollable subframe after zooming on a non-scrollable document</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1180295">Bug 1180295</a>: <input class="noteinput" name="note1180295" type="text"><input class="tagsinput" name="tags1180295" value="!active" type="text"> Redo Fennec dynamic toolbar implementation</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1134917">Bug 1134917</a>: <input class="noteinput" name="note1134917" type="text"><input class="tagsinput" name="tags1134917" value="waiting-logs" type="text"> B2G: MOZ_ASSERT(aGuid == mPendingTouchPreventedGuid); gfx/layers/apz/util/APZEventState.cpp:310</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1157745">Bug 1157745</a>: <input class="noteinput" name="note1157745" type="text"><input class="tagsinput" name="tags1157745" value="waiting-dep, !checkin" type="text"> Enable APZ on Windows E10S</div>
+    <div id="notebuttons">
+     <input value="Add note" onclick="addNote('')" type="button">
+     <input id="savenotes" value="Save notes" type="submit">
+    </div>
+   </fieldset>
+  </form>
+  <form method="POST" action="search.php">
+   <fieldset>
+    <legend>Recent bug search</legend>
+    <input name="q" type="text">
+    <input value="Search" type="submit">
+   </fieldset>
+  </form>
+ 
+
+</body></html>

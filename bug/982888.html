@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="initial-scale=1"/>
+  <title>The Grid</title>
+ </head>
+ <body>
+  <div style="width: 400px; height: 300px; overflow:scroll; border: solid 1px black">
+   this is the outer div
+   <div id="inner" style="overflow:scroll; width: 300px; height: 200px; border: solid 1px red">
+r to showing the external images, we have a scrollable
+    div containing the email contents. Since it's a subframe,
+    it starts of with a scroll info layer, let's call it A.
+
+  - The email contents are in an iframe, but that does not
+    get its own layer, probably because the iframe is sized
+    to fit the document it contains.
+
+  - When you show the external images, the contents of the
+    iframe become slightly larger than its scroll port (*) 
+    and it also gets a scroll info layer, let's call it B.
+
+       (*) This may not be intentional. If it's not, it can
+           probably be fixed in the app.
+
+  - Since scroll info layers do not have children, B is not
+    a descendant of A in the layer tree.
+
+  - However, since the element to which B corresponds is a
+    child of the element to which A corresponds in the DOM,
+    B is above A in the layer tree.
+
+  - When you pan on the email contents, APZ hit testing
+    finds B. You can pan it by the very small amount by
+    which the iframe contents are larger than its scroll
+    port. After that, overscroll handoff kicks in.
+
+  - However, the overscroll handoff chain only walks 
+    child -&gt; parent links. Since A is not an ancestor of B,
+    A is not an element of B's handoff chain, so A does
+    not get the overscroll. As a result, A never scrolls.
+
+  - If you scroll A prior to showing the external images,
+    A gets a scrollable layer and B becomes its child,
+    and later when B gets its own layer, overscroll handoff
+    now works.
+   </div>
+   end of inner div<br/>
+Amusingly, the reason this appeared to work prior to the
+regression range from comment 10 is that due to a race 
+condition (bug 944047), the synchronous scrolling code 
+from BrowserElementPanning.js was being enabled in spite
+of APZ being turned on, and the <div> was being scrolled
+synchronously!
+
+It's not clear to me what is the best way to fix this in the
+1.3 timeframe. 
+
+ - The proper solution is to get overscroll handoff to 
+    consider non-ancestor-descendant relationships in the 
+    layer tree where appropriate. I don't think we want
+    to do that until bug 918288 is fixed, and we almost 
+    certainly don't want to uplift that to 1.3. 
+
+  - Bug 982141 will fix the problem in this case by giving
+    A a scrollable layer as soon as the page loads (it won't
+    solve the problem in general, though). However, I don't
+    imagine we want to uplift bug 982141 to 1.3 either.
+
+  </div>
+ </body>
+</html>

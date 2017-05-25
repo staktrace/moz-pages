@@ -1,0 +1,167 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+.aui {
+  background-image: none;
+  background-color: transparent; }
+
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background-image: none;
+  background-color: transparent; }
+
+.aui body, .aui div, .aui span, .aui object, .aui iframe,
+.aui h1, .aui h2, .aui h3, .aui h4, .aui h5, .aui h6, .aui p, .aui blockquote, .aui pre,
+.aui abbr, .aui address, .aui cite, .aui code,
+.aui del, .aui dfn, .aui em, .aui img, .aui ins, .aui kbd, .aui q, .aui samp,
+.aui small, .aui strong, .aui sub, .aui sup, .aui var,
+.aui b, .aui i,
+.aui dl, .aui dt, .aui dd, .aui ol, .aui ul, .aui li,
+.aui fieldset, .aui form, .aui label, .aui legend,
+.aui table, .aui caption, .aui tbody, .aui tfoot, .aui thead, .aui tr, .aui th, .aui td,
+.aui article, .aui aside, .aui canvas, .aui details, .aui figcaption, .aui figure,
+.aui footer, .aui header, .aui hgroup, .aui menu, .aui section, .aui summary,
+.aui time, .aui mark, .aui audio, .aui video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 12pt;
+  vertical-align: baseline;
+  background-image: none;
+  background-color: transparent; }
+.aui body {
+  line-height: 1; }
+.aui article, .aui aside, .aui details, .aui figcaption, .aui figure,
+.aui footer, .aui header, .aui hgroup, .aui menu, .aui nav, .aui section {
+  display: block; }
+.aui nav ul {
+  list-style: none; }
+.aui blockquote, .aui q {
+  quotes: none; }
+.aui blockquote:before, .aui blockquote:after,
+.aui q:before, .aui q:after {
+  content: '';
+  content: none; }
+.aui a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+.aui ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+.aui mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+.aui del {
+  text-decoration: line-through; }
+.aui abbr[title], .aui dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+.aui table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+.aui input, .aui select {
+  vertical-align: middle; }
+.aui hr, .aui nav, .aui #search, .aui ul.links, .aui .mega, .aui #picto, .aui #sidebar, .aui footer div#links, .aui div.print, .aui footer div.center ul, .aui footer img, .aui div.button, .aui p.nahoru, .aui .prev {
+  display: none; }
+.aui footer {
+  background-image: none; }
+.aui footer div.center ul.call {
+  display: block; }
+.aui a[href]:after {
+  content: none !important; }
+.aui .breadcrumb .first, .aui .breadcrumb {
+  padding: 0;
+  margin: 0; }
+.aui .breadcrumb li.last .divider {
+  display: none; }
+.aui .breadcrumb {
+  font-size: 10pt; }
+.aui #logo {
+  float: none;
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 20px;
+  display: block; }
+.aui .breadcrumb .first {
+  background: none;
+  padding: 0; }
+.aui #content {
+  width: auto;
+  float: none;
+  margin: 0 auto;
+  padding: 0;
+  background: none; }
+.aui h1 {
+  font-size: 28px;
+  line-height: 30px; }
+.aui h2, .aui .bckg h2, .aui .list-item h2, .aui h2.noBg, .aui .portlet-body h2 {
+  background-image: none;
+  border: 0px;
+  padding-left: 0px !important;
+  left: 0px; }
+.aui input, .aui input.text {
+  background: none;
+  border: 0px;
+  box-shadow: none;
+  -moz-transition-property: none;
+  -webkit-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none; }
+.aui article.bckg .article-content {
+  padding: 0;
+  margin: 0; }
+.aui form {
+  border: 1px solid #cccccc;
+  padding-left: 25px; }
+.aui form#hrefFm {
+  display: none; }
+.aui .infobox {
+  border: 1px solid #ff0000; }
+.aui #icons .journal-content-article li {
+  height: 50px; }
+.aui #icons .journal-content-article a {
+  padding: 15px 0 0 0;
+  margin: 0; }
+.aui .clearfix, .aui .overview-item {
+  page-break-inside: auto;
+  page-break-after: auto;
+  page-break-before: auto; }
+.aui .overview-item-content {
+  page-break-inside: avoid;
+  page-break-after: auto;
+  page-break-before: auto;
+  display: block; }
+.aui .overview-item {
+  display: block;
+  width: 250px;
+  height: 260px; }
+.aui .overview-item-content {
+  display: block;
+  width: 250px;
+  height: 195px; }
+.aui .overview-item-content span.number, .aui .overview-item-content a, .aui .overview-item-content a img, .aui .overview-item-content p.status {
+  page-break-inside: avoid;
+  page-break-after: avoid;
+  page-break-before: avoid;
+  float: none; }
+.aui div.overview-item-content a img {
+  max-height: 145px;
+  max-width: 100% !important;
+  display: block;
+  page-break-inside: avoid; }

@@ -1,0 +1,14 @@
+<html>
+ <head>
+  <script>
+    function writeWidth() {
+        var div = document.getElementsByTagName("div")[0];
+        div.textContent += " and its width is " + div.getBoundingClientRect().width;
+    }
+  </script>
+ </head>
+ <body style="width: 100%; border: 0; margin: 0; padding: 0; overflow: auto" onload="writeWidth()">
+  <div style="width: 100%; border: 0; margin: 0; padding: 0">This div is 100%</div>
+  <div style="position: absolute; left: 50%; top: 100px; background-color: red; width: 10px; height: 10px;"></div>
+ </body>
+</html>

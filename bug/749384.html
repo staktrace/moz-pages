@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Touch event listener test case</title>
+  <script type="text/javascript">
+    function init() {
+        document.getElementById("none").addEventListener("touchstart", report, true);
+        document.getElementById("none").addEventListener("touchmove", report, true);
+        document.getElementById("none").addEventListener("touchend", report, true);
+        document.getElementById("down").addEventListener("touchstart", cancel, true);
+        document.getElementById("down").addEventListener("touchmove", report, true);
+        document.getElementById("down").addEventListener("touchend", report, true);
+        document.getElementById("move").addEventListener("touchstart", report, true);
+        document.getElementById("move").addEventListener("touchmove", cancel, true);
+        document.getElementById("move").addEventListener("touchend", report, true);
+    }
+
+    function report(e) {
+        var note = document.getElementById("note");
+        var x = e.touches[0].pageX;
+        var y = e.touches[0].pageY;
+        note.textContent = "" + x + ", " + y;
+        note.style.left = x + "px";
+        note.style.top = y + "px";
+    }
+
+    function cancel(e) {
+        report(e);
+        e.preventDefault();
+    }
+  </script>
+ </head>
+ <body onload="init()">
+  <div id="none" style="float: left; width: 40%; height: 5000px; border: solid 1px green;">Touch events on this div will not be cancelled.</div>
+  <div id="down" style="float: left; width: 40%; height: 2500px; border: solid 1px red;">Touch events in this div will be cancelled on the touch down.</div>
+  <div id="move" style="float: left; width: 40%; height: 2500px; border: solid 1px blue;">Touch events in this div will be cancelled on the touch move.</div>
+  <div id="note" style="position:absolute; left: 0px; top: 20px; border: solid 1px black">Notes</div>
+ </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  box-shadow: 0 0 5px #888;
+  border-radius: 2px;
+}
+.b0 { background: yellow; }
+.b1 { background: lime; }
+.b2 { background: orange; }
+</style>
+</head>
+<body style="background:url(repeatable-diagonal-gradient.png) fixed;" onload="start()">
+<script>
+for (var i = 0; i < 10000; ++i) {
+  document.write("<span class='b" + i%3 + "'></span>");
+}
+function start() {
+  var i = 0;
+  var start;
+  function f() {
+    if (!start) {
+      start = Date.now();
+    }
+    if (++i == 50) {
+      alert((Date.now() - start) + "ms");
+      return;
+    }
+    window.scrollTo(0, i*10);
+    setTimeout(f, 10);
+  }
+  setTimeout(f, 10);
+}
+</script>
+</body>
+</html>

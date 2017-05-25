@@ -1,0 +1,26 @@
+<script>
+function logevent(e) {
+    var log = document.createElement('div');
+    log.textContent = 'Got event ' + e.type;
+    var output = document.getElementById('output');
+    output.insertBefore(log, output.firstChild);
+}
+
+document.addEventListener('mousedown', logevent, true);
+//document.addEventListener('mousemove', logevent, true);
+document.addEventListener('mouseup', logevent, true);
+document.addEventListener('click', logevent, true);
+
+document.addEventListener('drag', logevent, true);
+document.addEventListener('dragend', logevent, true);
+document.addEventListener('dragenter', logevent, true);
+document.addEventListener('dragexit', logevent, true);
+document.addEventListener('dragleave', logevent, true);
+document.addEventListener('dragover', logevent, true);
+document.addEventListener('dragstart', logevent, true);
+document.addEventListener('drop', logevent, true);
+
+</script>
+<a href="https://mozilla.org/">Link to mozilla that you can drag</a><br/>
+<div id="output">
+</div>

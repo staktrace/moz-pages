@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>This page makes a lot of XHR requests</title>
+  <script>
+    var bytes = 0;
+    var stop = 0;
+
+    function doXHR() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) {
+                return;
+            }
+            bytes += xhr.getAllResponseHeaders().length + xhr.responseText.length;
+            document.getElementById('counter').textContent = bytes;
+            if (!stop) {
+                setTimeout(doXHR, 1000);
+            }
+        };
+        xhr.open("GET", "761731.html?r=" + Math.random(), false);
+        xhr.send();
+    }
+  </script>
+ </head>
+ <body onload="doXHR()">
+  <span id="counter">0</span> bytes downloaded.<br/>
+  <button onclick="stop = 1">Stop</button><br/>
+ </body>
+</html>

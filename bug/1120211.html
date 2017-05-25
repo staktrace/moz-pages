@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bugmash Dashboard (8 unviewed, 0 errors)</title>
+  <!-- base href="https://staktrace.com/apps/bugmash/dashboard.php" -->
+  <style type="text/css">
+@media (min-width:801px) {
+    html {
+        overflow-y: scroll;
+    }
+}
+body {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+.column {
+    width: 25%;
+    float: left;
+}
+@media (max-width:800px) {
+    .column {
+        width: 100%;
+        float: left;
+    }
+}
+.bug {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid;
+}
+.secure {
+    border-color: red;
+}
+.row {
+    border-bottom: dashed 1px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.row:last-child {
+    border-bottom: none;
+}
+div.title {
+    background-color: lightblue;
+    margin-bottom: 2px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.secure > div.title {
+    background-color: red;
+    color: white;
+}
+a.wipe, a.wipetop {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+a.noteify {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+div.footer {
+    background-color: lightblue;
+    margin-top: 2px;
+}
+.noteinput {
+    width: 350px;
+}
+a.linkified {
+    color: black;
+    text-decoration: none;
+}
+a.linkified:hover {
+    text-decoration: underline;
+}
+  </style>
+  <script type="text/javascript">
+    function wipe(e) {
+        var block = e.target;
+        while (! block.classList.contains("bug")) {
+            block = block.parentNode;
+        }
+        var items = block.querySelectorAll( "div.row" );
+        var ids = new Array();
+        for (var i = 0; i < items.length; i++) {
+            ids.push( items[i].id );
+        }
+        block.style.display = 'none';
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) {
+                return;
+            }
+            if (xhr.status == 200) {
+                block.parentNode.removeChild(block);
+                document.title = document.title.replace( /\d+ unviewed/, function(unviewed) { return (unviewed.split(" ")[0] - ids.length) + " unviewed"; } );
+            } else {
+                block.style.display = 'block';
+                e.target.textContent = "[E]";
+            }
+        };
+        var body = "ids=" + ids.join( "," );
+        xhr.open( "POST", "wipe.php", true );
+        xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+        xhr.setRequestHeader( "Content-Length", body.length );
+        xhr.send( body );
+        e.preventDefault();
+    }
+
+    document.addEventListener( "DOMContentLoaded", function() {
+        var wipers = document.querySelectorAll( "a.wipe" );
+        for (var i = 0; i < wipers.length; i++) {
+            wipers[i].addEventListener( "click", wipe, true );
+        }
+    }, true );
+
+    function addNote( bugnumber ) {
+        var notediv = document.createElement( "div" );
+        notediv.className = "newnote";
+        var sibling = document.getElementById( "notebuttons" );
+        sibling.parentNode.insertBefore( notediv, sibling );
+        notediv.innerHTML = '<span>Bug <input type="text" size="7" maxlength="10" value="' + bugnumber + '"/></span>: <input class="noteinput" type="text"/><input class="tagsinput" type="text""/>';
+        if (bugnumber) {
+            notediv.getElementsByTagName( "input" )[1].focus();
+        } else {
+            notediv.getElementsByTagName( "input" )[0].focus();
+        }
+    }
+
+    function setNoteNames() {
+        var newnotes = document.getElementsByClassName( "newnote" );
+        while (newnotes.length > 0) {
+            var newnote = newnotes[0];
+            var bugnumbertext = newnote.getElementsByTagName( "input" )[0].value;
+            var bugnumber = parseInt( bugnumbertext );
+            if (isNaN( bugnumber )) {
+                if (window.confirm( "Unable to parse " + bugnumbertext + " as a bug number; replace with 0 and continue anyway?" )) {
+                    bugnumber = 0;
+                } else {
+                    return false;
+                }
+            }
+            var anchor = document.createElement( "a" );
+            anchor.setAttribute( "href", "https://bugzilla.mozilla.org/show_bug.cgi?id=" + bugnumber );
+            anchor.textContent = "Bug " + bugnumber;
+            newnote.replaceChild( anchor, newnote.getElementsByTagName( "span" )[0] );
+            newnote.getElementsByTagName( "input" )[0].setAttribute( "name", "note" + bugnumber );
+            newnote.getElementsByTagName( "input" )[1].setAttribute( "name", "tags" + bugnumber );
+            newnote.className = "note";
+        }
+        return true;
+    }
+
+    function noteify( linkElement, bugnumber ) {
+        var notes = document.getElementsByClassName( "note" );
+        // see if we can find a note already for this bug and just give it focus
+        var search = "Bug " + bugnumber;
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].firstChild.textContent == search) {
+                notes[i].getElementsByTagName( "input" )[0].focus();
+                return false;
+            }
+        }
+        // also search through the newly-added notes that are in a different format
+        notes = document.getElementsByClassName( "newnote" );
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].getElementsByTagName( "input" )[0].value == bugnumber) {
+                notes[i].getElementsByTagName( "input" )[1].focus();
+                return false;
+            }
+        }
+        // couldn't find it, so add a new one
+        addNote( bugnumber );
+        linkElement.textContent = 'U';
+        return false;
+    }
+  </script>
+ </head>
+ <body>
+  <div class="column">
+   &nbsp;  </div>
+  <div class="column">
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug1106280"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1106280)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1106280">Bug 1106280</a> Vertical scroll position is not saved when pressing back button</div><div><div class="row" style="white-space: pre-line;" id="c138918">Fabrice Desré [:fabrice]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1106280#c7">said</a>:<br>Kats, you can repro 100% by loading <a class="linkified" href="http://reddit.com/.compact,">http://reddit.com/.compact,</a> scrolling down
+open a page and then go back in history.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(document.getElementById('bug1106280').offsetLeft,document.getElementById('bug1106280').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(document.getElementById('bug1106280').offsetLeft,document.getElementById('bug1106280').offsetTop);return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug1119245"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1119245)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1119245">Bug 1119245</a>
+ crash in 
+mozilla::layers::CompositorParent::GetAPZTestData(mozilla::layers::LayerTransactionParent
+ const*, mozilla::layers::APZTestData*)</div><div><div class="row" id="d233679">CC:  → milan@mozilla.com</div>
+<div class="row" id="d233680">Component: Graphics: Layers → Panning and Zooming</div>
+<div class="row" id="d233681">See Also:  → https://bugzilla.mozilla.org/show_bug.cgi?id=1119019</div>
+<div class="row" id="d233682">Whiteboard:  → gfx-noted</div>
+<div class="row" style="white-space: pre-line;" id="c141628">Milan Sreckovic [:milan]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1119245#c1">said</a>:<br>Starts in a similar place as <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1119019" title="(Secure bug 1119019 in Core :: Graphics: Layers)">bug 1119019</a></div>
+
+<div class="row" id="d233710">CC:  → botond@mozilla.com</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(document.getElementById('bug1119245').offsetLeft,document.getElementById('bug1119245').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(document.getElementById('bug1119245').offsetLeft,document.getElementById('bug1119245').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug1079627"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1079627)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1079627">Bug 1079627</a> Make RasterImage support multiple decoders at once</div><div><div class="row" style="white-space: pre-line;" id="c141775">Seth Fowler [:seth]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1079627#c17">said</a>:<br>I went ahead and pushed since the tree is orange right now and I think these
+patches will fix it. If not, I apologize in advance for the number of backouts
+that are going to have to happen. =(
+
+remote:   <a class="linkified" href="https://hg.mozilla.org/integration/mozilla-inbound/rev/3dd5401f359c">https://hg.mozilla.org/integration/mozilla-inbound/rev/3dd5401f359c</a>
+remote:   <a class="linkified" href="https://hg.mozilla.org/integration/mozilla-inbound/rev/4d93dcf74f01">https://hg.mozilla.org/integration/mozilla-inbound/rev/4d93dcf74f01</a>
+remote:   <a class="linkified" href="https://hg.mozilla.org/integration/mozilla-inbound/rev/460c36a4666a">https://hg.mozilla.org/integration/mozilla-inbound/rev/460c36a4666a</a>
+remote:   <a class="linkified" href="https://hg.mozilla.org/integration/mozilla-inbound/rev/a8044fd506db">https://hg.mozilla.org/integration/mozilla-inbound/rev/a8044fd506db</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(document.getElementById('bug1079627').offsetLeft,document.getElementById('bug1079627').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(document.getElementById('bug1079627').offsetLeft,document.getElementById('bug1079627').offsetTop);return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <form onsubmit="return setNoteNames()" method="POST" target="_self" style="clear: both">
+   <fieldset>
+    <legend>Bug notes</legend>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=858137">Bug 858137</a>: <input class="noteinput" name="note858137" value="mentored" type="text"><input class="tagsinput" name="tags858137" type="text"> Animated GIFs not working properly on the Samsung Galaxy SII (i9100)</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=894622">Bug 894622</a>: <input class="noteinput" name="note894622" value="mentored" type="text"><input class="tagsinput" name="tags894622" type="text"> display URL/address when hovering over a link</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=976616">Bug 976616</a>: <input class="noteinput" name="note976616" value="mentored" type="text"><input class="tagsinput" name="tags976616" type="text"> Support dynamic viewport changes (changing meta viewport tag from JavaScript)</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=969466">Bug 969466</a>: <input class="noteinput" name="note969466" value="mentored-botond" type="text"><input class="tagsinput" name="tags969466" value="nov26" type="text"> Log checkerboarding in APZC</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=990974">Bug 990974</a>: <input class="noteinput" name="note990974" value="mentored-tn" type="text"><input class="tagsinput" name="tags990974" value="nov03" type="text"> Unexpected checkerboarding when scrolling input field in Contacts app</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=995394">Bug 995394</a>: <input class="noteinput" name="note995394" value="mentored-botond" type="text"><input class="tagsinput" name="tags995394" type="text"> Split BrowserElementPanning.js into two parts</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=996563">Bug 996563</a>: <input class="noteinput" name="note996563" value="mentored" type="text"><input class="tagsinput" name="tags996563" type="text"> Font inflation is not re-run when screen size and density changes</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1023571">Bug 1023571</a>: <input class="noteinput" name="note1023571" value="mentored" type="text"><input class="tagsinput" name="tags1023571" type="text"> Strangely poor performance on fairly simple app</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1092128">Bug 1092128</a>: <input class="noteinput" name="note1092128" value="mentored" type="text"><input class="tagsinput" name="tags1092128" type="text"> [pointer-events] TEST-UNEXPECTED-FAIL | APZCPinchGestureDetectorTester.Pinch_UseGestureDetector_NoTouchAction</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1100315">Bug 1100315</a>: <input class="noteinput" name="note1100315" value="mentored" type="text"><input class="tagsinput" name="tags1100315" value="jan08" type="text"> Implement fling curving in java PZC</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1101627">Bug 1101627</a>: <input class="noteinput" name="note1101627" value="mentored" type="text"><input class="tagsinput" name="tags1101627" value="jan06" type="text"> Add touch-action regions to the layer EventRegions</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1106905">Bug 1106905</a>: <input class="noteinput" name="note1106905" value="mentored" type="text"><input class="tagsinput" name="tags1106905" value="jan10" type="text"> Desktop mode should defeat responsive design</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1110874">Bug 1110874</a>: <input class="noteinput" name="note1110874" value="mentored" type="text"><input class="tagsinput" name="tags1110874" type="text"> PROFILER_MARKER_PAYLOAD can leak objects if MOZ_ENABLE_PROFILER_SPS is not defined</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=990907">Bug 990907</a>: <input class="noteinput" name="note990907" value="mentored" type="text"><input class="tagsinput" name="tags990907" type="text"> </div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1117712">Bug 1117712</a>: <input class="noteinput" name="note1117712" value="eye" type="text"><input class="tagsinput" name="tags1117712" type="text"> [Flame][Calendar]Tap an All day event in Week view,it can't enter event detail view.</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1042103">Bug 1042103</a>: <input class="noteinput" name="note1042103" type="text"><input class="tagsinput" name="tags1042103" value="!take" type="text"> Don't ignore touch events while in an overscroll animation</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=986884">Bug 986884</a>: <input class="noteinput" name="note986884" type="text"><input class="tagsinput" name="tags986884" value="waiting-spec" type="text"> [Camera][Madai] Settings options lose the active state when sliding the finger</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1102427">Bug 1102427</a>: <input class="noteinput" name="note1102427" type="text"><input class="tagsinput" name="tags1102427" value="!move-dep" type="text"> Ensure scroll parents of an active scrollframe are layerized</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1105812">Bug 1105812</a>: <input class="noteinput" name="note1105812" type="text"><input class="tagsinput" name="tags1105812" value="!address-comments" type="text"> run-gdb.sh should allow overriding GDB_PORT so as to more easily allow running gdb over ssh</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=920036">Bug 920036</a>: <input class="noteinput" name="note920036" type="text"><input class="tagsinput" name="tags920036" value="inbound-b2g" type="text"> Route all events through the APZCTreeManager on B2G</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1119177">Bug 1119177</a>: <input class="noteinput" name="note1119177" type="text"><input class="tagsinput" name="tags1119177" value="waiting-window" type="text"> [Homescreen] User could not tap app correctly when scroll screen down to button and tap home button while flywheel scrolling</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1107009">Bug 1107009</a>: <input class="noteinput" name="note1107009" type="text"><input class="tagsinput" name="tags1107009" value="fix" type="text"> (Secure bug 1107009 in Core :: Graphics: Layers)</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1119497">Bug 1119497</a>: <input class="noteinput" name="note1119497" type="text"><input class="tagsinput" name="tags1119497" value="inbound-b2g" type="text"> With bug 920036 applied, user is able to scroll stuff through the notification tray</div>
+    <div class="note"><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1119355">Bug 1119355</a>: <input class="noteinput" name="note1119355" type="text"><input class="tagsinput" name="tags1119355" value="!redo" type="text"> [Settings] User is able to use slider and scroll at the same time</div>
+    <div id="notebuttons">
+     <input value="Add note" onclick="addNote('')" type="button">
+     <input id="savenotes" value="Save notes" type="submit">
+    </div>
+   </fieldset>
+  </form>
+  <form method="POST" action="search.php">
+   <fieldset>
+    <legend>Recent bug search</legend>
+    <input name="q" type="text">
+    <input value="Search" type="submit">
+   </fieldset>
+  </form>
+ 
+
+</body></html>

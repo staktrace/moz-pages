@@ -1,0 +1,290 @@
+/*
+Theme Name: Jade
+Theme URI: http://themeforest.net/item/jade-flexible-multi-purpose-responsive-theme/9333003
+Author: MetCreative
+Author URI: http://metcreative.com/
+Version: 1.2.1
+Description: A True Multi-Purpose Theme
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: Jade
+Tags: custom-header, custom-background, custom-menu, responsive-layout, full-width-template, post-formats, theme-options, translation-ready
+*/
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
+}
+
+ins {
+    background-color: rgba(254,255,0,0.68);
+    text-decoration: none;
+}
+
+/* =Content
+----------------------------------------------- */
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+dt{font-weight: bold;}
+dd{margin-left: 10px !important;}
+abbr, tla, acronym {
+	text-decoration: underline;
+	cursor: help;
+}
+cite,q{font-style: italic !important}
+
+
+.post img,.page img,.size-full{max-width: 100%; height: auto;}
+/* =Asides
+-----------------------------------------------
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}*/
+
+
+/* =Media
+----------------------------------------------- */
+.gallery-item:first-child{clear: left}
+.gallery-item{vertical-align: top;}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+    clear: both;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 .gallery-item {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*
+.oembed-custom-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+}
+
+.oembed-custom-conteiner iframe,
+.oembed-custom-conteiner object,
+.oembed-custom-conteiner embed,
+.oembed-custom-conteiner a{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.oembed-custom-conteiner iframe {
+	width: 100%;
+}*/
+
+.mfp-inline-holder .mfp-content{text-align: center;}
+
+.mfp-inline-holder .mfp-content > div{display: inline-block;}
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content [class*="navigation"] {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+[class*="navigation"] .previous {
+	float: left;
+	width: 50%;
+}
+[class*="navigation"] .next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+.comment-form-comment label {
+	display: none;
+}
+
+.pingback blockquote{
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 5px;
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .submit {
+	display: none;
+}
+
+.form-allowed-tags code {
+	background: none !important;
+	border: none;
+	font-size: 12px;
+	white-space: normal;
+}
+
+.dslca-enabled #TB_overlay {
+	z-index: 999999998!important;
+}
+
+.dslca-enabled #TB_window {
+	z-index: 999999999!important;
+}
+
+
+/* =Table
+----------------------------------------------- */
+.met_blog_block_text table,
+.met_blog_detail table,
+.met_comment table,
+.page table {
+	margin: 20px 0;
+	width: 100%;
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.met_blog_block_text table thead:first-child tr:first-child th,
+.met_blog_block_text table tbody:first-child tr:first-child th,
+.met_blog_block_text table tbody:first-child tr:first-child td,
+.met_blog_detail table thead:first-child tr:first-child th,
+.met_blog_detail table tbody:first-child tr:first-child th,
+.met_blog_detail table tbody:first-child tr:first-child td,
+.met_comment table thead:first-child tr:first-child th,
+.met_comment table tbody:first-child tr:first-child th,
+.met_comment table tbody:first-child tr:first-child td,
+.page table thead:first-child tr:first-child th,
+.page table tbody:first-child tr:first-child th,
+.page table tbody:first-child tr:first-child td{
+	border-top: 0;
+}
+
+.met_blog_block_text table th,
+.met_blog_block_text table td,
+.met_blog_detail table th,
+.met_blog_detail table td,
+.met_comment table th,
+.met_comment table td,
+.page table th,
+.page table td{
+	padding: 8px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+	text-align: left;
+	line-height: 18px;
+}

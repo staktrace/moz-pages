@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+  <title>Touch Event Test</title>
+  <style>
+    * {
+      font-size: 24px;
+      box-sizing: border-box;
+    }
+
+    #video {
+      display:block;
+      position:absolute;
+      top: 100px;
+      left:0;
+      width: 33%;
+      height: 100px;
+      border:solid black 1px;
+      background-color: #8a8;
+    }
+
+    #audio {
+      display:block;
+      position:absolute;
+      top: 100px;
+      left:33%;
+      width: 33%;
+      height: 100px;
+      border:solid black 1px;
+      background-color: #a88;
+    }
+
+    #div {
+      display:block;
+      position:absolute;
+      top: 100px;
+      left: 66%;
+      width: 34%;
+      height: 100px;
+      border:solid black 1px;
+      background-color: #88a;
+    }
+
+    #reset {
+      position:absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    #log {
+      position:absolute;
+      top: 200px;
+      height: 300px;
+      overflow: scroll;
+      left:0;
+      width:100%;
+    }
+  </style>
+</head>
+<body>
+<p>Tap on the colored boxes to hide them.</p>
+<video id="video"></video>
+<audio id="audio" controls></audio>
+<div id="div"></div>
+<br>
+<pre id="log"></pre>
+<button id="reset">Reset</button>
+<script>
+var v = document.getElementById('video');
+var a = document.getElementById('audio');
+var d = document.getElementById('div');
+var reset = document.getElementById('reset');
+var log = document.getElementById('log');
+
+reset.onclick = function() {
+  v.style.display = 'block';
+  a.style.display = 'block';
+  d.style.display = 'block';
+  log.textContent = '';
+}
+
+document.body.ontouchstart = function(e) {
+  if (e.target === v) {
+    v.style.display = 'none';
+  }
+  if (e.target === a) {
+    a.style.display = 'none';
+  }
+  if (e.target === d) {
+    d.style.display = 'none';
+  }
+
+  print(e);
+};
+
+document.body.ontouchend = function(e) {
+  print(e);
+};
+
+document.body.ontouchmove = function(e) {
+  print(e);
+};
+
+document.body.ontouchcancel = function(e) {
+  print(e);
+};
+
+function print(e) {
+  log.textContent += e.type + " " + e.target.id + ', ' + (typeof e.originalTarget) + '\n';
+}
+</script>
+</body>
+</html>
+

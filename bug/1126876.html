@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  <div id="scrollable" style="overflow: scroll; width: 150px; height: 300px">
+   <div id="inner" style="width: 1000px; height: 1000px; background-color: blue"></div>
+  </div>
+  <div id="noout" style="pointer-events: none; overflow: scroll; width: 100px; height: 100px; position: absolute; left: 10px; top: 10px">
+   <div id="noin" style="width: 1000px; height: 1000px; background-color: green"></div>
+  </div>
+  <iframe style="pointer-events: none; width: 100px; height: 100px; position: absolute; left: 10px; top: 158px; border: solid 2px black" src="https://staktrace.com/"></iframe>
+  <script>
+    document.body.addEventListener('click', function(e) {
+        console.log('clicked on body');
+    }, false);
+    document.getElementById('scrollable').addEventListener('click', function(e) {
+        console.log('clicked on scrollable');
+    }, false);
+    document.getElementById('inner').addEventListener('click', function(e) {
+        console.log('clicked on inner');
+    }, false);
+    document.getElementById('noout').addEventListener('click', function(e) {
+        console.log('clicked on noout');
+    }, false);
+    document.getElementById('noin').addEventListener('click', function(e) {
+        console.log('clicked on noin');
+    }, false);
+  </script>
+ </body>
+</html>

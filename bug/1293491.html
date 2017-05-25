@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var el;
+
+window.onresize = window.onscroll = function () {
+    el.style.width = ((window.innerWidth / 100) * 80).toFixed(2) + 'px';
+    el.style.height = ((window.innerHeight / 100) * 80).toFixed(2) + 'px';
+    el.style.left = (window.pageXOffset + ((window.innerWidth / 100) * 10)).toFixed(2) + "px";
+    el.style.top = (window.pageYOffset + ((window.innerHeight / 100) * 10)).toFixed(2) + "px";
+    el.innerHTML = "window.innerWidth: " + window.innerWidth + "<br>window.innerHeight: " + window.innerHeight + "<br>window.pageXOffset: " + window.pageXOffset + "<br>window.pageYOffset: " + window.pageYOffset;  
+}
+
+window.onload = function () {
+    document.body.innerHTML = "<div id=\"dome\" style=\"padding: 0px;height: 80%;width: 80%;font-size: 8px;position: absolute;background-color: #9198C1;\"></div>";
+    el = document.getElementById('dome');
+    window.onresize();
+}
+</script>
+</head>
+<body width="100%" height="100%" marginheight="0" marginwidth="0" spacing="0" style="width:100%;height:100%;overflow:hidden;"></body>
+</body>
+</html>

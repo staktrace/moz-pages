@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+Below is an opacity:0 400x400 div. The top-left 200x200 of it has a touch listener that should prevent panning initiated in that quadrant. Panning in the remaining 3 quadrants of the opacity:0 div should work fine.
+<div style="width: 400px; height: 400px; opacity: 0" id="outer">
+ <div style="width: 200px; height: 200px" id="inner"><a href="#fail">i am a link that should not be clickable because the event listener will preventdefault the click event</a></div>
+</div>
+<div style="height: 1000px; border: solid 1px black">
+this is a tall div to make the page scrollable
+</div>
+<script>
+    function ev(e) {
+        console.log(e.type);
+        e.preventDefault();
+    }
+    document.getElementById('inner').addEventListener('click', ev, false);
+    document.getElementById('inner').addEventListener('touchstart', ev, false);
+</script>
+</body>
+</html>

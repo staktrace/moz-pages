@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html><head><title>scrollMaxX test</title></head>
+<body onload="check()">
+ <div id="test1" dir="ltr" style="overflow: auto; width: 100px; height: 100px; border: 5px solid black"><div style="width: 200px; height: 200px">blah</div></div>
+ <div id="test2" dir="rtl" style="overflow: auto; width: 100px; height: 100px; border: 5px solid black"><div style="width: 200px; height: 200px">blah</div></div>
+ <div id="out"></div>
+ <script>
+    function check() {
+        document.getElementById('out').innerHTML = "test1.scrollMaxX should be 100, is actually: " + document.getElementById('test1').scrollMaxX
+                                        + "<br>" + "test2.scrollMaxX should be 0, is actually: " + document.getElementById('test2').scrollMaxX;
+    }
+ </script>
+</body>

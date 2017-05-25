@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width">
+<body id="body">
+<div id="p" style="position:absolute; width: 80%; height: 80%">
+<div id="x" style="overflow:auto; position:relative; box-sizing: border-box; width: 100%; height: 100%; border: solid 1px black">
+ <div id="y" style="width: 100px;">
+ this<br/>
+ is<br/>
+ a<br/>
+ scrollable<br/>
+ frame<br/>
+ and<br/>
+ you<br/>
+ should<br/>
+ be<br/>
+ able<br/>
+ to<br/>
+ scroll<br/>
+ it<br/>
+ without<br/>
+ problems.<br/>
+ however<br/>
+ if<br/>
+ you<br/>
+ scroll<br/>
+ down<br/>
+ and<br/>
+ then<br/>
+ try<br/>
+ to<br/>
+ scroll<br/>
+ back<br/>
+ up<br/>
+ by<br/>
+ dragging<br/>
+ the<br/>
+ right<br/>
+ side<br/>
+ it<br/>
+ won't<br/>
+ work.<br/>
+ dragging<br/>
+ on<br/>
+ the<br/>
+ left<br/>
+ side<br/>
+ should<br/>
+ work<br/>
+ fine.<br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ foo
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ bar
+ </div>
+</div>
+</div>
+</body>
+<script>
+    document.body.addEventListener('click', function(e) {
+        console.log('click on ' + e.target.id);
+    }, false);
+</script>

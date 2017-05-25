@@ -1,0 +1,475 @@
+<!-- saved from http://www.socialfly.com.br/videos/11-este-homem-resolve-deixar-a-baboseira-de-lado-e-resume-o-maior-do-problema-do-brasil-em-2-minutos -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>BUG 964403</title>
+
+  <style type="text/css">
+  body {
+    line-height: 1;
+    color: black;
+    background: white
+  }
+
+  body {
+    font-size: 75%;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: #5e6469
+  }
+
+  h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+    margin: 0
+  }
+
+  h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 0.5em
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 0.75em
+  }
+
+  h3 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 1em
+  }
+
+  h4 {
+    font-size: 1.2em;
+    line-height: 1.25;
+    margin-bottom: 1.25em
+  }
+
+  h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1.5em
+  }
+
+  h6 {
+    font-size: 1em;
+    font-weight: bold
+  }
+
+  p {
+    margin: 0 0 1.5em
+  }
+
+    blockquote {
+    margin: 1.5em;
+    color: #666;
+    font-style: italic
+  }
+
+  strong, dfn {
+    font-weight: bold
+  }
+
+  em, dfn {
+    font-style: italic
+  }
+
+  sup, sub {
+    line-height: 0
+  }
+
+  abbr, acronym {
+    border-bottom: 1px dotted #666
+  }
+
+  address {
+    margin: 0 0 1.5em;
+    font-style: italic
+  }
+
+  del {
+    color: #666
+  }
+
+  pre {
+    margin: 1.5em 0;
+    white-space: pre
+  }
+
+  pre, code, tt {
+    font: 1em 'andale mono', 'lucida console', monospace;
+    line-height: 1.5
+  }
+
+  li ul, li ol {
+    margin: 0
+  }
+
+  ul, ol {
+    margin: 0 1.5em 1.5em 0;
+    padding-left: 1.5em
+  }
+
+  ul {
+    list-style-type: disc
+  }
+
+  ol {
+    list-style-type: decimal
+  }
+
+  dl {
+    margin: 0 0 1.5em 0
+  }
+
+  dl dt {
+    font-weight: bold
+  }
+
+  dd {
+    margin-left: 1.5em
+  }
+
+  table {
+    margin-bottom: 1.4em;
+    width: 100%
+  }
+
+  th {
+    font-weight: bold
+  }
+
+  a, a:link, a:visited {
+    color: #38678b;
+    text-decoration: underline
+  }
+
+  a:hover {
+    text-decoration: none
+  }
+
+  .section > h3, .panel > h3 {
+    background: #efefef;
+    background: -webkit-linear-gradient(-90deg, #efefef, #dfe1e2);
+    background: -moz-linear-gradient(-90deg, #efefef, #dfe1e2);
+    background: linear, -90deg, #efefef, #dfe1e2;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEFEFEF', endColorstr='#FFDFE1E2');
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEFEFEF', endColorstr='#FFDFE1E2');
+    text-shadow: white 0 1px 0;
+    border: solid 1px #cdcdcd;
+    border-color: #d4d4d4;
+    border-top-color: #e6e6e6;
+    border-right-color: #d4d4d4;
+    border-bottom-color: #cdcdcd;
+    border-left-color: #d4d4d4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px #fff inset;
+    font-size: 1.0em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    color: #5e6469;
+    padding: 5px 10px 3px 10px
+  }
+
+
+  .section > div, .panel > div {
+    padding: 3px 15px 15px 15px
+  }
+
+  .section hr, .panel hr {
+    border: none;
+    border-bottom: 1px solid #E8E8E8
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 150%;
+    font-size: 72%;
+    background: white;
+    margin: 0;
+    padding: 0;
+    color: #323537
+  }
+
+  a {
+    text-decoration: none !important
+  }
+
+  body, h1, h2, h3, h4, form, input, textarea, label, a, img {
+    vertical-align: baseline;
+    font-style: normal;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 0
+  }
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+  }
+
+  p {
+    margin: 0px !important
+  }
+
+  hr {
+    height: 1px;
+    border: 10px solid #eee;
+    margin: 10px 0 10px 0
+  }
+
+  em, dfn {
+    font-style: italic
+  }
+
+  b, strong {
+    font-weight: bold
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0
+  }
+
+  fieldset {
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 5px
+  }
+
+  button, html input[type="button"], input[type="submit"] {
+    cursor: pointer
+  }
+
+  button, input {
+    line-height: normal;
+    font-weight: normal
+  }
+
+  abbr[title], dfn[title] {
+    cursor: help;
+    border-bottom: 1px dotted
+  }
+
+  pre, code {
+    font-family: monospace
+  }
+
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #ebebeb
+  }
+
+  /*
+  .content {
+    float: left;
+    width: 100%;
+    padding: 10px
+  }
+  */
+
+  p {
+    font-size: 14px;
+    line-height: 18px
+  }
+
+  h1 {
+    margin-bottom: 1em
+  }
+
+  h2 {
+    border-bottom: 1px dashed #c4c4c4;
+    float: left;
+    width: 100%;
+    margin-bottom: 1em;
+    padding-bottom: 10px
+  }
+
+  h2 span {
+    background: orange;
+    color: white;
+    padding: 10px
+  }
+
+  h5 {
+    background: none repeat scroll 0 0 #FFA500;
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 20px solid #E47601;
+    border-top: 0 solid rgba(0, 0, 0, 0);
+    box-shadow: 0 7px 3px -6px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    float: left;
+    font-size: 22px;
+    margin-left: -10px;
+    margin-top: -15px;
+    padding: 11px;
+    position: relative;
+    z-index: 2
+  }
+
+  .holder {
+    width: 960px;
+    margin: auto
+  }
+
+  .collumn4 h3, .collumn4 p {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    height: 76px
+  }
+
+  .collumn4 h3 span {
+    font-weight: lighter;
+    font-size: 11px;
+    padding-left: 10px;
+    display: none
+  }
+
+  header {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.5);
+    background: #fff
+  }
+
+  .show {
+    width: 960px;
+    margin: 5px auto 0 auto;
+    padding: 0;
+    min-height: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.5);
+    display: table
+  }
+
+  .show .main {
+    margin: 0;
+    padding: 30px 20px 20px 20px;
+    width: 670px;
+    float: left
+  }
+
+  .show .main h1 {
+    margin: 0 20px 20px 0
+  }
+
+  .show .main .video_description {
+    margin: 0 20px 20px 0
+  }
+
+  .show .main .video_description p {
+    font-size: 14px
+  }
+
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden
+  }
+  </style>
+</head>
+<body >
+<div >
+  <div id="bug_bug_bug" style="width: 100%; padding: 10px">
+    <div class="holder">
+      <section role="main">
+        <div class="show">
+          <div class="main">
+            <div class="video_title">
+              <h1>
+               Este Homem Resolve Deixar a Baboseira de Lado e Resume o Maior do Problema do Brasil em 2 Minutos.
+              </h1>
+              <h1>
+                Este Homem Resolve Deixar a Baboseira de Lado e Resume o Maior do Problema do Brasil em 2 Minutos.
+              </h1>
+              <h1>
+                Este Homem Resolve Deixar a Baboseira de Lado e Resume o Maior do Problema do Brasil em 2 Minutos.
+              </h1>
+            </div>
+            <div class="video_description">
+              <p>“Desigualdade não é um mal em si; depende de como se chega a ela.” Eduardo Giannetti, economista e
+                pensador brasileiro, explica a origem do maior problema do Brasil. Minha parte favorita nesse vídeo é
+                ver a cara de espanto/ponto de interrogação da Marília Gabriela e dos convidados no minuto 1:21.
+                Fantástico.</p>
+
+              <p>“Desigualdade não é um mal em si; depende de como se chega a ela.” Eduardo Giannetti, economista e
+                pensador brasileiro, explica a origem do maior problema do Brasil. Minha parte favorita nesse vídeo é
+                ver a cara de espanto/ponto de interrogação da Marília Gabriela e dos convidados no minuto 1:21.
+                Fantástico.</p>
+
+              <p>“Desigualdade não é um mal em si; depende de como se chega a ela.” Eduardo Giannetti, economista e
+                pensador brasileiro, explica a origem do maior problema do Brasil. Minha parte favorita nesse vídeo é
+                ver a cara de espanto/ponto de interrogação da Marília Gabriela e dos convidados no minuto 1:21.
+                Fantástico.</p>
+
+              <p>“Desigualdade não é um mal em si; depende de como se chega a ela.” Eduardo Giannetti, economista e
+                pensador brasileiro, explica a origem do maior problema do Brasil. Minha parte favorita nesse vídeo é
+                ver a cara de espanto/ponto de interrogação da Marília Gabriela e dos convidados no minuto 1:21.
+                Fantástico.</p>
+
+              <p>“Desigualdade não é um mal em si; depende de como se chega a ela.” Eduardo Giannetti, economista e
+                pensador brasileiro, explica a origem do maior problema do Brasil. Minha parte favorita nesse vídeo é
+                ver a cara de espanto/ponto de interrogação da Marília Gabriela e dos convidados no minuto 1:21.
+                Fantástico.</p>
+
+              <p>“Desigualdade não é um mal em si; depende de como se chega a ela.” Eduardo Giannetti, economista e
+                pensador brasileiro, explica a origem do maior problema do Brasil. Minha parte favorita nesse vídeo é
+                ver a cara de espanto/ponto de interrogação da Marília Gabriela e dos convidados no minuto 1:21.
+                Fantástico.</p>
+
+            </div>
+
+            <div class="after_video">
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+
+              <p>Se você, como nós, achou este homem brilhante, é porque ele é. A gente recomenda você procurar saber
+                mais sobre ele. Você pode começar por aqui:
+                http://pt.wikipedia.org/wiki/Eduardo_Giannetti_da_Fonseca</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

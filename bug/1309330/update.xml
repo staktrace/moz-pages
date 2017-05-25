@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<updates>
+    <addons>
+        <addon id="e10srollout@mozilla.org" URL="https://ftp.mozilla.org/pub/system-addons/e10srollout/e10srollout@mozilla.org-ff48-49-1.3.xpi" hashFunction="sha512" hashValue="0df40fab234d5cf881fd2edc2d6054fb1e597203da6cb6204815ba78190d65f652278fd9555ae9aa76b67df8a5f5b47f3d0d68ace667049255fabc73b399de18" size="7076" version="1.3"/>
+        <addon id="d3d9fallback@mozilla.org" URL="https://people.mozilla.org/~kgupta/bug/1309330/d3d9fallback@mozilla.org.xpi" hashFunction="sha512" hashValue="2ca6a77f168f72208a75d213453d50fe4af22bf6efa73fe7654b53e067355570b7c02f1b810b73d9d6e5b17b2ff33a4fb0a10592a4742717aa709198dc026bbe" size="5311" version="1.0"/>
+    </addons>
+</updates>

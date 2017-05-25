@@ -1,0 +1,257 @@
+------------------------------------------------------------------
+Invocation
+------------------------------------------------------------------
+
+$DMD = '1'
+Sample-below size = 4093
+
+------------------------------------------------------------------
+Double-reported blocks
+------------------------------------------------------------------
+
+(none)
+
+------------------------------------------------------------------
+Unreported blocks
+------------------------------------------------------------------
+
+Unreported: ~727 blocks in block group 1 of 1
+ ~9,742,800 bytes (~9,272,726 requested / ~470,074 slop)
+ 42.03% of the heap (42.03% cumulative);  100.00% of unreported (100.00% cumulative)
+ Allocated at
+   (empty)
+
+------------------------------------------------------------------
+Unreported frames
+------------------------------------------------------------------
+
+(none)
+
+------------------------------------------------------------------
+Reported blocks
+------------------------------------------------------------------
+
+Reported: ~1,173 blocks in block group 1 of 21
+ ~6,157,804 bytes (~6,039,904 requested / ~117,900 slop)
+ 26.56% of the heap (26.56% cumulative);  45.82% of reported (45.82% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'js' at
+   (empty)
+
+Reported: ~62 blocks in block group 2 of 21
+ ~2,191,357 bytes (~2,055,238 requested / ~136,119 slop)
+ 9.45% of the heap (36.02% cumulative);  16.31% of reported (62.12% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'startup-cache/data' at
+   (empty)
+
+Reported: ~137 blocks in block group 3 of 21
+ ~1,462,083 bytes (~1,304,979 requested / ~157,104 slop)
+ 6.31% of the heap (42.32% cumulative);  10.88% of reported (73.00% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'freetype' at
+   (empty)
+
+Reported: 51 blocks in block group 4 of 21
+ 917,504 bytes (909,320 requested / 8,184 slop)
+ 3.96% of the heap (46.28% cumulative);  6.83% of reported (79.83% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'xpti-working-set' at
+   (empty)
+
+Reported: ~138 blocks in block group 5 of 21
+ ~769,781 bytes (~728,649 requested / ~41,132 slop)
+ 3.32% of the heap (49.60% cumulative);  5.73% of reported (85.56% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'windows' at
+   (empty)
+
+Reported: ~51 blocks in block group 6 of 21
+ ~688,020 bytes (~671,004 requested / ~17,016 slop)
+ 2.97% of the heap (52.57% cumulative);  5.12% of reported (90.68% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'js-worker' at
+   (empty)
+
+Reported: ~60 blocks in block group 7 of 21
+ ~245,580 bytes (~245,580 requested / ~0 slop)
+ 1.06% of the heap (53.63% cumulative);  1.83% of reported (92.50% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'layout/style-sheet-cache' at
+   (empty)
+
+Reported: ~24 blocks in block group 8 of 21
+ ~212,926 bytes (~204,742 requested / ~8,184 slop)
+ 0.92% of the heap (54.55% cumulative);  1.58% of reported (94.09% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'atom-table' at
+   (empty)
+
+Reported: ~19 blocks in block group 9 of 21
+ ~171,987 bytes (~162,271 requested / ~9,716 slop)
+ 0.74% of the heap (55.29% cumulative);  1.28% of reported (95.37% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'component-manager' at
+   (empty)
+
+Reported: ~10 blocks in block group 10 of 21
+ ~139,240 bytes (~131,056 requested / ~8,184 slop)
+ 0.60% of the heap (55.89% cumulative);  1.04% of reported (96.40% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'script-namespace-manager' at
+   (empty)
+
+Reported: ~14 blocks in block group 11 of 21
+ ~131,057 bytes (~124,921 requested / ~6,136 slop)
+ 0.57% of the heap (56.45% cumulative);  0.98% of reported (97.38% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'preferences' at
+   (empty)
+
+Reported: 1 block in block group 12 of 21
+ 69,632 bytes (65,540 requested / 4,092 slop)
+ 0.30% of the heap (56.75% cumulative);  0.52% of reported (97.90% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'effective-tld-service' at
+   (empty)
+
+Reported: ~11 blocks in block group 13 of 21
+ ~53,230 bytes (~44,016 requested / ~9,214 slop)
+ 0.23% of the heap (56.98% cumulative);  0.40% of reported (98.29% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'font-list' at
+   (empty)
+
+Reported: 4 blocks in block group 14 of 21
+ 36,864 bytes (33,628 requested / 3,236 slop)
+ 0.16% of the heap (57.14% cumulative);  0.27% of reported (98.57% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'network-disk-cache' at
+   (empty)
+
+Reported: ~9 blocks in block group 15 of 21
+ ~36,837 bytes (~36,837 requested / ~0 slop)
+ 0.16% of the heap (57.30% cumulative);  0.27% of reported (98.84% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'layout/style-sheet-service' at
+   (empty)
+
+Reported: 3 blocks in block group 16 of 21
+ 32,768 bytes (27,909 requested / 4,859 slop)
+ 0.14% of the heap (57.44% cumulative);  0.24% of reported (99.09% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'images' at
+   (empty)
+
+Reported: ~6 blocks in block group 17 of 21
+ ~32,756 bytes (~32,756 requested / ~0 slop)
+ 0.14% of the heap (57.58% cumulative);  0.24% of reported (99.33% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'category-manager' at
+   (empty)
+
+Reported: ~8 blocks in block group 18 of 21
+ ~32,744 bytes (~32,744 requested / ~0 slop)
+ 0.14% of the heap (57.73% cumulative);  0.24% of reported (99.57% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'font-cache' at
+   (empty)
+
+Reported: ~3 blocks in block group 19 of 21
+ ~24,570 bytes (~20,478 requested / ~4,092 slop)
+ 0.11% of the heap (57.83% cumulative);  0.18% of reported (99.76% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'telemetry' at
+   (empty)
+
+Reported: 1 block in block group 20 of 21
+ 20,480 bytes (16,472 requested / 4,008 slop)
+ 0.09% of the heap (57.92% cumulative);  0.15% of reported (99.91% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'cycle-collector' at
+   (empty)
+
+Reported: ~3 blocks in block group 21 of 21
+ ~12,279 bytes (~12,279 requested / ~0 slop)
+ 0.05% of the heap (57.97% cumulative);  0.09% of reported (100.00% cumulative)
+ Allocated at
+   (empty)
+
+ Reported by 'orphans' at
+   (empty)
+
+------------------------------------------------------------------
+Reported frames
+------------------------------------------------------------------
+
+(none)
+
+------------------------------------------------------------------
+Summary
+------------------------------------------------------------------
+
+Total:      ~23,182,299 bytes
+Reported:   ~13,439,499 bytes (57.97%)
+Unreported: ~9,742,800 bytes (42.03%)
+
+------------------------------------------------------------------
+Execution measurements
+------------------------------------------------------------------
+
+Data structures that persist after Dump() ends:
+  Stack traces:               112 bytes
+  Stack trace table:      262,224 bytes (16,384 entries, 1 used)
+  Live block table:       262,224 bytes (8,192 entries, 2,515 used)
+
+Data structures that are partly cleared after Dump() ends:
+  Double-report table:        240 bytes (4 entries, 0 used)
+
+Data structures that are destroyed after Dump() ends:
+  Unreported table:        65,536 bytes (2,048 entries, 1 used)
+  Reported table:          65,536 bytes (2,048 entries, 21 used)
+  Location service:        71,680 bytes
+
+Counts:
+  Location service:             0 requests
+  Location service cache:   NaN% hit rate, 0.0% occupancy at end
+

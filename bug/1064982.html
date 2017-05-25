@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width">
+<script>
+    function update() {
+        document.getElementById('x').textContent = 'inner: ' + window.innerHeight + '; outer: ' + window.outerHeight;
+    }
+
+    window.addEventListener('resize', update, false);
+</script>
+<body onload="update()">
+ <div id="x" style="position:fixed; top:0"></div>
+</body>

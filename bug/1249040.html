@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>scroll-snap-type proximity</title>
+    <style>
+section {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+.background {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: red;
+}
+.container {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-destination: 0 0;
+  scroll-snap-type: proximity;
+}
+.link {
+  display: block;
+  height: 250px;
+}
+.snapTargetTop {
+  /*scroll-snap-coordinate: 0 0;*/
+}
+.content {
+  height: 2000px;
+  z-index: 1;
+  position: relative;
+  background: white;
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+  box-shadow: 0 0 3.75em 1.25em rgba(0, 0, 0, 0.5);
+  /*scroll-snap-coordinate: 0 0;*/
+}
+.snapTargetBottom {
+  position: absolute;
+  height: 100%;
+}
+.snapTargetBottomInner {
+  position: absolute;
+  top: -100%;
+  scroll-snap-coordinate: 0 0;
+}
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="background">
+      </div>
+      <div class="container">
+        <div class="snapTargetTop"></div>
+        <a class="link"></a>
+        <div class="content"></div>
+        <div class="snapTargetBottom">
+          <div class="snapTargetBottomInner"></div>
+        </div>
+        <a class="link"></a>
+        <div class="snapTargetBottom">
+          <div class="snapTargetBottomInner"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

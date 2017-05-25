@@ -1,0 +1,17 @@
+<html><head><title>Width properties</title>
+<script>
+function x() {
+    alert( document.body.scrollWidth + "," + document.body.offsetWidth + "," + document.body.clientWidth + ", "
+        +  document.documentElement.scrollWidth + "," + document.documentElement.offsetWidth + "," + document.documentElement.clientWidth + ", "
+        +  window.innerWidth);
+}
+
+window.onload = function() {
+    window.onresize = x;
+}
+</script>
+</head>
+<body>
+rotate me!
+</body>
+</html>

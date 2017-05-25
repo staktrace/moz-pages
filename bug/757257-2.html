@@ -1,0 +1,15 @@
+<head>
+ <title>Font inflation grouping test</title>
+ <style type="text/css">
+    .someText {
+        float: left;
+        width: 492px;
+        font-size: 10px;
+        line-height: 11px;
+    }
+ </style>
+</head>
+<body>
+ <div id="short" class="someText">a short piece of text</div>
+ <div id="long" class="someText">this is a simple div in the body that has some long piece of text. the idea here is that this div will get grouped with the next div below. the next div has a short piece of text, and so by default shouldn't not get inflated. however, because it is grouped with this one, and this one does get inflated, that one should get inflated too. i refer to this behaviour as overriding the default inflation because of element grouping.</div>
+</body>

@@ -1,0 +1,79 @@
+/*
+ * (c) staktrace systems, 2010.
+ * See http://staktrace.com/ for license details.
+ */
+
+table.alphaList {
+    width: 100%;
+    border-width: 0px;
+    border-style: none;
+}
+
+td.alphaList {
+    width: 50%;
+    text-align: left;
+    vertical-align: top;
+}
+
+div.commentBlock {
+    text-align: left;
+    border: solid 1px black;
+    background-color: #e0e0e0;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+div.commentAddBlock {
+    border: solid 1px black;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+    vertical-align: top;
+}
+
+div.commentName {
+    text-align: left;
+    border: none;
+    background-color: #c0c0c0;
+    padding: 0px 5px;
+    margin: 0px;
+}
+
+div.commentAdd {
+    text-align: right;
+    margin-top: 5px;
+}
+
+span.commentEdit {
+    float: right;
+    text-align: right;
+}
+
+div.commentEntry {
+    padding: 0px 5px;
+    margin: 0px;
+}
+
+div.commentBlock textarea {
+    width: 98%;
+    height: 5em;
+}
+
+.commentAddField {
+    display: inline-block;
+    width: 8em;
+    text-align: right;
+    vertical-align: top;
+}
+
+div.commentAddBlock textarea {
+    width: 85%;
+    height: 5em;
+}
+
+div.events {
+    border: solid 1px red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

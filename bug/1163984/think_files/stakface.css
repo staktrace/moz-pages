@@ -1,0 +1,318 @@
+/** General Modifiers **/
+
+body {
+    background-color: #ffffff;
+    font-family: Sans-Serif;
+    font-size: 10pt;
+    line-height: 150%;
+}
+
+p {
+    font-family: Sans-Serif;
+    font-size: 10pt;
+    line-height: 150%;
+}
+
+ul {
+    font-family: Sans-Serif;
+    font-size: 10pt;
+    line-height: 150%;
+}
+
+a {
+    text-decoration: none;
+    color: #00a0a0;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #00a0a0;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff0000;
+}
+
+a img {
+    border: none;
+}
+
+h1 {
+    font-size: 17pt;
+    text-align: center;
+}
+
+h2 {
+    font-size: 15pt;
+    text-align: left;
+}
+
+h3 {
+    font-size: 13pt;
+    text-align: left;
+}
+
+h4 {
+    font-size: 11pt;
+    text-align: left;
+}
+
+h5 {
+    font-size: 9pt;
+    text-align: left;
+}
+
+h6 {
+    font-size: 7pt;
+    text-align: left;
+}
+
+/** Utility CSS **/
+
+td.spacer {
+}
+
+p.error {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+p.success {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #0000ff;
+}
+
+hr.sectionDivider {
+    width: 95%;
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
+
+p.modOption {
+    text-align: right;
+}
+
+pre.codeBox {
+    font-family: Monospace;
+    border: solid;
+    border-width: 2px;
+    border-color: #000000;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+blockquote.quote, p.quote {
+    font-size: 9pt;
+    text-align: left;
+    line-height: 120%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+table.miniNavTable {
+    width: 100%;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+td.miniNavLeft {
+    text-align: left;
+    width: 20%;
+}
+
+td.miniNavCenter {
+    text-align: center;
+    width: 60%;
+}
+
+td.miniNavRight {
+    text-align: right;
+    width: 20%;
+}
+
+code {
+    /* Use pre.codeBox instead if possible */
+    font-family: Monospace;
+}
+
+/** Site-Global Modifiers **/
+
+table#_mainTable {
+    width: 100%;
+}
+
+tr._mainRow {
+    width: 100%;
+}
+
+td#_mainTitle {
+    color: #000000;
+}
+
+td#_mainNav {
+    width: 150px;
+    vertical-align: top;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-style: none;
+}
+
+td#_mainContent {
+    vertical-align: top;
+    padding-top: 10px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+}
+
+td#_mainFooter, td#_mainFooter a {
+    font-size: 8pt;
+    line-height: 100%;
+    color: #a0a0a0;
+    text-align: center;
+}
+
+/** Site-global navigation bar modifiers **/
+
+div._navLink {
+    font-size: 11pt;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding: 3px 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #505050;
+    margin: 5px 0px;
+    line-height: 100%;
+}
+
+div._navBox {
+    font-size: 10pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #505050;
+    margin: 5px 0px;
+}
+
+/** Site-global comment module modifiers **/
+
+table._commentBox {
+    width: 100%;
+    border: none;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+div._commentBlock {
+    width: 100%;
+    text-align: left;
+    border: solid 1px black;
+    background-color: #e0e0e0;
+    padding: 0px;
+    margin: 0px;
+}
+
+div._commentName {
+    text-align: left;
+    border: none;
+    background-color: #c0c0c0;
+    padding: 0px 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+div._commentEntry {
+    padding: 0px 5px;
+    margin: 0px;
+}
+
+._commentNewNotice {
+    margin: 0px;
+    text-align: center;
+}
+
+._commentReplyNote {
+    text-align: right;
+}
+
+table._commentReplyTable {
+    text-align: center;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+td._commentReplyCell {
+    text-align: center;
+}
+
+p._commentTags {
+    font-size: 9pt;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+div._commentFormBorder {
+    border: solid;
+    border-width: 1px;
+    border-color: #000000;
+}
+
+/** Site-global input-form modifiers **/
+
+div.inputForm {
+}
+
+table.inputTable {
+}
+
+td.inputLabel {
+    text-align: right;
+    vertical-align: top;
+    white-space: nowrap;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+td.inputElement {
+    text-align: left;
+    vertical-align: top;
+    padding-bottom: 10px;
+}
+
+.inputNote {
+    font-size: 8pt;
+    font-style: italic;
+}
+
+td.inputSubmit {
+    text-align: center;
+    vertical-align: top;
+}
+
+

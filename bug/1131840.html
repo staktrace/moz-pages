@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width">
+<body onclick="console.log('parent clicked');">
+<div style="pointer-events:none">
+This iframe is inside a pointer-events:none div<br/>
+<iframe src="button.html"></iframe>
+</div>
+<hr/>
+This iframe is outside the pointer-events:none div<br/>
+<iframe src="button.html"></iframe>
+</body>

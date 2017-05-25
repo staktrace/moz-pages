@@ -1,0 +1,20 @@
+<html>
+<body>
+
+<iframe id="second-iframe" src="about:blank" style="height: 0px; width: 100%; opacity: 0;"></iframe>
+<iframe id="third-iframe" src="about:blank" style="height: 1px; width: 100%; opacity: 0;"></iframe>
+<iframe id="fourth-iframe" src="about:blank" style="height: 0px; width: 100%; visibility: hidden; opacity: 0;"></iframe>
+<iframe id="fifth-iframe" src="about:blank" style="height: 1px; width: 100%; visibility: hidden; opacity: 0;"></iframe>
+
+<script>
+    ['second', 'third', 'fourth', 'fifth'].forEach(function(num) {
+        var _id = num + '-iframe';
+        var ifrm = document.getElementById(_id);
+        ifrm.contentWindow.addEventListener('resize', function() {
+            console.warn(_id + ' resize');
+        });
+    });
+</script>
+
+</body>
+</html>

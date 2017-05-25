@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bugmash Dashboard (42 unviewed, 0 errors)</title>
+  <!-- base href="https://staktrace.com/apps/bugmash/dashboard.php" -->
+  <style type="text/css">
+@media (min-width:801px) {
+    html {
+        overflow-y: scroll;
+    }
+}
+body {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+.column {
+    width: 25%;
+    float: left;
+}
+@media (max-width:800px) {
+    .column {
+        width: 100%;
+        float: left;
+    }
+}
+.bug {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid;
+}
+.secure {
+    border-color: red;
+}
+.row {
+    border-bottom: dashed 1px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.row:last-child {
+    border-bottom: none;
+}
+div.title {
+    background-color: lightblue;
+    margin-bottom: 2px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.secure > div.title {
+    background-color: red;
+    color: white;
+}
+a.wipe, a.wipetop {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+a.noteify {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+div.footer {
+    background-color: lightblue;
+    margin-top: 2px;
+}
+.noteinput {
+    width: 350px;
+}
+a.linkified {
+    color: black;
+    text-decoration: none;
+}
+a.linkified:hover {
+    text-decoration: underline;
+}
+  </style>
+  <script type="text/javascript">
+    function wipe(e) {
+        var block = e.target;
+        while (! block.classList.contains("bug")) {
+            block = block.parentNode;
+        }
+        var items = block.querySelectorAll( "div.row" );
+        var ids = new Array();
+        for (var i = 0; i < items.length; i++) {
+            ids.push( items[i].id );
+        }
+        block.style.display = 'none';
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) {
+                return;
+            }
+            if (xhr.status == 200) {
+                block.parentNode.removeChild(block);
+                document.title = document.title.replace( /\d+ unviewed/, function(unviewed) { return (unviewed.split(" ")[0] - ids.length) + " unviewed"; } );
+            } else {
+                block.style.display = 'block';
+                e.target.textContent = "[E]";
+            }
+        };
+        var body = "ids=" + ids.join( "," );
+        xhr.open( "POST", "wipe.php", true );
+        xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+        xhr.setRequestHeader( "Content-Length", body.length );
+        xhr.send( body );
+        e.preventDefault();
+    }
+
+    document.addEventListener( "DOMContentLoaded", function() {
+        var wipers = document.querySelectorAll( "a.wipe" );
+        for (var i = 0; i < wipers.length; i++) {
+            wipers[i].addEventListener( "click", wipe, true );
+        }
+    }, true );
+
+    function addNote( bugnumber ) {
+        var notediv = document.createElement( "div" );
+        notediv.className = "newnote";
+        var sibling = document.getElementById( "notebuttons" );
+        sibling.parentNode.insertBefore( notediv, sibling );
+        notediv.innerHTML = '<span>Bug <input type="text" size="7" maxlength="10" value="' + bugnumber + '"/></span>: <input class="noteinput" type="text"/><input class="tagsinput" type="text""/>';
+        if (bugnumber) {
+            notediv.getElementsByTagName( "input" )[1].focus();
+        } else {
+            notediv.getElementsByTagName( "input" )[0].focus();
+        }
+    }
+
+    function setNoteNames() {
+        var newnotes = document.getElementsByClassName( "newnote" );
+        while (newnotes.length > 0) {
+            var newnote = newnotes[0];
+            var bugnumbertext = newnote.getElementsByTagName( "input" )[0].value;
+            var bugnumber = parseInt( bugnumbertext );
+            if (isNaN( bugnumber )) {
+                if (window.confirm( "Unable to parse " + bugnumbertext + " as a bug number; replace with 0 and continue anyway?" )) {
+                    bugnumber = 0;
+                } else {
+                    return false;
+                }
+            }
+            var anchor = document.createElement( "a" );
+            anchor.setAttribute( "href", "https://bugzilla.mozilla.org/show_bug.cgi?id=" + bugnumber );
+            anchor.textContent = "Bug " + bugnumber;
+            newnote.replaceChild( anchor, newnote.getElementsByTagName( "span" )[0] );
+            newnote.getElementsByTagName( "input" )[0].setAttribute( "name", "note" + bugnumber );
+            newnote.getElementsByTagName( "input" )[1].setAttribute( "name", "tags" + bugnumber );
+            newnote.className = "note";
+        }
+        return true;
+    }
+
+    function noteify( linkElement, bugnumber ) {
+        var notes = document.getElementsByClassName( "note" );
+        // see if we can find a note already for this bug and just give it focus
+        var search = "Bug " + bugnumber;
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].firstChild.textContent == search) {
+                notes[i].getElementsByTagName( "input" )[0].focus();
+                return false;
+            }
+        }
+        // also search through the newly-added notes that are in a different format
+        notes = document.getElementsByClassName( "newnote" );
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].getElementsByTagName( "input" )[0].value == bugnumber) {
+                notes[i].getElementsByTagName( "input" )[1].focus();
+                return false;
+            }
+        }
+        // couldn't find it, so add a new one
+        addNote( bugnumber );
+        linkElement.textContent = 'U';
+        return false;
+    }
+  </script>
+ </head>
+ <body>
+  <div class="column">
+<div class="bug" id="bug1193557"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1193557)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1193557">Bug 1193557</a> Using mix-blend-mode flattens classic scrollbars with APZ</div><div><div class="row" id="d292788"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8653157">Attachment #8653157</a> Flags: feedback?(mstange@themasta. com) → review?(mstange@themasta.com)</div>
+
+<div class="row" id="d292789">Attachment description: patch → fix hoisting, part 1</div>
+<div class="row" style="white-space: pre-line;" id="c178331">David Anderson [:dvander]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1193557#c4">said</a>:<br>Comment on <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8653157">attachment 8653157</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8653157">https://bugzilla.mozilla.org/attachment.cgi?id=8653157</a>
+fix hoisting, part 1
+
+I think technically we may only need scroll info items for the rootmost
+flattened scrollframes, since nested ones will not propagate their event
+regions up and will never activate. But in case we ever want to fix that, this
+patch will support it.</div>
+
+<div class="row" id="q3093">r? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8654433">part 2, fix event regions</a></div>
+<div class="row" style="display: none" id="d292791"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8654433">Attachment #8654433</a> Flags:  → review?(bugmail.mozilla@staktrace.com)</div>
+<div class="row" style="white-space: pre-line;" id="c178333">David Anderson [:dvander]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1193557#c5">said</a>:<br>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8654433">attachment 8654433</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8654433&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8654433&amp;action=edit</a>
+part 2, fix event regions
+
+Scroll info items get hoisted, but event regions for inactive frames don't.
+This means nested, flattened subframes cannot be scrolled when APZ is enabled.
+
+This patch simply makes scroll info layers into one big dispatch-to-content
+region. Alternately, we could add event region items to the hoisted list, or we
+could aggregate their regions like how the scroll info items get aggregated.
+But this is a quicker fix for an obscure case and the performance shouldn't
+matter too much.</div>
+
+<div class="row" id="q3094">r? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8654434">part 3, test case</a></div>
+<div class="row" style="display: none" id="d292792"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8654434">Attachment #8654434</a> Flags:  → review?(bugmail.mozilla@staktrace.com)</div>
+<div class="row" style="white-space: pre-line;" id="c178334">David Anderson [:dvander]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1193557#c6">said</a>:<br>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1193557&amp;attachment=8654434">attachment 8654434</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8654434&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8654434&amp;action=edit</a>
+part 3, test case
+
+Tests both issues in this bug.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1193557').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1193557').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1193557').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1193557').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+<div class="bug" id="bug1174532"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1174532)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1174532">Bug 1174532</a> Very hard to tap elements in search result on Voyages-SNCF.mobi</div><div><div class="row" id="q3096">needinfo? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1174532&amp;attachment=0"></a></div>
+<div class="row" id="d292981">Flags:  → needinfo?(bugmail.mozilla@staktrace.com),needinfo?(hsteen@mozilla.com)</div>
+<div class="row" style="white-space: pre-line;" id="c178411">Alexandre LISSY :gerard-majax  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1174532#c21">said</a>:<br>Might also be the same problem that makes it very hard to use the France 24 app
+on B2G on the Z3 Compact device ...</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1174532').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1174532').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1174532').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1174532').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug1177018"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1177018)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1177018">Bug 1177018</a> test_layerization.html fails with APZ enabled</div><div><div class="row" id="d292969">Depends on:  → <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200158" title="[APZ] 100% CPU by scrolling treeherder with e10s on">1200158</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1177018').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1177018').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1177018').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1177018').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+
+
+
+
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug1122804"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1122804)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1122804">Bug 1122804</a> Have nsDisplayResolution items adjust event coordinates for hit testing and dispatching to content</div><div><div class="row" id="d292688">Assignee: nobody@mozilla.org → rbarker@mozilla.com</div>
+<div class="row" id="d292689">CC:  → rbarker@mozilla.com</div>
+
+<div class="row" id="d292691">Attachment is obsolete: 0 → 1</div>
+<div class="row" style="white-space: pre-line;" id="c178252">Randall Barker [:rbarker]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1122804#c6">said</a>:<br>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1122804&amp;attachment=8654270">attachment 8654270</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8654270&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8654270&amp;action=edit</a>
+0001-<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1122804" title="Have nsDisplayResolution items adjust event coordinates for hit testing and dispatching to content">Bug-1122804</a>-Have-nsDisplayResolution-items-adjust-event-coordinates-for-hit-testing-and-dispatching-to-content-15082811-a61a7b5.patch</div>
+
+<div class="row" style="white-space: pre-line;" id="c178335">Randall Barker [:rbarker]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1122804#c7">said</a>:<br><a class="linkified" href="https://treeherder.mozilla.org/#/jobs?repo=try&amp;revision=b93b8bf51006">https://treeherder.mozilla.org/#/jobs?repo=try&amp;revision=b93b8bf51006</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1122804').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1122804').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1122804').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1122804').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+<div class="bug" id="bug1200063"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1200063)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200063">Bug 1200063</a> Intermittent test_wheel_transactions.html | Test timed out</div><div><div class="row" id="n11942">New: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200063">Intermittent test_wheel_transactions.html | Test timed                    out</a> by ryanvm@gmail.com<br>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=1200063&amp;attachment=8654666">attachment 8654666</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8654666&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8654666&amp;action=edit</a>
+test screenshot</div>
+
+<div class="row" style="white-space: pre-line;opacity: 0.5;" id="c178386">Treeherder Robot  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200063#c1">said</a>:<br>log:
+<a class="linkified" href="https://treeherder.mozilla.org/logviewer.html#?repo=mozilla-inbound&amp;job_id=13477223">https://treeherder.mozilla.org/logviewer.html#?repo=mozilla-inbound&amp;job_id=13477223</a>
+repository: mozilla-inbound
+start_time: 2015-08-30T13:51:03
+who: rvandermeulen[at]mozilla[dot]com
+machine: tst-linux32-spot-353
+buildname: Ubuntu VM 12.04 mozilla-inbound debug test mochitest-4
+revision: d890a8243f93
+
+1289 INFO TEST-UNEXPECTED-FAIL |
+gfx/layers/apz/test/test_wheel_transactions.html | Test timed out.</div>
+
+<div class="row" style="white-space: pre-line;opacity: 0.5;" id="c178387">Treeherder Robot  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200063#c2">said</a>:<br>log:
+<a class="linkified" href="https://treeherder.mozilla.org/logviewer.html#?repo=b2g-inbound&amp;job_id=2642174">https://treeherder.mozilla.org/logviewer.html#?repo=b2g-inbound&amp;job_id=2642174</a>
+repository: b2g-inbound
+start_time: 2015-08-30T14:25:41
+who: rvandermeulen[at]mozilla[dot]com
+machine: tst-linux32-spot-563
+buildname: Ubuntu VM 12.04 b2g-inbound debug test mochitest-4
+revision: 2ad5077d86ba
+
+1289 INFO TEST-UNEXPECTED-FAIL |
+gfx/layers/apz/test/test_wheel_transactions.html | Test timed out.</div>
+
+<div class="row" style="white-space: pre-line;opacity: 0.5;" id="c178388">Treeherder Robot  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200063#c3">said</a>:<br>log:
+<a class="linkified" href="https://treeherder.mozilla.org/logviewer.html#?repo=mozilla-inbound&amp;job_id=13481129">https://treeherder.mozilla.org/logviewer.html#?repo=mozilla-inbound&amp;job_id=13481129</a>
+repository: mozilla-inbound
+start_time: 2015-08-30T15:38:13
+who: rvandermeulen[at]mozilla[dot]com
+machine: tst-linux32-spot-210
+buildname: Ubuntu VM 12.04 mozilla-inbound debug test mochitest-4
+revision: 3859539ac715
+
+1289 INFO TEST-UNEXPECTED-FAIL |
+gfx/layers/apz/test/test_wheel_transactions.html | Test timed out.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1200063').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1200063').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1200063').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1200063').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+<div class="bug" id="bug1160540"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1160540)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1160540">Bug 1160540</a> APZ scrolling with mouse wheel becomes choppy after some time with general.smoothScroll enabled</div><div><div class="row" id="d292944">CC:  → karlt@mozbugz.karlt.net</div>
+<div class="row" id="d292945">Flags: needinfo?(bbirtles@mozilla. com) → </div>
+<div class="row" style="white-space: pre-line;" id="c178399">Brian Birtles (:birtles, busy 22~30 Aug)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1160540#c51">said</a>:<br>(In reply to Markus Stange [:mstange] from comment #49)
+&gt; Brian, can you look into this some more? It sounds like the drift detection
+&gt; from your patch isn't good enough, or some other noise is introduced into
+&gt; the timestamps. At least that's what I'm concluding from the fact that
+&gt; jastekken reports that the current state is worse than with my first try
+&gt; build (with the patch in comment 32).
+
+I'm afraid it's going to be difficult for me to have a proper look at this, at
+least during Q3. I'm not really sure how APZ is using timestamps so it's hard
+to guess how the native UI event time to TimeStamp code might be affecting
+this. Karl may have a better idea.
+
+The next step might be to add some debugging output to
+widget/SystemTimeConverter.h to indicate when we adjust for forwards skew and
+backwards skew and see if they correspond with the jumps. Also, we might see if
+there is an async method for getting the current time on windows like we use on
+Linux.</div>
+
+<div class="row" style="white-space: pre-line;" id="c178412">Karl Tomlinson (ni?:karlt)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1160540#c52">said</a>:<br>The lack of a winnt GetTimeAsyncForPossibleBackwardsSkew() implementation
+means that skew correction is implemented in one direction only.
+However, the report of correction of cumulative delay sounds like it happens
+to be the direction that helps.
+
+If the skew in this direction is large then the result is essentially that
+event timestamps represent times of processing the events instead of
+hardware (or OS) event times.  However, the skew rates reported here don't
+sound so large that I would guess that effect.  I suspect something else might
+be involved.</div>
+
+<div class="row" style="white-space: pre-line;" id="c178414">Karl Tomlinson (ni?:karlt)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1160540#c53">said</a>:<br>I don't know whether this is involved here but
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1026765#c4">https://bugzilla.mozilla.org/show_bug.cgi?id=1026765#c4</a> means that code needs
+to be careful not to mix the two versions of Timestamp if it wants sane
+results on winnt.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1160540').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1160540').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1160540').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1160540').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+
+
+
+
+
+
+   &nbsp;  </div>
+  <div class="column">
+
+
+
+
+<div class="bug" id="bug1200158"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 1200158)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200158">Bug 1200158</a> [APZ] 100% CPU by scrolling treeherder with e10s on</div><div><div class="row" id="d292970">Blocks:  → <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1177018" title="test_layerization.html fails with APZ enabled">1177018</a></div>
+<div class="row" id="d292971">CC:  → alice0775@yahoo.co.jp</div>
+<div class="row" id="d292972">Component: Untriaged → Panning and Zooming</div>
+<div class="row" id="d292973">Ever confirmed: 0 → 1</div>
+<div class="row" id="d292974">Keywords:  → perf, regression</div>
+<div class="row" id="d292975">OS: Windows 10 → All</div>
+<div class="row" id="d292976">Product: Firefox → Core</div>
+<div class="row" id="d292977">Status: UNCONFIRMED → NEW</div>
+<div class="row" id="d292978">Summary: 100% CPU by scrolling       treeherder with e10s on → [APZ] 100% CPU by scrollingtreeherder with e10s on</div>
+<div class="row" id="d292979">tracking-e10s: --- → ?</div>
+<div class="row" style="white-space: pre-line;" id="c178409">Alice0775 White  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200158#c1">said</a>:<br>Reproduced on windows7 and ubuntu14.04 with enabled e10s and APZ
+
+Pushlog:
+<a class="linkified" href="https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=81dd43b43784&amp;tochange=2e4a1822a511">https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=81dd43b43784&amp;tochange=2e4a1822a511</a>
+
+
+Regressed by:<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1177018" title="test_layerization.html fails with APZ enabled">Bug 1177018</a>
+
+Referenced Bugs:
+
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1177018">https://bugzilla.mozilla.org/show_bug.cgi?id=1177018</a>
+[<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1177018" title="test_layerization.html fails with APZ enabled">Bug 1177018</a>] test_layerization.html fails with APZ enabled</div>
+
+<div class="row" id="d292980">OS: All → Windows</div>
+
+<div class="row" id="d292982">URL:  → https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound</div>
+<div class="row" style="white-space: pre-line;" id="c178413">Alice0775 White  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1200158#c2">said</a>:<br>STR
+1. Open <a class="linkified" href="https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound">https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound</a>
+2. Scroll page by scrollbar(click scrollbar/scroll buttun or drag thumb) 
+   or Scroll page by keyboards(up/down arrow etc)</div>
+
+<div class="row" id="d292991">CC:  → bernesb@gmail.com</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1200158').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1200158').offsetTop,window.scrollY)); wipe(event); return false">X&nbsp;</a><a href="#" onclick="window.scrollTo(Math.min(document.getElementById('bug1200158').offsetLeft,window.scrollX),Math.min(document.getElementById('bug1200158').offsetTop,window.scrollY));return false">Back to top</a></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   &nbsp;  </div>
+</body></html>

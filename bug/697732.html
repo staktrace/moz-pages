@@ -1,0 +1,19 @@
+<div id="dump"><a href="javascript:doPush()">push state</a><br/></div>
+<a href="about:blank">link to blank</a>
+
+<script>
+    function doPush() {
+        document.getElementById('dump').innerHTML = 'pushed';
+        window.history.pushState({pushed: 1}, 'new title', 'pushed.html');
+    }
+
+    window.onpopstate = function(e) {
+        if (e.state == null) {
+            document.getElementById('dump').innerHTML = 'no more state!';
+        } else if (e.state.pushed > 0) {
+            document.getElementById('dump').innerHTML = 'popped';
+        } else {
+            document.getElementById('dump').innerHTML = '';
+        }
+    }
+</script>

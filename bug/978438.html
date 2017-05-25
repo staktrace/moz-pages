@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width">
+  <script>
+    function logevent(e) {
+        document.getElementById('log').innerHTML = e.type + "<br/>" + document.getElementById('log').innerHTML;
+    }
+
+    function register() {
+        document.getElementById('t').addEventListener('touchstart', logevent, false);
+        document.getElementById('t').addEventListener('touchmove', logevent, false);
+        document.getElementById('t').addEventListener('touchend', logevent, false);
+        document.getElementById('t').addEventListener('touchcancel', logevent, false);
+    }
+  </script>
+ </head>
+<body onload="register()">
+ Place your finger in the square below and then drag it outside the square.
+ <div id="t" style="border: solid 1px black; width: 100px; height: 100px;"></div>
+ Events received:
+ <div id="log" style="height: 200px; overflow:scroll"></div>
+</body>
+</html>
