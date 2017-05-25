@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript">
+    function report(e) {
+        var report = e.type;
+        var x = document.getElementById('x');
+        x.innerHTML = report + '<br/>' + x.innerHTML;
+    }
+
+    document.addEventListener('touchstart', report, true);
+    document.addEventListener('touchmove', report, true);
+    document.addEventListener('touchend', report, true);
+    document.addEventListener('click', report, true);
+  </script>
+ <body>
+  <div id="x">
+  </div>
+ </body>
+</html>

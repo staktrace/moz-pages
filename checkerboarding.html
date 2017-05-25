@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Checkerboarding dashboard</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://telemetry.mozilla.org/new-pipeline/style/metricsgraphics.css"/>
+  <style>
+    html {
+        font-size: 12px;
+    }
+    body {
+        background-color: #fff;
+        color: #000;
+        font-family: 'Open Sans', sans-serif, Arial;
+    }
+    .metric {
+        border: solid 1px black;
+        text-align: center;
+    }
+    .controls {
+        width: 800px;
+        height: 100px;
+        text-align: center;
+        margin: auto;
+        padding-top: 1em;
+    }
+    .older, .newer {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="https://telemetry.mozilla.org/new-pipeline/lib/metricsgraphics.js"></script>
+  <script src="https://telemetry.mozilla.org/new-pipeline/lib/d3pie.min.js"></script>
+  <script src="https://telemetry.mozilla.org/v2/telemetry.js"></script>
+  <script>
+    /* Create a stock dashboard at:
+     * https://telemetry.mozilla.org/dashboard-generator/index.html?channel=nightly;nightly;nightly;nightly&version=;;;&metric=CHECKERBOARD_SEVERITY;CHECKERBOARD_DURATION;CHECKERBOARD_PEAK;CHECKERBOARD_POTENTIAL_DURATION&useSubmissionDate=false;false;false;false&sanitize=true;true;true;true&trim=false;false;false;false&compare=;;;&sensibleCompare=true;true;true;true&evoVersions=1;1;1;1&filters={"application":"Firefox"};{"application":"Firefox"};{"application":"Firefox"};{"application":"Firefox"}
+     */
+
+    function nextDay(aDate, delta = 1) {
+        var next = new Date(aDate);
+        next.setDate(next.getDate() + delta);
+        return next;
+    }
+
+    function prevDay(aDate) {
+        return nextDay(aDate, -1);
+    }
+
+    function ymd(aDate) {
+        var yr = aDate.getFullYear();
+        var mn = 1 + aDate.getMonth();
+        var dt = aDate.getDate();
+        return yr + (mn < 10 ? '0' : '') + mn + (dt < 10 ? '0' : '') + dt;
+    }
+
+    var baselineDate = new Date("2016-02-21T00:00:00");
+
+    function plotSeverity() {
+      Telemetry.getEvolution("nightly", "47", "CHECKERBOARD_SEVERITY", {}, false, function(evolutionMap) {
+        var compareDate = nextDay(baselineDate);
+
+        // timezones are messy. just get a padded range from telemetry, and then pick out the build ids we want
+        var prev = prevDay(baselineDate);
+        var next = nextDay(compareDate);
+        var startRange = prevDay(prev);
+        var endRange = nextDay(next);
+        subset = evolutionMap[""].dateRange(startRange, endRange);
+
+        //console.log(subset);
+        var baselineIx = -1;
+        var compareIx = -1;
+        var hasPrev = false;
+        var hasNext = false;
+        for (i = 0; i < subset.data.length; i++) {
+            if (subset.data[i].date == ymd(baselineDate)) {
+                baselineIx = i;
+            }
+            if (subset.data[i].date == ymd(compareDate)) {
+                compareIx = i;
+            }
+            if (subset.data[i].date == ymd(prev)) {
+                hasPrev = true;
+            }
+            if (subset.data[i].date == ymd(next)) {
+                hasNext = true;
+            }
+        }
+        if (baselineIx < 0 || compareIx < 0 || baselineIx == compareIx) {
+            throw 'Unable to find the data from the date range';
+        }
+        document.querySelector('.older').disabled = !hasPrev;
+        document.querySelector('.newer').disabled = !hasNext;
+        var data = [];
+        for (i = 0; i < subset.buckets.length; i++) {
+          data.push({'severity': Math.log(subset.buckets[i] + 1),
+                     'value1': subset.data[baselineIx].histogram[i],
+                     'value2': subset.data[compareIx].histogram[i]});
+        }
+        MG.data_graphic({
+          target: '#severity_comparison',
+          title: "CHECKERBOARD_SEVERITY " + ymd(baselineDate) + " vs. " + ymd(compareDate),
+          description: "Comparison of CHECKERBOARD_SEVERITY over two days",
+          data: data,
+          width: 800,
+          height: 400,
+          bottom: 60,
+          left: 80,
+          x_accessor: ['severity'],
+          y_accessor: ['value1', 'value2'],
+          x_label: 'log(Severity)',
+          y_label: 'Count',
+          mouseover: function(d, i) {
+            var prefix = d3.formatPrefix(d.value);
+            d3.select('#severity_comparison svg .mg-active-datapoint')
+                .text(ymd(baselineDate) + ": " + d.value1 + ", "
+                    + ymd(compareDate) + ": " + d.value2);
+          },
+        });
+      });
+    }
+
+    Telemetry.init(plotSeverity);
+
+    function older() {
+        baselineDate.setDate(baselineDate.getDate() - 1);
+        plotSeverity();
+    }
+
+    function newer() {
+        baselineDate.setDate(baselineDate.getDate() + 1);
+        plotSeverity();
+    }
+  </script>
+ </head>
+ <body>
+  <h1>Checkerboarding dashboard</h1>
+  <hr/>
+  <div class="metric">
+   <div id="severity_comparison"></div>
+   <div class="controls">
+    <button class="older" onclick="older()">Older</button>
+    <button class="newer" onclick="newer()">Newer</button>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,186 @@
+<html><!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<script>
+// The next function is converted into a bookmarklet:
+// - Make sure to use /* .. */ comments
+// - Make sure to use |;| as if all EOLs are replaced with spaces
+// - Make sure to use only double-quotes (") or escaped single-quotes (\').
+
+////////////////// Bookmarklet start ///////////////////
+function runScrollTest() {
+  var REPORT2WINDOW=false; /* if true, reports to a new window, which might need to be popup-unblocked */
+
+  var intervals = [];
+  var count = 0;
+  var maxDuration;
+
+  /* opera pre-webkit doesn't support rAF, nor does it have window.performance */
+  function now(){ return window.performance ? window.performance.now() : Date.now(); };
+  var rAF = window.requestAnimationFrame       || 
+            window.mozRequestAnimationFrame    ||
+            window.webkitRequestAnimationFrame ||
+            window.oRequestAnimationFrame      ||
+            window.msRequestAnimationFrame     ||
+            function(func){ var i=1000/60; return setTimeout(func, i - now()%i); };
+
+  /* the biggest function is for reporting the results... */
+  function reportResults() {
+    function sum(v) {
+      var s=0; for (var j in v) s+=v[j]; return s;
+    }
+
+    function avg(v) {
+      return v.length?sum(v)/v.length:0;
+    }
+
+    function std(v, a) { /* values, optional average */
+      var l = v.length;
+      if (undefined == a) a = avg(v);
+
+      return l<=1 ? 0 : Math.sqrt(
+        v.map(function (v) { return Math.pow(v - a, 2); })
+              .reduce(function(a, b) { return a + b; }) / (l-1));
+    }
+
+    /* Value smaller than buckets[0] or bigger than the last will not be counted */
+    function histogram(values, buckets) {
+      var res = new Array(buckets.length -1);
+
+      for (var b = 0; b < res.length; b++) {
+        res[b]=0;
+        for (var v in values) {
+          if (values[v] >= buckets[b] && values[v] < buckets[b+1])
+            res[b]++;
+        }
+      }
+
+      return res;
+    }
+
+    var res = "";
+    res += "Page: " + document.location.href + "\n"
+         + "Steps: " + intervals.length + "\n"
+         + "Duration: " + (now()-start).toFixed(0) + " ms\n"
+         + "\n"
+         + "Window size: " + window.innerWidth + " x " + window.innerHeight + "\n"
+         + "Average interval: " + avg(intervals).toFixed(2) + " ms\n"
+         + "STDDEV intervals: " + std(intervals).toFixed(2) + " ms\n"
+         + "\n";
+
+    var buckets = [0,2,4,6,8,10,12,14,15.9,17.3,18,22,32,35,50,80,120,180,250,500,1000];
+    var his = histogram(intervals, buckets);
+    var hres = "intervals histogram:\n";
+    for (var h = 0; h < his.length; h++)
+      if (his[h])
+        hres += buckets[h].toFixed(1) + " - " + buckets[h+1].toFixed(1) + " ms: " + his[h] + "\n";
+    res += hres;
+
+    res += "\nintervals:\n";
+    res += intervals.map(function(a){return a.toFixed(2);}).join("\n");
+
+    if (REPORT2WINDOW) {
+      var w = window.open("", "");
+      w.document.body.innerHTML = res.split("\n").join("<br/>");
+    } else {
+      alert(res);
+    }
+    
+    window.scroll(0, 0);
+  }
+
+  /* initialize destination */
+  var dest = window.scrollMaxY;
+
+  /* the scroll iterations */
+  var prevTime;
+  var start;
+  function loop() {
+    var n = now();
+    var p = window.pageYOffset;
+    if (p >= dest - 1) { /* reached the destination */
+      return reportResults()
+    }
+
+    rAF(loop);
+
+    intervals.push(n - prevTime);
+    prevTime = n;
+  }
+
+  /* start the test */
+  window.scroll(0, 0);
+  var started = false;
+  rAF(function() {
+    window.scrollTo({left: 0, top: window.scrollMaxY, behavior: 'smooth'});
+    prevTime = now();
+    start = prevTime;
+    rAF(loop);
+  });
+}
+////////////////// Bookmarklet end ///////////////////
+
+
+function $(id) { return document.getElementById(id); }
+function makeBookmarkletLink(func) { /* lame minification, IE has 4K URL limit */
+  var res = String(func).split("\r").join(" ").split("\n").join(" ");
+  res = res.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '');
+  var len = res.length;
+  while ((res = res.split("  ").join(" ").split("%20%20").join(" ")).length < len)
+    len = res.length;
+  
+  var ch = "=;+*/)[]{}<>'%|"; /* "-(" were not added since i use them inside strings */
+  for (var j in ch) {
+    while ((res = res.split(" " + String(ch[j])).join(String(ch[j]))
+                     .split(String(ch[j])+ " " ).join(String(ch[j])))
+                  .length < len) {
+      len = res.length;
+    }
+  }
+  //alert(String(func).length + " -> " + res.length + " ("+res.split(" ").join("%20").length+")");
+  return "javascript:("+res+")()";
+}
+
+function updateSize() {
+  $("winsize").innerHTML = "(" + window.innerWidth + " x " + window.innerHeight + ")";
+}
+
+function init() {
+  $("bklet").href = makeBookmarkletLink(runScrollTest);
+  updateSize();
+}
+addEventListener("load", init);
+addEventListener("resize", updateSize);
+
+function repeat(str, n) {
+  var res = "";
+  while (!isNaN(n) && n-- > 0)
+    res += String(str);
+  return res;
+}
+
+function addLines(version) { // version 1 for sparse, anything else for dense.
+  var res = "";
+  for (var i = 0; i < (version == 1 ? 40 : 300); i++)
+    res += version == 1 ? "<span>" + i + repeat("<br/>", 10) + "</span>" : "<span>" + repeat("Line " +i + " - some test text. ", 10) + ".</span>";
+  document.getElementById("lines").innerHTML = res;
+  window.scroll(0, 0);
+}
+</script>
+</head>
+
+<body>
+Bookmark this: <a id="bklet" href=''>Scroll-test</a>, then browse to any page and click the stored bookmarklet to initiate the scroll test.<br>
+For testing at this page:
+<a href="javascript:addLines(1)">Add sparse text</a> or 
+<a href="javascript:addLines(2)">Add dense text</a>,
+then click the Scroll-test link above.
+<span id="winsize">(1228 x 701)</span><br><br>
+<div id="lines"></div>
+
+</body></html>

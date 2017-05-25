@@ -1,0 +1,64 @@
+<style>
+    td, th { border: solid 1px black }
+</style>
+<script>
+    var columns = new Array("label",
+                     "window innerWidth",
+                     "window innerHeight",
+                     "window outerWidth",
+                     "window outerHeight",
+                     "html scrollWidth",
+                     "html offsetWidth",
+                     "html clientWidth",
+                     "body scrollWidth",
+                     "body offsetWidth",
+                     "body clientWidth");
+    var props = new Array();
+
+    function saveProps(label) {
+        props.push(new Array(label,
+                             window.innerWidth,
+                             window.innerHeight,
+                             window.outerWidth,
+                             window.outerHeight,
+                             document.documentElement.scrollWidth,
+                             document.documentElement.offsetWidth,
+                             document.documentElement.clientWidth,
+                             document.body ? document.body.scrollWidth : -1,
+                             document.body ? document.body.offsetWidth : -1,
+                             document.body ? document.body.clientWidth : -1));
+        if (label == 'load' || label == 'resize') {
+            dumpProps();
+        }
+    }
+
+    saveProps('initial');
+    addEventListener('DOMContentLoaded', function() { saveProps('DOMContentLoaded') }, false);
+    addEventListener('load', function() { saveProps('load') }, false);
+    addEventListener('resize', function() { saveProps('resize') }, false);
+
+    function dumpProps() {
+        var table = document.createElement('table');
+        var tr = document.createElement('tr');
+        for (var i = 0; i < columns.length; i++) {
+            var th = document.createElement('th');
+            th.textContent = columns[i];
+            tr.appendChild(th);
+        }
+        table.appendChild(tr);
+        for (var i = 0; i < props.length; i++) {
+            var tr = document.createElement('tr');
+            for (var j = 0; j < props[i].length; j++) {
+                var td = document.createElement('td');
+                td.textContent = props[i][j];
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        while (document.body.firstChild) {
+            document.body.removeChild(document.body.firstChild);
+        }
+        document.body.appendChild(table);
+    }
+</script>
+<body></body>

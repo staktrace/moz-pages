@@ -1,0 +1,15 @@
+<html>
+ <head>
+  <script>
+    function shrink() {
+        document.getElementById('x').style.width = "1000px";
+        document.getElementById('x').style.height = "1000px";
+        document.getElementById('y').style.width = "1000px";
+        return false;
+    }
+  </script>
+ <body>
+  <div id="x" style="width: 2000px; height: 2000px">&nbsp;</div>
+  <div id="y" style="width: 2000px; text-align: right; vertical-align: bottom"><a href="#" onclick="return shrink()">shrink page</a></div>
+ </body>
+</html>

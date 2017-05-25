@@ -1,0 +1,20 @@
+<html>
+ <head> 
+  <title>properties</title>
+  <script type="text/javascript">
+    function x() {
+        var props = ['window.outerWidth', 'window.outerHeight', 'window.innerWidth', 'window.innerHeight'];
+        var str = '';
+        for (var i in props) {
+            str += props[i] + ': ' + eval(props[i]) + '<br/>';
+        }
+        document.body.innerHTML = str;
+    }
+    window.onload = function(e) {
+        setTimeout(x, 1000);
+    }
+  </script>
+ </head>
+ <body>
+ </body>
+</html>

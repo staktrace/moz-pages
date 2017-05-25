@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Not clipping to scroll clip in SVGEffects</title>
+
+<style>
+
+.svgeffects {
+  filter: brightness(100%);
+  padding: 50px 100px;
+}
+
+.scrollbox {
+  border: 10px solid black;
+  overflow: auto;
+  height: 100px;
+}
+
+.scrolled {
+  width: 200%;
+  height: 200%;
+  background: red;
+}
+
+</style>
+
+<div class="svgeffects">
+  <div class="scrollbox">
+    <div class="scrolled"></div>
+  </div>
+</div>
