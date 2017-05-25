@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Bugmash Dashboard (134 unviewed, 1 errors)</title>
+  <base target="_blank"/>
+  <style type="text/css">
+@media (min-width:801px) {
+    html {
+        overflow-y: scroll;
+    }
+}
+body {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+.column {
+    width: 25%;
+    float: left;
+}
+@media (max-width:800px) {
+    .column {
+        width: 100%;
+        float: left;
+    }
+}
+.bug {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid;
+}
+.secure {
+    border-color: red;
+}
+.row {
+    border-bottom: dashed 1px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.row:last-child {
+    border-bottom: none;
+}
+div.title {
+    background-color: lightblue;
+    margin-bottom: 2px;
+    word-wrap: break-word;  /* deprecated by css3-text, but the one that firefox picks up */
+    overflow-wrap: break-word; /* what i can do with the lastest version of CSS3 text */
+    overflow-wrap: break-word hyphenate; /* what i really want as per old css3-text (http://www.w3.org/TR/2011/WD-css3-text-20110901/#overflow-wrap0) */
+}
+.secure > div.title {
+    background-color: red;
+    color: white;
+}
+a.wipe, a.wipetop {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+a.noteify {
+    float: right;
+    margin-left: 3px;
+    vertical-align: top;
+}
+div.footer {
+    background-color: lightblue;
+    margin-top: 2px;
+}
+.noteinput {
+    width: 350px;
+}
+a.linkified {
+    color: black;
+    text-decoration: none;
+}
+a.linkified:hover {
+    text-decoration: underline;
+}
+  </style>
+ </head>
+ <body>
+  <div class="column">
+<div class="bug" id="bug980500"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 980500)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980500">Bug 980500</a> Mouse scrollbars no longer displayed on content</div><div><div class="row" id="q1361">needinfo? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980500&attachment=0"></a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug980500').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug980500').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug980657"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 980657)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980657">Bug 980657</a> Scrolling in Mozilla Support app side-pane causes main content area to also scroll</div><div><div class="row" id="q1370">needinfo? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980657&attachment=0"></a></div>
+<div class="row" id="d175071">CC:  &rarr; bugmail.mozilla@staktrace.com</div>
+<div class="row" id="d175072">Flags:  &rarr; needinfo?(bugmail.mozilla@staktrace.com)</div>
+<div class="row" style="white-space: pre-line;" id="c104978">Jason Smith [:jsmith]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980657#c6">said</a>:<br/>kats - does this look like a site bug to you with support.mozilla.org or an
+APZC bug?</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug980657').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug980657').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug982118"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 982118)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982118">Bug 982118</a> Move ui.click_hold_context_menus.delay to gfxPrefs</div><div><div class="row" id="q1371">r? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389572">Move ui.click_hold_context_menus.delay to gfxPrefs</a></div>
+<div class="row" id="d175124">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" style="display: none" id="d175125"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389572">Attachment #8389572</a> Flags:  &rarr; review?(bugmail.mozilla@staktrace.com)</div>
+<div class="row" style="white-space: pre-line;" id="c105005">Oleg Romashin (:romaxa)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982118#c7">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389572">attachment 8389572</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389572&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389572&amp;action=edit</a>
+Move ui.click_hold_context_menus.delay to gfxPrefs
+
+One more version with fix for gtests</div>
+
+<div class="row" id="d175188">CC:  &rarr; romaxa@gmail.com</div>
+<div class="row" id="d175189">Flags:  &rarr; needinfo?(romaxa@gmail.com)</div>
+<div class="row" style="white-space: pre-line;" id="c105046">Philip Chee  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982118#c8">said</a>:<br/>Comment on <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389572">attachment 8389572</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389572">https://bugzilla.mozilla.org/attachment.cgi?id=8389572</a>
+Move ui.click_hold_context_menus.delay to gfxPrefs
+
+&gt; Also please change r=kgupta to r=kats
+....
+&gt; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982118" title="Move ui.click_hold_context_menus.delay to gfxPrefs">Bug 982118</a> - Move ui.click_hold_context_menus.delay to gfxPrefs. r=kgupta
+You forgot again</div>
+
+<div class="row" id="q1372">r? <a href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389766">Move ui.click_hold_context_menus.delay to gfxPrefs</a></div>
+<div class="row" id="d175194">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175195"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389572">Attachment #8389572</a> Flags: review?(bugmail.mozilla@sta ktrace.com)                                                                         needinfo?(romaxa@gmail.com) &rarr; review?(bugmail.mozilla@staktrace.com)</div>
+<div class="row" style="white-space: pre-line;" id="c105048">Oleg Romashin (:romaxa)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982118#c9">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982118&attachment=8389766">attachment 8389766</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389766&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389766&amp;action=edit</a>
+Move ui.click_hold_context_menus.delay to gfxPrefs</div>
+
+<div class="row" style="white-space: pre-line;" id="c105049">Oleg Romashin (:romaxa)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982118#c10">said</a>:<br/><a class="linkified" href="https://tbpl.mozilla.org/?tree=Try&amp;rev=b842771b7052">https://tbpl.mozilla.org/?tree=Try&amp;rev=b842771b7052</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug982118').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug982118').offsetTop);return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug980041"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title=" | !work" onclick="return noteify(this, 980041)">U</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980041">Bug 980041</a> [B2G] Taking the phone in and out of standby with the keyboard up will hide messages</div><div><div class="row" id="d175128">Keywords:  &rarr; regressionwindow-wanted</div>
+<div class="row" style="white-space: pre-line;" id="c105009">Jason Smith [:jsmith]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980041#c21">said</a>:<br/>The window isn't right here. The above testing includes builds that don't have
+APZC enabled, but comment 20 says this isn't reproducing with APZC disabled.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug980041').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug980041').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug980679"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 980679)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980679">Bug 980679</a> [B2G][Youtube] The screen will jump up and down when scrolling through the Youtube app</div><div><div class="row" style="white-space: pre-line;" id="c105019">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980679#c11">said</a>:<br/>Maybe if we did the scroll offset update acknowledgement from the refresh
+driver it would get processed sooner on the content side?</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug980679').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug980679').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug968991"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 968991)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=968991">Bug 968991</a> OOP Keyboard issues with Nuwa</div><div><div class="row" id="d175157">Blocks:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982568" title="">982568</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug968991').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug968991').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug957668"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 957668)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668">Bug 957668</a> Change the displayport representation in layout to be layerpixel margins rather than csspixel offset/size</div><div><div class="row" id="d175167">Depends on:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596" title="APZC needs to base displayport calculation on visible rect of composition bounds">982596</a></div>
+
+<div class="row" style="white-space: pre-line;" id="c105037">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668#c46">said</a>:<br/>Just using layer margins won't solve this bug. I outlined why in <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596" title="APZC needs to base displayport calculation on visible rect of composition bounds">bug 982596</a>,
+comment 0, which is the bug I filed with patches to do the other piece of work
+we'll need to not OOM.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug957668').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug957668').offsetTop);return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug937078"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 937078)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=937078">Bug 937078</a> Intermittent aboutmemory/tests/test_aboutmemory5.xul | Assertion count 1 is greater than expected range 0-0 assertions.  Due to negative &quot;gfx-quartz-surface&quot; value.</div><div><div class="row" style="white-space: pre-line;opacity: 0.5;" id="c105017">TBPL Robot  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=937078#c89">said</a>:<br/>philor
+<a class="linkified" href="https://tbpl.mozilla.org/php/getParsedLog.php?id=35983224&amp;tree=Fx-Team">https://tbpl.mozilla.org/php/getParsedLog.php?id=35983224&amp;tree=Fx-Team</a>
+Rev4 MacOSX Snow Leopard 10.6 fx-team debug test mochitest-other on 2014-03-11
+22:37:21
+revision: 34941dd46be6
+slave: talos-r4-snow-060
+
+2687 ERROR TEST-UNEXPECTED-FAIL |
+chrome://mochitests/content/chrome/toolkit/components/aboutmemory/tests/test_aboutmemory5.xul
+| Assertion count 1 is greater than expected range 0-0 assertions.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug937078').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug937078').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug946344"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 946344)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=946344">Bug 946344</a> Replace GeckoEventResponder with an async callback mechanism</div><div><div class="row" id="d175145">Depends on:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982182" title="">982182</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug946344').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug946344').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug977298"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 977298)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=977298">Bug 977298</a> Use python's -u argument when calling run_tests.py</div><div><div class="row" id="d175159"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=977298&attachment=8389420">Attachment #8389420</a> Flags: review?(jmaher@mozilla.com) &rarr; review+</div>
+<div class="row" style="white-space: pre-line;" id="c105032">Joel Maher (:jmaher)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=977298#c8">said</a>:<br/>Comment on <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=977298&attachment=8389420">attachment 8389420</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389420">https://bugzilla.mozilla.org/attachment.cgi?id=8389420</a>
+use python -u for talos (buildbot/tegras)
+
+Review of <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=977298&attachment=8389420">attachment 8389420</a>:
+ --&gt; (<a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=977298&amp;attachment=8389420)">https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;bug=977298&amp;attachment=8389420)</a>
+-----------------------------------------------------------------
+
+lets keep a close eye on talos numbers here.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug977298').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug977298').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug982596"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 982596)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596">Bug 982596</a> APZC needs to base displayport calculation on visible rect of composition bounds</div><div><div class="row" id="n10397">New: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596">APZC needs to base displayport calculation on visible                    rect of composition bounds</a> by tnikkel@gmail.com<br/>Let H be the height of the scroll port of a scrollable element. Let V be the
+visible height. APZC will calculate a displayport that is basically some
+multiple, say k, of H tall. Making it k*H tall.
+
+If we then translate that display port rect into layer margins (like <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668" title="Change the displayport representation in layout to be layerpixel margins rather than csspixel offset/size">bug
+957668</a>) and apply those margins to the visible rect we will get a resulting
+display port that is (k-1)*H + V. In other words we only subtract the
+non-visible height, all of the extra multiples of H remain.
+
+So just using layer margins like <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668" title="Change the displayport representation in layout to be layerpixel margins rather than csspixel offset/size">bug 957668</a> won't be enough to solve our memory
+woes.  We'll need APZC to consider the visible rect when calculating the
+display port.
+
+Referenced Bugs:
+
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668">https://bugzilla.mozilla.org/show_bug.cgi?id=957668</a>
+[<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668" title="Change the displayport representation in layout to be layerpixel margins rather than csspixel offset/size">Bug 957668</a>] Change the displayport representation in layout to be
+layerpixel margins rather than csspixel offset/size</div>
+
+<div class="row" style="white-space: pre-line;" id="c105034">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596#c1">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982596&attachment=8389747">attachment 8389747</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389747&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389747&amp;action=edit</a>
+Part 1. Add a 'seeable' rect to frame metrics.
+
+Probably didn't need all the java plumbing in retrospect.</div>
+
+<div class="row" style="white-space: pre-line;" id="c105035">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596#c2">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982596&attachment=8389748">attachment 8389748</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389748&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389748&amp;action=edit</a>
+Part 2. Make APZC use the seeable rect for calculating display port and other
+places.</div>
+
+<div class="row" style="white-space: pre-line;" id="c105036">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596#c3">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=982596&attachment=8389749">attachment 8389749</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389749&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389749&amp;action=edit</a>
+Part 3. Add the actual calculation of the seeable rect to layout and populate
+it to the frame metrics.</div>
+
+<div class="row" id="d175171">CC:  &rarr; mstange@themasta.com</div>
+<div class="row" style="white-space: pre-line;" id="c105040">Markus Stange [:mstange]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596#c4">said</a>:<br/>(In reply to Timothy Nikkel (:tn) from comment #0)
+&gt; Let H be the height of the scroll port of a scrollable element. Let V be the
+&gt; visible height. APZC will calculate a displayport that is basically some
+&gt; multiple, say k, of H tall. Making it k*H tall.
+&gt; 
+&gt; If we then translate that display port rect into layer margins
+
+I don't understand this part. Isn't the point of the translation to margins to
+stop using a multiple of the scrollport height as the start of the calculation?
+I thought in the world with displayport margins there would no longer be a k,
+only a margin in screen pixels that's based on the current scroll velocity.</div>
+
+<div class="row" style="white-space: pre-line;" id="c105043">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596#c5">said</a>:<br/>The patches in <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=957668" title="Change the displayport representation in layout to be layerpixel margins rather than csspixel offset/size">bug 957668</a> very shallowly convert the display port to layer
+margins. In fact APZC isn't changed at all by those patches. Instead when
+content gets a new display port from APZC it then translates it into layer
+margins. Does that make it clearer?
+
+Basically APZC needs to modify it's display port calculation and I don't think
+there is any way it can intelligently do so without knowing the visible rect.
+Whether we convert to layer margins there or not doesn't matter, the math will
+work out the same.
+
+The reason that layer margins are important is the following case: we zoom
+(increase the resolution) of a document, APZC will send this zoom change for
+layout to update to before APZC changes any displayports on non-root scrollable
+frames. So until APZC sends us new display ports for the child scrollables that
+takes into account the new zoom layout needs to do something to keep those
+displayports reasonable. This is when we convert the existing display port to
+the _old_ layer pixels (before zoom), convert that to layer margins, apply
+those layer margins to the new visible rect (this time we are in the new layer
+pixels). This way we expand the display port from the visible rect by roughly
+the same number of layer pixels.</div>
+
+<div class="row" style="white-space: pre-line;" id="c105045">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982596#c6">said</a>:<br/>(In reply to Markus Stange [:mstange] from comment #4)
+&gt; calculation? I thought in the world with displayport margins there would no
+&gt; longer be a k, only a margin in screen pixels that's based on the current
+&gt; scroll velocity.
+
+So we could calculate the exact same rect, then convert it into margins
+expressed in screen pixels. But these will end up being too big in some cases
+(imagine a 100000px tall iframe). I'm saying we need to change the way APZC
+calculates the rect in the first place. And I'm further saying that it needs
+the visible rect in order to calculate it in a reasonable way. How else could
+APZC calculate a displayport for a 10000px tall iframe unless it knows what
+part of the iframe is visible? Currently it says the entire iframe is visible.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug982596').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug982596').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug965871"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 965871)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871">Bug 965871</a> Implement overscroll handoff for flings</div><div><div class="row" id="d175176">Last Resolved:  &rarr; 2014-03-12 05:06:53</div>
+<div class="row" id="d175177">Resolution: --- &rarr; FIXED</div>
+<div class="row" id="d175178">Status: NEW &rarr; RESOLVED</div>
+<div class="row" id="d175179">Target Milestone: --- &rarr; mozilla30</div>
+<div class="row" style="white-space: pre-line;" id="c105044">Carsten Book [:Tomcat]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871#c36">said</a>:<br/><a class="linkified" href="https://hg.mozilla.org/mozilla-central/rev/6e71e620511d">https://hg.mozilla.org/mozilla-central/rev/6e71e620511d</a>
+<a class="linkified" href="https://hg.mozilla.org/mozilla-central/rev/8382b9e3a551">https://hg.mozilla.org/mozilla-central/rev/8382b9e3a551</a>
+<a class="linkified" href="https://hg.mozilla.org/mozilla-central/rev/10360e4519f4">https://hg.mozilla.org/mozilla-central/rev/10360e4519f4</a>
+<a class="linkified" href="https://hg.mozilla.org/mozilla-central/rev/b9982dcb9a00">https://hg.mozilla.org/mozilla-central/rev/b9982dcb9a00</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug965871').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug965871').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug919625"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 919625)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=919625">Bug 919625</a> [browser] kinetic panning is broken if the user starts a scroll on a scrollable element</div><div><div class="row" id="d175182">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871" title="Implement overscroll handoff for flings">bug-965871</a>-Status: NEW &rarr; RESOLVED</div>
+<div class="row" id="d175183">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871" title="Implement overscroll handoff for flings">bug-965871</a>-Resolution: --- &rarr; FIXED</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug919625').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug919625').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug965593"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 965593)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=965593">Bug 965593</a> [B2G][Wikipedia] Vertical scrolling gets stuck on field areas that include vertical and horizontal scrolling</div><div><div class="row" id="d175186">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871" title="Implement overscroll handoff for flings">bug-965871</a>-Status: NEW &rarr; RESOLVED</div>
+<div class="row" id="d175187">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871" title="Implement overscroll handoff for flings">bug-965871</a>-Resolution: --- &rarr; FIXED</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug965593').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug965593').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug962629"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 962629)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=962629">Bug 962629</a> Rendering stretched when scrolling on PowerVR SGX with APZC</div><div><div class="row" style="white-space: pre-line;" id="c105047">Chris Lord [:cwiiis]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=962629#c15">said</a>:<br/>Pushed to inbound:
+<a class="linkified" href="https://hg.mozilla.org/integration/mozilla-inbound/rev/8b449c3a4caa">https://hg.mozilla.org/integration/mozilla-inbound/rev/8b449c3a4caa</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug962629').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug962629').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug977975"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 977975)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=977975">Bug 977975</a> composites running slower than 60fps on b2g 1.4</div><div><div class="row" id="d175192">status-b2g-v1.4: --- &rarr; fixed</div>
+<div class="row" id="d175193">Target Milestone: --- &rarr; 1.4 S3 (14mar)</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug977975').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug977975').offsetTop);return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+  <div class="column">
+<div class="bug" id="bug982113"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 982113)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982113">Bug 982113</a> Blank white box above keyboard when keyboard is opened from partially visible input field</div><div><div class="row" id="d175102">blocking-b2g: --- &rarr; 1.4?</div>
+<div class="row" id="d175103">Component: Gaia::Keyboard &rarr; Panning and Zooming</div>
+<div class="row" id="d175104">Keywords:  &rarr; regressionwindow-wanted</div>
+<div class="row" id="d175105">Product: Firefox OS &rarr; Core</div>
+<div class="row" id="d175106">Version: unspecified &rarr; Trunk</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug982113').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug982113').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug980247"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 980247)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980247">Bug 980247</a> position:sticky elements with multiple continuations duplicate offsets on later continuations when parent is reflowed without reflowing the continuations</div><div><div class="row" style="white-space: pre-line;" id="c105006">Abel Lin(alin, abel)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980247#c16">said</a>:<br/>(In reply to Corey Ford [:corey] from comment #15)
+&gt; It's not clear to me that there's anything wrong with computing the
+&gt; continuation union areas in terms of GetPosition(). As long as the
+&gt; continuations are in the right place relative to each other to begin with,
+&gt; it shouldn't matter, right?
+Right. But the wrong calculation is translation, not position relative to each
+other.
+However, translation calculation is from ComputeStickyLimits.
+&gt; 
+&gt; Do you have a test case that would be fixed by changing the union
+&gt; calculations (or is even the original test case still broken)?
+The original test case is still broken.
+I am intended to look into how the continuation union is calculated.
+
+I think few folks is aware the test case is broken because the test case is
+launched from begging, the result is ok. But after launching, if the html is
+zoomed/scrolled, the result is wrong. The patch solved the incremental problem,
+but the union calculation is still wrong.</div>
+
+<div class="row" style="white-space: pre-line;" id="c105039">Abel Lin(alin, abel)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980247#c17">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980247&attachment=8389757">attachment 8389757</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389757&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389757&amp;action=edit</a>
+abnormal.mp4</div>
+
+<div class="row" style="white-space: pre-line;" id="c105041">Abel Lin(alin, abel)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980247#c18">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980247&attachment=8389759">attachment 8389759</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389759&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389759&amp;action=edit</a>
+normal.mp4</div>
+
+<div class="row" style="white-space: pre-line;" id="c105042">Abel Lin(alin, abel)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980247#c19">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980247&attachment=8389760">attachment 8389760</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389760&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389760&amp;action=edit</a>
+stick.patch2(unofficial)
+
+abnormal.mp4 -&gt; sticky.patch
+normal.mp4 -&gt; sticky.patch + stick.patch2(unofficial)
+
+The 2nd patch shows the wrong union calculation is in nsIFrame::GetOffsetTo.
+So i add a new function NormalPositionGetOffsetTo to get the normal position,
+only in StickyScrollContainer::ComputeStickyLimit.
+
+The patch is so ugly, but it can help me to explain how the union is wrong.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug980247').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug980247').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug863658"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 863658)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=863658">Bug 863658</a> Intermittent layout/reftests/bugs/28811-1a.html,28811-2a.html,28811-2b.html,359903-2.html | image comparison (==), max difference: 1, number of differing pixels: 4</div><div><div class="row" style="white-space: pre-line;opacity: 0.5;" id="c105008">TBPL Robot  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=863658#c35">said</a>:<br/>philor
+<a class="linkified" href="https://tbpl.mozilla.org/php/getParsedLog.php?id=35978752&amp;tree=Mozilla-Central">https://tbpl.mozilla.org/php/getParsedLog.php?id=35978752&amp;tree=Mozilla-Central</a>
+b2g_emulator mozilla-central opt test reftest-2 on 2014-03-11 20:38:29
+revision: 69fbe69ddb8c
+slave: talos-r3-fed-039
+
+REFTEST TEST-UNEXPECTED-FAIL |
+<a class="linkified" href="http://10.0.2.2:8888/tests/layout/reftests/bugs/359903-2.html">http://10.0.2.2:8888/tests/layout/reftests/bugs/359903-2.html</a> | image
+comparison (==), max difference: 5, number of differing pixels: 11
+03-12 04:02:22.681   678   678 I Gecko   : REFTEST TEST-UNEXPECTED-FAIL |
+<a class="linkified" href="http://10.0.2.2:8888/tests/layout/reftests/bugs/359903-2.html">http://10.0.2.2:8888/tests/layout/reftests/bugs/359903-2.html</a> | image
+comparison (==), max difference: 5, number of differing pixels: 11
+AttributeError: GzipFile instance has no attribute '__exit__'
+Return code: 1</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug863658').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug863658').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug917755"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 917755)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=917755">Bug 917755</a> Implement Node.getBoxQuads</div><div><div class="row" id="d175129"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389628">Attachment #8389628</a> Flags:  &rarr; review?(matspal@gmail.com)</div>
+<div class="row" style="white-space: pre-line;" id="c105010">Robert O'Callahan (:roc) (Mozilla Corporation)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=917755#c57">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389628">attachment 8389628</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389628&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389628&amp;action=edit</a>
+Part 1.5: Make nsImageLoadingContent more robust in unified builds</div>
+
+<div class="row" id="d175130">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175131">CC:  &rarr; jst@mozilla.org</div>
+<div class="row" id="d175132"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8388504">Attachment #8388504</a> Flags: review?(mrbkap@mozilla.com) &rarr; review?(jst@mozilla.org)</div>
+<div class="row" style="white-space: pre-line;" id="c105011">Robert O'Callahan (:roc) (Mozilla Corporation)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=917755#c58">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389630">attachment 8389630</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389630&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389630&amp;action=edit</a>
+Part 2: Implement DOMPoint (v2)</div>
+
+<div class="row" id="d175133">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175134"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8388505">Attachment #8388505</a> Flags: review?(mrbkap@mozilla.com) &rarr; review?(jst@mozilla.org)</div>
+<div class="row" style="white-space: pre-line;" id="c105012">Robert O'Callahan (:roc) (Mozilla Corporation)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=917755#c59">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389631">attachment 8389631</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389631&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389631&amp;action=edit</a>
+Implement DOMRect (v2)</div>
+
+<div class="row" id="d175135">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175136"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8388507">Attachment #8388507</a> Flags: review?(mrbkap@mozilla.com) &rarr; review?(jst@mozilla.org)</div>
+<div class="row" style="white-space: pre-line;" id="c105013">Robert O'Callahan (:roc) (Mozilla Corporation)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=917755#c60">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389632">attachment 8389632</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389632&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389632&amp;action=edit</a>
+Part 4: Implement DOMQuad (v2)</div>
+
+<div class="row" id="d175137">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175138"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8388510">Attachment #8388510</a> Flags: review?(mrbkap@mozilla.com) &rarr; review?(jst@mozilla.org)</div>
+<div class="row" style="white-space: pre-line;" id="c105014">Robert O'Callahan (:roc) (Mozilla Corporation)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=917755#c61">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389633">attachment 8389633</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389633&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389633&amp;action=edit</a>
+Part 5.5: Implement getBoxQuads DOM API (v2)</div>
+
+<div class="row" id="d175201"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=917755&attachment=8389628">Attachment #8389628</a> Flags: review?(matspal@gmail.com) &rarr; review+</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug917755').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug917755').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug918189"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 918189)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=918189">Bug 918189</a> Implement Node.convertPoint/Rect/QuadFromNode</div><div><div class="row" id="d175139">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175140">CC:  &rarr; jst@mozilla.org</div>
+<div class="row" id="d175141"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=918189&attachment=8388513">Attachment #8388513</a> Flags: review?(mrbkap@mozilla.com) &rarr; review?(jst@mozilla.org)</div>
+<div class="row" style="white-space: pre-line;" id="c105015">Robert O'Callahan (:roc) (Mozilla Corporation)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=918189#c15">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=918189&attachment=8389634">attachment 8389634</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389634&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389634&amp;action=edit</a>
+Part 1.5: Implement GeometryUtils.convertPointFromNode, convertRectFromNode,
+and convertQuadFromNode</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug918189').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug918189').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug982489"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 982489)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982489">Bug 982489</a> New: Mapbox demo totally unusable in Firefox, works in the default browser</div><div><div class="row" id="n10396">New: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982489">Mapbox demo totally unusable in Firefox, works in the                    default browser</a> by mar.castelluccio@studenti.unina.it<br/>I'd guess this is a graphics problem.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug982489').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug982489').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug982230"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 982230)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982230">Bug 982230</a> [B2G] Resizing video element is delayed</div><div><div class="row" style="white-space: pre-line;" id="c105016">Timothy Nikkel (:tn)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982230#c2">said</a>:<br/>Can we translate the regression window into changesets?</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug982230').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug982230').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug980241"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 980241)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980241">Bug 980241</a> Vsync-triggered RefreshDriver</div><div><div class="row" id="d175143">Blocks:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=970751" title="Deliver input events more consistently per composite to make scrolling smoother">970751</a></div>
+
+<div class="row" id="d175155">Attachment is obsolete: 0 &rarr; 1</div>
+<div class="row" id="d175156"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980241&attachment=8389705">Attachment #8389705</a> Flags:  &rarr; feedback?(faraojh@gmail.com)</div>
+<div class="row" style="white-space: pre-line;" id="c105028">Vincent Lin[:vilin]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980241#c8">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980241&attachment=8389705">attachment 8389705</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389705&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389705&amp;action=edit</a>
+ProjectButterWIP0312.patch
+
+Jeremy,
+
+Could you please try this patch ? We don't have equipment to verify the
+uniformity. I will attach systrace profile later.
+
+The major change is to have a VsyncObserver in gecko/HAL so RefreshDriver and
+CompositorParent can register to it. The prerequisite is your HWComposer should
+support vsync callback(Android JB). Or I can design a SW Vsync to support
+non-JB device.
+
+I also include your patch in <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=970751" title="Deliver input events more consistently per composite to make scrolling smoother">Bug 970751</a>. You can see that I ever try to make a
+VsyncTimer instead for triggering dispatch, but thing gets worse. (I will keep
+looking into it.)</div>
+
+<div class="row" style="white-space: pre-line;" id="c105031">Vincent Lin[:vilin]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=980241#c9">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=980241&attachment=8389719">attachment 8389719</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389719&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389719&amp;action=edit</a>
+mynewtrace.html</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug980241').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug980241').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug349259"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 349259)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=349259">Bug 349259</a> CSS Property 'line-height' has no effects on input text fields</div><div><div class="row" style="white-space: pre-line;" id="c105020">Archil Imnadze  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=349259#c88">said</a>:<br/>(In reply to thommson from comment #87)
+&gt; Sorry guys, this ist one of the most important render bug on this browser.
+&gt; All webdevelopers hate you for this! Why the you do NOT fix it?!?! SEVEN
+&gt; YEARS is a very long time...
+&gt; 
+&gt; ALL other browsers support this very good. FF was the best browser with the
+&gt; best CSS support a few years ago - but now it looks like we have to make
+&gt; extra css styles for FF? Really?? Kidding mee, feels like working on IE8 :(
+&gt; 
+&gt; Sorry but its still so terrible, and its seem the priority is not longer on
+&gt; quality more than on quantity.
+&gt; 
+&gt; regards
+
+I agree. Should we fork Firefox and apply the updates?</div>
+
+<div class="row" id="d175150">CC:  &rarr; matspal@gmail.com</div>
+<div class="row" id="d175151">Flags:  &rarr; needinfo?(matspal@gmail.com)</div>
+<div class="row" style="white-space: pre-line;" id="c105024">David Baron [:dbaron] (needinfo? me) (UTC-8)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=349259#c89">said</a>:<br/>Mats, did you want to get this landed?
+
+(I think there was another bug where :bz was asking me about this same issue
+recently.)</div>
+
+<div class="row" id="d175153">CC:  &rarr; x.redir@yahoo.fr</div>
+<div class="row" id="d175154">Flags:  &rarr; needinfo?</div>
+<div class="row" style="white-space: pre-line;" id="c105026">x.redir@yahoo.fr <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=349259#c90">said</a>:<br/>An !important declaration should override another !important one. Not being
+able to override the default line-height on text inputs is pure stupidity.
+
+It's been 8 years that this serious blocking bug has been reported and all we
+can see from the Firefox team is absolute laziness. It's like they have &quot;mode:
+lazy !important;&quot; and no matter how serious the bug is they won't get out of
+their lazy mode. Firefox is dead now. I'm not using it anymore, the dev team is
+just too slow to respond and react to find real-life solutions for real
+problems like this one...</div>
+
+<div class="row" style="white-space: pre-line;" id="c105027">David Baron [:dbaron] (needinfo? me) (UTC-8)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=349259#c91">said</a>:<br/>That said, I think in the other bug I suggested putting the special-case in
+nsLineLayout::VerticalAlignLine.  I think it's actually needed in both places.
+
+I also think it probably makes more sense to max() with 1.0 rather than the
+normal line-height, although it's worth checking the behavior of other
+browsers.</div>
+
+<div class="row" id="d175158">Flags: needinfo? &rarr; </div>
+<div class="row" style="white-space: pre-line;" id="c105030">David Baron [:dbaron] (needinfo? me) (UTC-8)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=349259#c92">said</a>:<br/>And yes, you're right -- we should get this fixed.  I'll try to make it happen
+for Firefox 30 or 31.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug349259').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug349259').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug977757"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 977757)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=977757">Bug 977757</a> Implement enabling will-change for Gaia or otherwise privileged content at first</div><div><div class="row" id="d175144">CC:  &rarr; pchang@mozilla.com</div>
+<div class="row" style="white-space: pre-line;" id="c105021">peter chang[:pchang][:peter]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=977757#c75">said</a>:<br/>I found the landed patch cause <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=981804" title="">bug 981804</a>.
+
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=981804#c12">https://bugzilla.mozilla.org/show_bug.cgi?id=981804#c12</a></div>
+
+<div class="row" id="d175146">Resolution: FIXED &rarr; ---</div>
+<div class="row" id="d175147">Status: RESOLVED &rarr; REOPENED</div>
+<div class="row" style="white-space: pre-line;" id="c105023">peter chang[:pchang][:peter]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=977757#c76">said</a>:<br/>Reopen this bug because of <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=981804" title="">bug 981804</a>, but the following comment suggests to
+check will-changes modification in gaia side.
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=981804#c16">https://bugzilla.mozilla.org/show_bug.cgi?id=981804#c16</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug977757').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug977757').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug961871"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 961871)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=961871">Bug 961871</a> Enable will-change CSS property</div><div><div class="row" id="d175148">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=977757" title="Implement enabling will-change for Gaia or otherwise privileged content at first">bug-977757</a>-Status: RESOLVED &rarr; REOPENED</div>
+<div class="row" id="d175149">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=977757" title="Implement enabling will-change for Gaia or otherwise privileged content at first">bug-977757</a>-Resolution: FIXED &rarr; ---</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug961871').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug961871').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug924260"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 924260)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=924260">Bug 924260</a> window.close not working with browser.tabs.remote=true - ASSERTION: TabChild::SetWebBrowser not supported in TabChild</div><div><div class="row" id="d175152">CC:  &rarr; bobowencode@gmail.com</div>
+<div class="row" style="white-space: pre-line;" id="c105025">Bob Owen (:bobowen)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=924260#c3">said</a>:<br/>I've just hit a similar problem in tests that open and close new tabs.
+
+I also noticed that it is actually TabChild::DestroyBrowserWindow that is being
+called, the error message is wrong.
+I've raised <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982555" title="">bug 982555</a>, with a patch.</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug924260').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug924260').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug982298"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 982298)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982298">Bug 982298</a> crash in mozilla::ScrollFrameHelper::ScrollToImpl(nsPoint, nsRect const&amp;, nsIAtom*)</div><div><div class="row" style="white-space: pre-line;" id="c105029">Nick Thomas [:nthomas]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982298#c3">said</a>:<br/>I can't reproduce on that page, but this works:
+
+1, load
+<a class="linkified" href="https://wiki.mozilla.org/index.php?title=Releases/Firefox_28.0/BuildNotes&amp;action=edit">https://wiki.mozilla.org/index.php?title=Releases/Firefox_28.0/BuildNotes&amp;action=edit</a>
+2, cmd-f to search for mock
+3, click on 'Page' to switch back to actual page
+4, cmd-g once to crash
+
+Or use the 'Show Preview' button at 3 and cmd-g twice to crash.  Reloading with
+cmd-r at 3 doesn't crash.</div>
+
+<div class="row" id="d175160">Blocks:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=968647" title="">968647</a></div>
+<div class="row" id="d175161">CC:  &rarr; masayuki@d-toybox.com,matspal@gmail.com,m_kato@ga2.so-net.ne.jp,roc@ocallahan.org</div>
+<div class="row" id="d175162">Keywords:  &rarr; regression</div>
+<div class="row" id="d175163">OS: Mac OS X &rarr; All</div>
+<div class="row" id="d175164">status-firefox30: --- &rarr; affected</div>
+<div class="row" id="d175165">tracking-firefox30: --- &rarr; ?</div>
+<div class="row" style="white-space: pre-line;" id="c105033">Mats Palmgren (:mats)  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=982298#c4">said</a>:<br/>With the STR in comment 3 I'm crashing on this line (on Linux):
+<a class="linkified" href="http://hg.mozilla.org/mozilla-central/annotate/69fbe69ddb8c/layout/generic/nsGfxScrollFrame.cpp#l2089">http://hg.mozilla.org/mozilla-central/annotate/69fbe69ddb8c/layout/generic/nsGfxScrollFrame.cpp#l2089</a>
+which was added Feb 28, 2014 in <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=968647" title="">bug 968647</a> part 1 (so I'm guessing it's a
+regression from that bug).
+
+Referenced Bugs:
+
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=968647">https://bugzilla.mozilla.org/show_bug.cgi?id=968647</a>
+[<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=968647" title="">Bug 968647</a>] Use nsIReflowObserver and nsIScrollPositionListener for TSF
+instead of nsITimer</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug982298').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug982298').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug913806"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 913806)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=913806">Bug 913806</a> Turn HTTP cache v2 on by default on all products</div><div><div class="row" id="d175166">Depends on:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=916052" title="">916052</a></div>
+
+<div class="row" id="d175168">Depends on:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=982598" title="">982598</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug913806').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug913806').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug971985"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 971985)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=971985">Bug 971985</a> Gmail hangs 4sec parsing style on page load, with over 80% of the time in mozilla::css::ErrorReporter::OutputError()</div><div><div class="row" id="d175169">CC:  &rarr; vseerror@lehigh.edu</div>
+<div class="row" id="d175170">Keywords:  &rarr; perf</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug971985').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug971985').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug874950"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 874950)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=874950">Bug 874950</a> Opaque content can incorrectly occlude content that has a displayport set</div><div><div class="row" style="white-space: pre-line;" id="c105038">Chris Lord [:cwiiis]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=874950#c13">said</a>:<br/>(In reply to Jason Smith [:jsmith] from comment #12)
+&gt; (In reply to Chris Lord [:cwiiis] from comment #10)
+&gt; &gt; For what it's worth, I didn't make clear that this would be a regression in
+&gt; &gt; 1.3 vs. &lt;=1.2. Taking that into consideration, and with the video above,
+&gt; &gt; does that alter your decision?
+&gt; 
+&gt; I don't think so - mainly because Fennec has already shipped with the
+&gt; problem for multiple releases.
+
+ok. I still think this is important, but the decision has been made. One final
+note, this doesn't affect fennec as badly as low precision content means the
+blank area you see in the video is usually still rendered, but in low
+resolution (and because of the generally higher power of Android devices, it's
+displayed for less time).
+
+I'll see if I can cook up a patch for this and maybe that will change things,
+as I think this is a really visible bug we shouldn't ship with on b2g (and it
+doesn't just affect Twitter, it's just a good example - it affects any page
+with an opaque fixed position content. Not to mention the increased
+checkerboarding it causes).</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug874950').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug874950').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug879538"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 879538)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=879538">Bug 879538</a> e10s back-end tasks tracking bug</div><div><div class="row" id="d175172">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=972420" title="">bug-972420</a>-Status: ASSIGNED &rarr; RESOLVED</div>
+<div class="row" id="d175173">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=972420" title="">bug-972420</a>-Resolution: --- &rarr; FIXED</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug879538').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug879538').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug677653"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 677653)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=677653">Bug 677653</a> Memory reporters for Ogg-related allocations</div><div><div class="row" id="d175174">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=981966" title="">bug-981966</a>-Status: NEW &rarr; RESOLVED</div>
+<div class="row" id="d175175">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=981966" title="">bug-981966</a>-Resolution: --- &rarr; FIXED</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug677653').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug677653').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug835152"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 835152)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=835152">Bug 835152</a> [Browser] Show the address bar whenever the user scrolls up</div><div><div class="row" id="d175180">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871" title="Implement overscroll handoff for flings">bug-965871</a>-Status: NEW &rarr; RESOLVED</div>
+<div class="row" id="d175181">dep<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=965871" title="Implement overscroll handoff for flings">bug-965871</a>-Resolution: --- &rarr; FIXED</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug835152').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug835152').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug432391"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 432391)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=432391">Bug 432391</a> Slow loading background images sent with cache-control: no-cache do not reload upon completion</div><div><div class="row" id="d175190">CC:  &rarr; ryanvm@gmail.com</div>
+<div class="row" id="d175191">Resolution: FIXED &rarr; WORKSFORME</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug432391').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug432391').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug960523"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 960523)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=960523">Bug 960523</a> Too much recursion error starting with Firefox 26</div><div><div class="row" id="d175196">Assignee: nobody@mozilla.org &rarr; jdemooij@mozilla.com</div>
+<div class="row" id="d175197">CC:  &rarr; kvijayan@mozilla.com</div>
+<div class="row" id="d175198">Ever confirmed: 0 &rarr; 1</div>
+<div class="row" id="d175199"><a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=960523&attachment=8389776">Attachment #8389776</a> Flags: com) &rarr; review?(kvijayan@mozilla.co</div>
+<div class="row" id="d175200">Status: UNCONFIRMED &rarr; ASSIGNED</div>
+<div class="row" style="white-space: pre-line;" id="c105050">Jan de Mooij [:jandem]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=960523#c12">said</a>:<br/>Created <a class="linkified" href="https://bugzilla.mozilla.org/page.cgi?id=splinter.html&bug=960523&attachment=8389776">attachment 8389776</a>
+  --&gt; <a class="linkified" href="https://bugzilla.mozilla.org/attachment.cgi?id=8389776&amp;action=edit">https://bugzilla.mozilla.org/attachment.cgi?id=8389776&amp;action=edit</a>
+Add fun.call stub
+
+This patch adds a Baseline IC stub for fun.call with a scripted function as
+|this|.
+
+On some fun.call() testcases I tried, it increases the max recursion depth from
+440 to 5000-13000 (non-deterministic due to parallel Ion compilation).
+
+Kannan, it would be great if you could review this before the weekend so that
+we can land this before the merge next Monday. <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=966173" title="&quot;too much recursion&quot; on Linux trying to file U.S. income tax in Firefox 28">Bug 966173</a> is the same issue, we
+really want to get this in FF 30.</div>
+
+<div class="row" id="d175202">Blocks:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=966173" title="&quot;too much recursion&quot; on Linux trying to file U.S. income tax in Firefox 28">966173</a></div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug960523').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug960523').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug966173"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 966173)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=966173">Bug 966173</a> &quot;too much recursion&quot; on Linux trying to file U.S. income tax in Firefox 28</div><div><div class="row" id="d175203">Depends on:  &rarr; <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=960523" title="Too much recursion error starting with Firefox 26">960523</a></div>
+<div class="row" style="white-space: pre-line;" id="c105051">Jan de Mooij [:jandem]  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=966173#c36">said</a>:<br/>The patch in <a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=960523" title="Too much recursion error starting with Firefox 26">bug 960523</a> should increase the max recursion depth here at least
+10x.
+
+Referenced Bugs:
+
+<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=960523">https://bugzilla.mozilla.org/show_bug.cgi?id=960523</a>
+[<a class="linkified" href="https://bugzilla.mozilla.org/show_bug.cgi?id=960523" title="Too much recursion error starting with Firefox 26">Bug 960523</a>] Too much recursion error starting with Firefox 26</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug966173').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug966173').offsetTop);return false">Back to top</a></div></div>
+
+<div class="bug" id="bug942004"><div class="title"><a class="wipe" href="#">X&nbsp;</a><a class="noteify" href="#" title="" onclick="return noteify(this, 942004)">N</a><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=942004">Bug 942004</a> Intermittent TEST-UNEXPECTED-FAIL | bug917595-exif-rotated.jpg | image comparison (==), max difference: 224, number of differing pixels: 433587</div><div><div class="row" style="white-space: pre-line;opacity: 0.5;" id="c105052">TBPL Robot  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=942004#c33">said</a>:<br/>Tomcat
+<a class="linkified" href="https://tbpl.mozilla.org/php/getParsedLog.php?id=35995287&amp;tree=Mozilla-Inbound">https://tbpl.mozilla.org/php/getParsedLog.php?id=35995287&amp;tree=Mozilla-Inbound</a>
+b2g_emulator mozilla-inbound opt test reftest-10 on 2014-03-12 05:13:32
+revision: f9d3af502654
+slave: talos-r3-fed-098
+
+REFTEST TEST-UNEXPECTED-FAIL |
+<a class="linkified" href="http://10.0.2.2:8888/tests/content/html/document/reftests/bug917595-exif-rotated.jpg">http://10.0.2.2:8888/tests/content/html/document/reftests/bug917595-exif-rotated.jpg</a>
+| image comparison (==), max difference: 102, number of differing pixels: 1650
+03-12 12:44:05.038   677   677 I Gecko   : REFTEST TEST-UNEXPECTED-FAIL |
+<a class="linkified" href="http://10.0.2.2:8888/tests/content/html/document/reftests/bug917595-exif-rotated.jpg">http://10.0.2.2:8888/tests/content/html/document/reftests/bug917595-exif-rotated.jpg</a>
+| image comparison (==), max difference: 102, number of differing pixels: 1650
+AttributeError: GzipFile instance has no attribute '__exit__'
+Return code: 1</div>
+</div><div class="footer"><a class="wipetop" href="#" onclick="scrollTo(0,document.getElementById('bug942004').offsetTop); wipe(event); return false">X&nbsp;</a><a href="#" onclick="scrollTo(0,document.getElementById('bug942004').offsetTop);return false">Back to top</a></div></div>
+
+   &nbsp;  </div>
+ </body>
+</html>

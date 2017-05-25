@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width"/>
+  <title>The Grid in an iframe</title>
+ </head>
+ <script>
+    function spin() {
+        var start = Date.now();
+        while (Date.now() - start < 1000);
+        setTimeout(spin, 0);
+    }
+ </script>
+ <body onload="spin()">
+  <table width="100%" border="0"><tr><td width="50%">
+  <div style="color: red">this text is above the scrolling iframe. the iframe below is 300x400</div>
+  <iframe style="height: 400px; width: 300px; border: solid 1px black" src="grid.html">Your browser doesn't support iframes</iframe>
+  <div style="color: red">this text is below the scrolling iframe</div>
+  </td><td width="50%">
+  <div style="color: red">this text is above the scrolling iframe. the iframe below is 300x400</div>
+  <iframe style="height: 400px; width: 300px; border: solid 1px black" src="grid.html">Your browser doesn't support iframes</iframe>
+  <div style="color: red">this text is below the scrolling iframe</div>
+  </td></tr></table>
+ </body>
+</html>

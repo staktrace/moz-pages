@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body {
+        padding-left: 20px;
+    }
+  </style>
+  <script type="text/javascript">
+    const CANCEL_NONE = 0;
+    const CANCEL_START1 = 0x1;
+    const CANCEL_START2 = 0x2;
+    const CANCEL_MOVE1 = 0x4;
+    const CANCEL_MOVE2 = 0x8;
+    const CANCEL_END = 0x10;
+    const CANCEL_CONTEXTMENU = 0x20;
+    const CANCEL_MOVE11 = 0x40;
+
+    var flags = CANCEL_NONE;
+    var isFirstTouch = false;
+    var isFirstMove = false;
+
+    function updateFlag() {
+        flags = CANCEL_NONE;
+        if (document.getElementById('START1').checked) {
+            console.log("START1 will be cancelled");
+            flags |= CANCEL_START1;
+        }
+        if (document.getElementById('START2').checked) {
+            console.log("START2 will be cancelled");
+            flags |= CANCEL_START2;
+        }
+        if (document.getElementById('MOVE1').checked) {
+            console.log("MOVE1 will be cancelled");
+            flags |= CANCEL_MOVE1;
+        }
+        if (document.getElementById('MOVE2').checked) {
+            console.log("MOVE2 will be cancelled");
+            flags |= CANCEL_MOVE2;
+        }
+        if (document.getElementById('MOVE11').checked) {
+            console.log("MOVE11 will be cancelled");
+            flags |= CANCEL_MOVE11;
+        }
+        if (document.getElementById('END').checked) {
+            console.log("END will be cancelled");
+            flags |= CANCEL_END;
+        }
+        if (document.getElementById('CONTEXTMENU').checked) {
+            console.log("CONTEXTMENU will be cancelled");
+            flags |= CANCEL_CONTEXTMENU;
+        }
+        console.log("flags = " + flags);
+    }
+
+    window.addEventListener("touchstart", function(e) {
+        console.log("touchstart; touches.length: " + e.touches.length + "; changedTouches.length: " + e.changedTouches.length);
+        isFirstTouch = (e.touches.length == e.changedTouches.length);
+        isFirstMove = true;
+        if (isFirstTouch) {
+            if (flags & CANCEL_START1) {
+                console.log("cancelling");
+                e.preventDefault();
+            }
+        } else {
+            if (flags & CANCEL_START2) {
+                console.log("cancelling");
+                e.preventDefault();
+            }
+        }
+    }, true);
+
+    window.addEventListener("touchmove", function(e) {
+        console.log("touchmove; isFirstTouch: " + isFirstTouch + " isFirstMove: " + isFirstMove + " " + e.touches[0].clientX + ", " + e.touches[0].clientY);
+        if (isFirstTouch) {
+            if (flags & CANCEL_MOVE1) {
+                console.log("cancelling");
+                e.preventDefault();
+            }
+        } else {
+            if (flags & CANCEL_MOVE2) {
+                console.log("cancelling");
+                e.preventDefault();
+            }
+        }
+        if (isFirstMove) {
+            isFirstMove = false;
+            if (flags & CANCEL_MOVE11) {
+                console.log("cancelling");
+                e.preventDefault();
+            }
+        }
+    }, true);
+
+    window.addEventListener("touchend", function(e) {
+        console.log("touchend with " + e.touches.length + " touches");
+        if (flags & CANCEL_END) {
+            console.log("cancelling");
+            e.preventDefault();
+        }
+    }, true);
+
+    window.addEventListener("contextmenu", function(e) {
+        console.log("contextmenu");
+        if (flags & CANCEL_CONTEXTMENU) {
+            console.log("cancelling");
+            e.preventDefault();
+        }
+    }, true);
+
+    window.addEventListener("click", function(e) {
+        console.log("click at " + e.clientX + ", " + e.clientY + ", clickCount: " + e.detail);
+    }, true);
+
+    function logevent(e) {
+        console.log(e.type);
+    }
+
+    window.addEventListener("touchcancel", logevent, true);
+    window.addEventListener("mousedown", logevent, true);
+    window.addEventListener("mousemove", logevent, true);
+    window.addEventListener("mouseup", logevent, true);
+    window.addEventListener("mouselongtap", logevent, true);
+    window.addEventListener("mouselongtapup", logevent, true);
+    window.addEventListener("MozMouseHittest", logevent, true);
+
+  </script>
+ </head>
+ <body>
+  Prevent default on:<br/>
+  <input type="checkbox" id="START1" onchange="updateFlag()">First touch-start<br/>
+  <input type="checkbox" id="START2" onchange="updateFlag()">Second touch-start<br/>
+  <input type="checkbox" id="MOVE1" onchange="updateFlag()">First point touch-move<br/>
+  <input type="checkbox" id="MOVE2" onchange="updateFlag()">Second point touch-move<br/>
+  <input type="checkbox" id="MOVE11" onchange="updateFlag()">First touch-move only<br/>
+  <input type="checkbox" id="END" onchange="updateFlag()">Touch end<br/>
+  <input type="checkbox" id="CONTEXTMENU" onchange="updateFlag()">Context menu<br/>
+  <a href="#">link to nowhere</a><br/>
+  <p>Filler text</p>
+  <script>
+    for (var i = 0; i < 100; i++) {
+        document.writeln('<p>line ' + i + '</p>');
+    }
+  </script>
+ </body>
+</html>
