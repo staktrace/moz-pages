@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<script>
+    function jtop() {
+        document.getElementById('sticky-top').scrollTop = 0;
+        document.getElementById('sticky-bottom').scrollTop = 0;
+    }
+    function jmid() {
+        document.getElementById('sticky-top').scrollTop = document.getElementById('sticky-top').scrollTopMax / 2;
+        document.getElementById('sticky-bottom').scrollTop = document.getElementById('sticky-bottom').scrollTopMax / 2;
+    }
+    function jbot() {
+        document.getElementById('sticky-top').scrollTop = document.getElementById('sticky-top').scrollTopMax;
+        document.getElementById('sticky-bottom').scrollTop = document.getElementById('sticky-bottom').scrollTopMax;
+    }
+</script>
+
+<div style="display: grid; grid-template-columns: 200px 200px">
+
+<div style="overflow: auto; height: 400px; width: 150px" id="sticky-top">
+    <div style="height: 200px; width: 100%">Sticky with top margin of 50px</div>
+    <div style="height: 800px; width: 100%; background: linear-gradient(0deg, red, blue)">
+        <div style="position: sticky; top: 50px; height: 100px; width: 100%; background-color: green">Sticky</div>
+    </div>
+    <div style="height: 400px; width: 100%">Spacer</div>
+</div>
+
+<div style="overflow: auto; height: 400px; width: 150px" id="sticky-bottom">
+    <div style="height: 390px; width: 100%">Sticky with bottom margin of 50px</div>
+    <div style="height: 800px; width: 100%; background: linear-gradient(0deg, red, blue)">
+        <div style="height: 700px; width: 100%"></div>
+        <div style="position: sticky; bottom: 50px; height: 100px; width: 100%; background-color: green">Sticky</div>
+    </div>
+    <div style="height: 210px; width: 100%">Spacer</div>
+</div>
+
+</div>
+
+Jump to <button onclick="jtop()">top</button>, <button onclick="jmid()">middle</button>, <button onclick="jbot()">bottom</button>.
