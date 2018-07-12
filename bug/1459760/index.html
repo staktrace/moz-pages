@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+@keyframes bookmark-animation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-627px);
+  }
+}
+
+#container {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+#img {
+  fill-opacity: 0.6;
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  box-sizing: border-box;
+  -moz-context-properties: fill, fill-opacity;
+}
+
+#container.starred #img {
+  fill: #0a84ff;
+  fill-opacity: 1.0;
+}
+
+#container.animate #img {
+  fill: transparent;
+  fill-opacity: 1.0;
+  position: relative;
+}
+
+#container #box {
+  position: absolute;
+  overflow: hidden;
+  width: 33px;
+  height: 33px;
+  top: calc(50% - 16.5px);
+  left: calc(50% - 16.5px);
+}
+
+#container.animate #star {
+  background-image: url("bookmark-animation.svg");
+  background-size: auto;
+  list-style-image: none;
+  height: 33px;
+  min-height: 33px;
+  animation-name: bookmark-animation;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(19);
+  animation-duration: 317ms;
+  width: 660px;
+  -moz-context-properties: fill, stroke;
+  stroke: #0a84ff;
+}
+</style>
+</head><body>
+<div id="container" onclick="doit()">
+   <img id="img" src="bookmark-hollow.svg"/>
+   <div id="box"><div id="star"></div></div>
+</div>
+<script>
+    var container = document.getElementById('container');
+    var img = document.getElementById('img');
+    var box = document.getElementById('box');
+
+    function doit() {
+        if (container.classList.contains('starred')) {
+            unstar();
+        } else {
+            star();
+        }
+    }
+
+    function star() {
+        box.addEventListener("animationend", () => {
+            container.classList.remove('animate');
+        }, {once: true});
+        container.classList.add('animate');
+
+        img.src = "bookmark.svg";
+        container.classList.add('starred');
+    }
+
+    function unstar() {
+        img.src = "bookmark-hollow.svg";
+        container.classList.remove('starred');
+    }
+</script>
+<br/>
+Click on the star to animate. Click again to reset
+</body></html>
