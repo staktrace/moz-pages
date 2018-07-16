@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Raw image viewer</title>
+  <script type="text/javascript">
+
+function fileentry_changed() {
+  var input = document.getElementById("fileentry");
+  var files = input.files;
+  if (files.length > 0) {
+    // Only handle the first file; don't handle multiple selection.
+    // The parts of the log we care about are ASCII-only.  Since we
+    // can ignore lines we don't care about, best to read in as
+    // iso-8859-1, which guarantees we don't get decoding errors.
+    var fileReader = new FileReader();
+    fileReader.onload = function(e) {
+      var buf = null;
+      buf = e.target.result;
+
+      if (buf)
+        show_image(buf);
+    }
+    fileReader.readAsArrayBuffer(files[0]);
+  }
+  // So the user can process the same filename again (after
+  // overwriting the log), clear the value on the form input so we
+  // will always get an onchange event.
+  input.value = "";
+}
+
+function show_image(buf) {
+  var width = document.getElementById('width').value;
+  var height = document.getElementById('height').value;
+  var c = document.getElementById('c');
+  c.width = width;
+  c.height = height;
+  var ctx = c.getContext('2d');
+  var arr = new Uint8ClampedArray(buf);
+  var img = new ImageData(arr, width, height);
+  ctx.putImageData(img, 0, 0);
+}
+
+  </script>
+</head>
+<body>
+
+<div id="entry">
+<p>Image is <input type="text" id="width" placeholder="width (pixels)"/> by <input type="text" id="height" placeholder="height (pixels)"/></p>
+<p>Load raw bytes from a file:<br/>
+<input type="file" id="fileentry" onchange="fileentry_changed()" />
+</p>
+</div>
+
+<canvas id="c"></canvas>
+
+</body>
+</html>
