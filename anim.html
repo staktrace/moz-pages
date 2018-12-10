@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<title>Reftest, bug 1156456</title>
+<style>
+
+body {
+  background: #2a4;
+}
+
+@keyframes Rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+div#top {
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 200px; height: 200px;
+  background: #c37;
+  transform-origin: 50% 50%;
+  animation: 3s Rotation infinite;
+}
+
+</style>
+<div id="top"></div>
