@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <script type="text/javascript">
+    function crashit() {
+                    var arr = new Array();
+                    for (var i = 0; i < 300000; i++) {
+                        arr[i] = (i % 256);
+                    }
+                    var blob = 'data:application/pdf,' + arr;
+                    var link = document.createElement("a");
+                    link.download = "attachment";
+                    link.href = blob;
+                    link.textContent = "really"
+                    document.body.appendChild(link);
+                    link.click();
+    }
+  </script>
+ </head>
+ <body>
+     <a href="#" onclick="crashit(); return false;">click here</a>
+ </body>
+</html>
