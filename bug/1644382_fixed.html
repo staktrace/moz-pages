@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Firefox Blur Bug</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+		body,html{
+			margin: 0px;
+			padding: 0px;
+		}
+	.n2-ss-slide-background-wrap div {
+	    background-size: cover;
+	    width: 98%;
+	    height: 500px;
+	    overflow: hidden;
+	}
+
+	[data-mode="blurfit"] .n2-ss-slide-background-image+.n2-ss-slide-background-image {
+	    background-size: contain;
+	}
+	#scroll{
+		/*position: fixed;*/
+		bottom: 10;
+		left: 10;
+		padding: 15px;
+		background: black;
+		color: white;
+		font-size:2em;
+	}
+	p{
+		font-size: 16px;
+		margin-bottom: 20px;
+		line-height: 1.5;
+		padding: 0 5px;
+		font-family: Arial, sans-serif;
+	}
+	</style>
+</head>
+<body>
+<div class="n2-ss-slide-background n2-ow" data-mode="blurfit" style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+<div class="n2-ss-slide-background-wrap n2-ow">
+<div data-blur="0" style="margin: -14px; padding: 14px; filter: blur(7px); background-image: url('https://smartslider3.com/wp-content/uploads/2020/05/smartsliderchanges-1-780x410.png');">
+</div>
+</div>
+</div>
+<div class="dummy">
+<p>Quis maecenas consectetuer. Fermentum purus non primis tellus, 
+habitasse, feugiat curabitur rhoncus mauris diam at accumsan nec, 
+pharetra nunc lorem maecenas quis quis aptent neque. Sit class commodo 
+tortor ligula sociis accumsan. Scelerisque blandit placerat fusce 
+habitant ullamcorper feugiat.</p>
+<p>Lorem magna, sociis gravida rutrum cum. Primis dapibus in. Eu 
+fringilla aenean. Auctor fermentum mattis, consequat luctus porttitor 
+sit. Orci nisi nunc justo tincidunt.</p>
+<p>Sit dui ridiculus dapibus tempor adipiscing. Arcu quisque fringilla. 
+Cursus. Venenatis fusce diam fusce feugiat suscipit vehicula nisi cras 
+scelerisque dui eu euismod pede quisque et. Praesent fringilla praesent 
+donec suscipit convallis. Imperdiet sed felis velit. Eleifend.</p>
+<p>Faucibus. Non sit conubia habitant ut molestie, tristique nulla 
+nascetur non Nunc condimentum mattis turpis ullamcorper pellentesque 
+elementum accumsan. Molestie platea quis interdum interdum ultricies 
+condimentum semper hac orci. Imperdiet leo. Imperdiet. Auctor nunc 
+integer, ligula sodales fringilla iaculis donec aliquet. Sociosqu ante 
+euismod aptent.</p>
+<p>Luctus platea magna aenean ut nullam phasellus euismod augue, nullam 
+fames pulvinar aliquet sollicitudin diam cubilia. Condimentum tristique 
+aliquam magna blandit eros. Primis eleifend eleifend.</p>
+<p>Netus nunc eget praesent mattis ut consectetuer. Maecenas, sagittis. 
+Velit. Enim dignissim accumsan. In ante cum. Imperdiet amet. Ut. Etiam 
+at augue tempus magna amet. Commodo accumsan diam fames lacus.</p>
+</div>
+<div id="scroll" onclick="document.documentElement.scrollTo({top: 0, behavior: 'smooth'})">↑ scroll top</div>
+
+</body></html>
